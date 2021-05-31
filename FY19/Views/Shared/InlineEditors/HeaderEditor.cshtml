@@ -1,0 +1,23 @@
+﻿@using CMS.EventLog
+@using Kentico.PageBuilder.Web.Mvc
+@using Kentico.Web.Mvc
+@model FY19.Models.InlineEditors.TextEditorViewModel
+
+@*@EventLogProvider.LogEvent(EventType.INFORMATION, "Static Text View", "CODE", eventDescription: "is EditMode = " + Context.Kentico().PageBuilder().EditMode)*@
+
+@using (Html.Kentico().BeginInlineEditor("header-editor", Model.PropertyName,
+    new
+    {
+
+        @class = "header-editor text-editor " + Model.Class,
+        data_enable_formatting = Model.EnableFormatting.ToString(),
+        contenteditable = "true"
+    }))
+{
+
+    @Html.Raw(HttpUtility.HtmlDecode(Model.Text));
+   
+  
+
+}
+
