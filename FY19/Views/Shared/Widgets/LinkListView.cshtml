@@ -64,8 +64,10 @@
             <p>@Model.Properties.Description1</p>
         </li>
         <li class="listItem">
-            <a href="@Model.Properties.Url2" target="@blank2">@Model.Properties.Text2</a>
-            <p>@Model.Properties.Description2</p>
+            @if (Model.Properties.Text2 != null)
+            {<a href="@Model.Properties.Url2" target="@blank2">@Model.Properties.Text2</a>}
+            @if (Model.Properties.Description2 != null)
+            {<p>@Model.Properties.Description2</p>}
         </li>
         <li class="listItem">
             <a href="@Model.Properties.Url3" target="@blank3">@Model.Properties.Text3</a>

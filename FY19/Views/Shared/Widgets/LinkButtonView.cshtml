@@ -68,7 +68,7 @@
 }
 else
 {
-    <div class="btn btn001 @Model.Properties.Class" id="@Model.Properties.Id">
+    <div class="btn btn001 @if (Model.Properties.Id != null) { @Model.Properties.Class; }" id="@Model.Properties.Id">
         <a href="https://@url" target="_blank">@textContent</a>
     </div>
 }

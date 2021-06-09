@@ -5,6 +5,17 @@
 
 @*@EventLogProvider.LogEvent(EventType.INFORMATION, "Static Text View", "CODE", eventDescription: "is EditMode = " + Context.Kentico().PageBuilder().EditMode)*@
 
+@{ 
+    string textVal = string.Empty;
+
+    EventLogProvider.LogEvent(EventType.INFORMATION, "text in inlinecode", "CODE", eventDescription: "text " + Model.Text);
+
+    if (Model.Text != "•")
+    { textVal = Model.Text; }
+    else
+    { textVal = null; }
+}
+
 @using (Html.Kentico().BeginInlineEditor("text-editor", Model.PropertyName,
     new
     {
@@ -13,6 +24,6 @@
         data_enable_formatting = Model.EnableFormatting.ToString()
     }))
 {
-    @Html.Raw(Model.Text)
+    @Html.Raw(textVal)
     
 }
