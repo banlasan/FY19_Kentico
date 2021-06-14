@@ -19,34 +19,51 @@ namespace FY19.Models.Widgets
         /// <summary>
         /// Guid of background image.
         /// </summary>
-        [EditingComponent(MediaFilesSelector.IDENTIFIER, Label = "Image", Order = 1)]
+        [EditingComponent(MediaFilesSelector.IDENTIFIER, Label = "Image", Order = 0)]
         [EditingComponentProperty(nameof(MediaFilesSelectorProperties.LibraryName), MEDIA_LIBRARY_NAME)]
         [EditingComponentProperty(nameof(MediaFilesSelectorProperties.MaxFilesLimit), 1)]
         [EditingComponentProperty(nameof(MediaFilesSelectorProperties.AllowedExtensions), ".gif;.png;.jpg;.jpeg")]
-        [Required]
+        //[Required]
         public IList<MediaFilesSelectorItem> Image { get; set; }
 
-        /// <summary>
-        /// Image.
-        /// </summary>
-        public DocumentAttachment ImageAttachment { get; set; }
+        ///// <summary>
+        ///// Image.
+        ///// </summary>
+        //public DocumentAttachment ImageAttachment { get; set; }
 
-        /// <summary>
-        /// Text to be displayed.
-        /// </summary>
-        public string Text { get; set; }
+        ///// <summary>
+        ///// Text to be displayed.
+        ///// </summary>
+        //public string Text { get; set; }
 
 
-        /// <summary>
-        /// Button text.
-        /// </summary>
-        public string ButtonText { get; set; }
+        ///// <summary>
+        ///// Button text.
+        ///// </summary>
+        //public string ButtonText { get; set; }
 
 
         /// <summary>
         /// Target of button link.
-        /// </summary>
-        [EditingComponent(TextInputComponent.IDENTIFIER, Label = "Button Target", Order = 2)]
-        public string ButtonTarget { get; set; }
+        ///// </summary>
+        //[EditingComponent(TextInputComponent.IDENTIFIER, Label = "Button Target", Order = 1)]
+        //public string ButtonTarget { get; set; }
+
+        [EditingComponent(TextInputComponent.IDENTIFIER, Label = "Title", Order = 1)]
+        [EditingComponentProperty(nameof(TextInputProperties.Name), "")]
+        public string Title { get; set; }
+
+        [EditingComponent(TextAreaComponent.IDENTIFIER, Label = "Text 1", Order = 2)]
+        [EditingComponentProperty(nameof(TextAreaProperties.Name), "")]
+        public string ContentText { get; set; }
+
+        [EditingComponent(TextInputComponent.IDENTIFIER, Label = "URL", Order = 3)]
+        [EditingComponentProperty(nameof(TextInputProperties.Name), "")]
+        [StringLength(1000, ErrorMessage = "Limit 1000 characters")]
+        public string Url { get; set; }
+
+        [EditingComponent(RadioButtonsComponent.IDENTIFIER, Label = "New Icon", Order = 4, DefaultValue = "hide")]
+        [EditingComponentProperty(nameof(RadioButtonsProperties.DataSource), "display;Display\r\nhide;Hide")]
+        public string NewIcon { get; set; }
     }
 }

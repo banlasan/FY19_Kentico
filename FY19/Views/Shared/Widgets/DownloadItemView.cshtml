@@ -1,4 +1,5 @@
 ﻿@using CMS.MediaLibrary
+@using CMS.SiteProvider;
 @using FY19.Models.Widgets
 @using FY19.Models.InlineEditors
 @using System.Text.RegularExpressions;
@@ -18,10 +19,28 @@
     //    styleAttribute = $"style=\"background-image: url('{Url.Content(MediaLibraryHelper.GetDirectUrl(Model.Properties.Image))}');\"";
     //}
 
-    string buttonTarget = null;
-    if (Model.Properties.ButtonTarget != null)
+    string url = string.Empty;
+    if (Model.Properties.Url != null)
     {
-        buttonTarget = Model.Properties.ButtonTarget;
+        string tmpUrl = HtmlToPlainText(Model.Properties.Url);
+        url = tmpUrl.Length > 1000 ? tmpUrl.Substring(0, 1000) : tmpUrl;
+    }
+
+    string newIcon = string.Empty;
+    if (Model.Properties.NewIcon == "Display")
+    {
+        newIcon = "catalog-row__col__img--new";
+    }
+    else
+    {
+        newIcon = string.Empty;
+    }
+
+    string imgSrc = string.Empty;
+
+    if (Model.Properties.Image != null)
+    {
+        imgSrc = Url.Content(MediaLibraryHelper.GetDirectUrl(MediaFileInfoProvider.GetMediaFileInfo(Model.Properties.Image.FirstOrDefault().FileGuid, SiteContext.CurrentSiteName)));
     }
 }
 
@@ -64,18 +83,18 @@
     }*@
 
 <div class="catalog-row__col">
-    <a href="@Model.Properties.ButtonTarget" class="catalog-row__col__img" target="_blank">
+    <a href="@url" class="catalog-row__col__img @if (Model.Properties.NewIcon == "display") { @newIcon } " target="_blank">
         @if (Context.Kentico().PageBuilder().EditMode)
         {
             Html.RenderPartial("InlineEditors/ImageUploaderEditor", new ImageUploaderEditorViewModel
             {
                 PropertyName = nameof(ImageWidgetProperties.ImageGuid),
-                HasImage = Model.Properties.Image != null,
+                HasImage = Model.Properties.Image != null
             });
         }
         else
         {
-            <img src="@Model.Properties.Image" alt="" class="center-block img-responsive">
+            <img src="@imgSrc" alt="" class="center-block img-responsive">
         }
 
         @*@Html.AttachmentImage(Model.Properties.ImageAttachment, cssClassName: "img-responsive")*@
@@ -85,14 +104,14 @@
         {
             Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
             {
-                PropertyName = nameof(KMJ_DownloadItemProperties.Text),
-                Text = Model.Properties.Text,
+                PropertyName = nameof(KMJ_DownloadItemProperties.Title),
+                Text = Model.Properties.Title,
                 EnableFormatting = false
             });
         }
         else
         {
-            @Html.Raw(Model.Properties.Text)
+            @Html.Raw(Model.Properties.Title)
         }
     </p>
     <p class="catalog-row__col__txt">
@@ -100,30 +119,30 @@
         {
             Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
             {
-                PropertyName = nameof(KMJ_DownloadItemProperties.ButtonText),
-                Text = Model.Properties.ButtonText,
+                PropertyName = nameof(KMJ_DownloadItemProperties.ContentText),
+                Text = Model.Properties.ContentText,
                 EnableFormatting = false
             });
         }
         else
         {
-            @Html.Raw(Model.Properties.ButtonText)
+            @Html.Raw(Model.Properties.ContentText)
         }
     </p>
     <p class="catalog-row__col__btn">
-        <a href="@Model.Properties.ButtonTarget" target="_blank">
+        <a href="@url" target="_blank">
             @if (Context.Kentico().PageBuilder().EditMode)
             {
                 Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
                 {
-                    PropertyName = nameof(KMJ_DownloadItemProperties.ButtonTarget),
-                    Text = Model.Properties.ButtonTarget,
+                    PropertyName = nameof(KMJ_DownloadItemProperties.Url),
+                    Text = url,
                     EnableFormatting = false
                 });
             }
             else
             {
-                @HtmlToPlainText(buttonTarget)
+                @HtmlToPlainText(url)
             }
         </a>
     </p>

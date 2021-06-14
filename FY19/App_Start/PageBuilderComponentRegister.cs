@@ -20,9 +20,8 @@ using Kentico.PageBuilder.Web.Mvc.PageTemplates;
 [assembly: RegisterWidget("FY19.LinkButton", "LinkButton", typeof(KMJ_LinkButtonProperties), "Widgets/LinkButtonView", Description = "Link Button", IconClass = "icon-list")]
 [assembly: RegisterWidget("FY19.HeadHTML", "HeadHTML", typeof(KMJ_HeadHTMLProperties), "Widgets/HeadHTMLView", Description = "HeadHTML", IconClass = "icon-l-header-text")]
 [assembly: RegisterWidget("FY19.FreeHTML", "Free HTML", typeof(CKEditor4_WysiwygWidgetProperties), "Widgets/FreeHTMLView", Description = "WYSIWYG Editor", IconClass = "icon-l-header-text")]
-[assembly: RegisterWidget("FY19.Table", "Table", typeof(CKEditor4_WysiwygWidgetProperties), "Widgets/TableView", IconClass = "icon-l-header-text")]
+[assembly: RegisterWidget("FY19.Table", "Table", typeof(KMJ_TableProperties), "Widgets/TableView", IconClass = "icon-l-header-text")]
 [assembly: RegisterWidget("FY19.Placeholder", "Placeholder", typeof(KMJ_PlaceholderProperties), "Widgets/PlaceholderView", Description = "Placeholder", IconClass = "icon-l-header-text")]
-
 
 
 //Sections

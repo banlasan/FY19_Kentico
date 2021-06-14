@@ -57,47 +57,87 @@
 }
 
 
-<div class="listLink @Model.Properties.Class" id="@Model.Properties.Id">
+<div class="listLink @if (Model.Properties.Id != null) { @Model.Properties.Class; } " id="@Model.Properties.Id">
     <ul class="listLinkList">
-        <li class="listItem">
-            <a href="@Model.Properties.Url1" target="@blank1">@Model.Properties.Text1</a>
-            <p>@Model.Properties.Description1</p>
-        </li>
-        <li class="listItem">
-            <a href="@Model.Properties.Url2" target="@blank2">@Model.Properties.Text2</a>
-            <p>@Model.Properties.Description2</p>
-        </li>
-        <li class="listItem">
-            <a href="@Model.Properties.Url3" target="@blank3">@Model.Properties.Text3</a>
-            <p>@Model.Properties.Description3</p>
-        </li>
-        <li class="listItem">
-            <a href="@Model.Properties.Url4" target="@blank4">@Model.Properties.Text4</a>
-            <p>@Model.Properties.Description4</p>
-        </li>
-        <li class="listItem">
-            <a href="@Model.Properties.Url5" target="@blank5">@Model.Properties.Text5</a>
-            <p>@Model.Properties.Description5</p>
-        </li>
-        <li class="listItem">
-            <a href="@Model.Properties.Url6" target="@blank6">@Model.Properties.Text6</a>
-            <p>@Model.Properties.Description6</p>
-        </li>
-        <li class="listItem">
-            <a href="@Model.Properties.Url7" target="@blank7">@Model.Properties.Text7</a>
-            <p>@Model.Properties.Description7</p>
-        </li>
-        <li class="listItem">
-            <a href="@Model.Properties.Url8" target="@blank8">@Model.Properties.Text8</a>
-            <p>@Model.Properties.Description8</p>
-        </li>
-        <li class="listItem">
-            <a href="@Model.Properties.Url9" target="@blank9">@Model.Properties.Text9</a>
-            <p>@Model.Properties.Description9</p>
-        </li>
-        <li class="listItem">
-            <a href="@Model.Properties.Url10" target="@blank10">@Model.Properties.Text10</a>
-            <p>@Model.Properties.Description10</p>
-        </li>
+       @if (Model.Properties.Text1 != null || Model.Properties.Description1 != null)
+       { 
+           <li class="listItem">
+                <a href="@Model.Properties.Url1" target="@blank1" >@Model.Properties.Text1</a>
+                @if (Model.Properties.Description1 != null)
+                { <p>@Model.Properties.Description1</p> }
+            </li>
+       }
+       @if (Model.Properties.Text2 != null || Model.Properties.Description2 != null)
+       {
+            <li class="listItem">
+                <a href="@Model.Properties.Url2" target="@blank2">@Model.Properties.Text2</a>
+                @if (Model.Properties.Description2 != null)
+                { <p>@Model.Properties.Description2</p> }
+            </li>
+       }
+       @if (Model.Properties.Text3 != null || Model.Properties.Description3 != null)
+       {
+            <li class="listItem">
+                <a href="@Model.Properties.Url3" target="@blank3">@Model.Properties.Text3</a>
+                @if (Model.Properties.Description3 != null)
+                {<p>@Model.Properties.Description3</p> }
+            </li>
+       }
+       @if (Model.Properties.Text4 != null || Model.Properties.Description4 != null)
+       {
+            <li class="listItem">
+                <a href="@Model.Properties.Url4" target="@blank4">@Model.Properties.Text4</a>
+                @if (Model.Properties.Description4 != null)
+                { <p>@Model.Properties.Description4</p> }
+            </li>
+       }
+       @if (Model.Properties.Text5 != null || Model.Properties.Description5 != null)
+       {
+            <li class="listItem">
+                <a href="@Model.Properties.Url5" target="@blank5">@Model.Properties.Text5</a>
+                @if (Model.Properties.Description5 != null)
+                { <p>@Model.Properties.Description5</p> }
+            </li>
+       }
+       @if (Model.Properties.Text6 != null || Model.Properties.Description6 != null)
+       {
+            <li class="listItem">
+                <a href="@Model.Properties.Url6" target="@blank6">@Model.Properties.Text6</a>
+                @if (Model.Properties.Description6 != null)
+                {<p>@Model.Properties.Description6</p> }
+            </li>
+       }
+       @if (Model.Properties.Text7 != null || Model.Properties.Description7 != null)
+       {
+            <li class="listItem">
+                <a href="@Model.Properties.Url7" target="@blank7">@Model.Properties.Text7</a>
+                @if (Model.Properties.Description7 != null)
+                {<p>@Model.Properties.Description7</p> }
+            </li>
+       }
+       @if (Model.Properties.Text8 != null || Model.Properties.Description8 != null)
+       {
+            <li class="listItem">
+                <a href="@Model.Properties.Url8" target="@blank8">@Model.Properties.Text8</a>
+                @if (Model.Properties.Description8 != null)
+                { <p>@Model.Properties.Description8</p> }
+            </li>
+       }
+       @if (Model.Properties.Text9 != null || Model.Properties.Description9 != null)
+       {
+            <li class="listItem">
+                <a href="@Model.Properties.Url9" target="@blank9">@Model.Properties.Text9</a>
+                @if (Model.Properties.Description9 != null)
+                {<p>@Model.Properties.Description9</p> }
+            </li>
+       }
+       @if (Model.Properties.Text10 != null || Model.Properties.Description10 != null)
+       {
+            <li class="listItem">
+                <a href="@Model.Properties.Url10" target="@blank10">@Model.Properties.Text10</a>
+                @if (Model.Properties.Description10 != null)
+                { <p>@Model.Properties.Description10</p> }
+            </li>
+       }
     </ul>
 </div>

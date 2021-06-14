@@ -50,5 +50,5 @@
 }
 else
 {
-<p class="textRead @Model.Properties.Class" id="@Model.Properties.Id">@Html.Raw(Model.Properties.TextContent)</p>
+<p class="textRead @if (Model.Properties.Id != null) { @Model.Properties.Class; } " id="@Model.Properties.Id">@Html.Raw(Model.Properties.TextContent)</p>
 }
