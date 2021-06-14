@@ -53,12 +53,12 @@
     {
         PropertyWidget = "H3",
         PropertyName = "Heading_Text",
-        Text = Model.Properties.Heading_Text,
+        Text = Model.Properties.Heading_Text.Replace(Environment.NewLine, "<br/>"),
         Class = "h3 " + Model.Properties.Class
     });
 }
 else
 {
 <h3 class="h3 @Model.Properties.Class" id="@Model.Properties.Id" style="word-wrap: break-word;
-        white-space: pre-wrap;">@Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Heading_Text))</h3>
+        white-space: pre-wrap;">@Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Heading_Text.Replace(Environment.NewLine, "<br/>")))</h3>
 }
