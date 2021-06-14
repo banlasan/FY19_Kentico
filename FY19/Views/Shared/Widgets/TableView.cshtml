@@ -1,6 +1,9 @@
-﻿@using SeventyeightDigital.CKEditor4_Wysiwyg;
+﻿@using FY19.Models.Widgets;
+@using SeventyeightDigital.CKEditor4_Wysiwyg;
 
-@model ComponentViewModel<CKEditor4_WysiwygWidgetProperties>
+@*@model ComponentViewModel<CKEditor4_WysiwygWidgetProperties>*@
+
+@model ComponentViewModel<KMJ_TableProperties>
 
 @if (Context.Kentico().PageBuilder().EditMode)
 {
@@ -14,6 +17,8 @@ else
 {
     if (Model.Properties.Html != "" && Model.Properties.Html != null)
     {
-        @Html.Kentico().ResolveUrls(Model.Properties.Html)
+        <div class="scroll @if (Model.Properties.Id != null) { @Model.Properties.Class; } " id="@Model.Properties.Id">
+            @Html.Kentico().ResolveUrls(Model.Properties.Html)
+        </div>
     }
 }

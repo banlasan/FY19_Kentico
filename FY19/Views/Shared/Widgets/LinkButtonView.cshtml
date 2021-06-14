@@ -35,7 +35,9 @@
 
     if (Model.Properties.TextContent != null)
     {
-        textContent = HtmlToPlainText(Model.Properties.TextContent.Replace("Label:", ""));
+        string tmpTxtContent = HtmlToPlainText(Model.Properties.TextContent.Replace("Label:", ""));
+
+        textContent = tmpTxtContent.Length > 200 ? tmpTxtContent.Substring(0, 200) : tmpTxtContent;
     }
     else
     {
@@ -44,7 +46,8 @@
 
     if (Model.Properties.Url != null)
     {
-        url = HtmlToPlainText(Model.Properties.Url.Replace("URL: https://", ""));
+        string tmpUrl = HtmlToPlainText(Model.Properties.Url.Replace("URL: https://", ""));
+        url = tmpUrl.Length > 992 ? tmpUrl.Substring(0, 992) : tmpUrl;
     }
     else
     {
@@ -68,7 +71,7 @@
 }
 else
 {
-    <div class="btn btn001 @Model.Properties.Class" id="@Model.Properties.Id">
+    <div class="btn btn001 @if (Model.Properties.Id != null) { @Model.Properties.Class; } " id="@if (Model.Properties.Id != null) { @Model.Properties.Id.Replace(" ", ""); }">
         <a href="https://@url" target="_blank">@textContent</a>
     </div>
 }

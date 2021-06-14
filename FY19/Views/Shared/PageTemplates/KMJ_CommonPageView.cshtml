@@ -492,7 +492,12 @@
                     <div class="main">
                         @*//render here!*@
 
-                        @Html.Raw(Model.Text)
+                        @if (Model.Text != null)
+                        {
+                            @Html.Raw(Model.Text)
+                        }
+
+                        @*@Html.Raw(Model.Text)*@
 
                         <div class="footer-btn">
 

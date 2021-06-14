@@ -32,20 +32,21 @@
 
 @{
     string headText = string.Empty;
+    headText = Model.Properties.Heading_Text;
 
-    if (Model.Properties.Heading_Text != null)
-    {
-        headText = HtmlToPlainText(Model.Properties.Heading_Text);
-    }
-    else
-    {
-        headText = Model.Properties.Heading_Text;
-    }
+    //if (Model.Properties.Heading_Text != null)
+    //{
+    //    headText = HtmlToPlainText(Model.Properties.Heading_Text);
+    //}
+    //else
+    //{
+    //    headText = Model.Properties.Heading_Text;
 }
 
 
 @if (Context.Kentico().PageBuilder().EditMode)
 {
+
     Type propType = typeof(KMJ_TextContentProperties);
     System.Reflection.PropertyInfo pInfo = propType.GetProperty("TextContent");
 
@@ -54,8 +55,12 @@
         PropertyName = "Heading_Text",
         //old approach
         //Text = headText
-        Text = Model.Properties.Heading_Text.Trim()
+        Text = headText != null ? headText.Trim() : ""
     });
+
+    <script type="text/javascript">
+        document.head.innerHTML += @headText;
+    </script>
 }
 else
 {
@@ -65,8 +70,11 @@ else
         </head>*@
 
     //edit by von 11:24pm 6/02/2021
-<head id="@Model.Properties.Id">
-    @Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Heading_Text))
-</head>
-  
+    @*<head id="@Model.Properties.Id">
+            @Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Heading_Text))
+        </head>*@
+
+    <script type="text/javascript">
+        document.head.innerHTML += @headText;
+    </script>
 }
