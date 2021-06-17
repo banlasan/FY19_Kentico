@@ -12,22 +12,24 @@
     else { htmlText = Model.Properties.Text; }
 }
 
-@if (Context.Kentico().PageBuilder().EditMode)
-{
-    <div style="height: 50px; font-weight: bold">
-        <p>Static Text Widget</p>
-        <p>Input HTML code:</p>
-    </div>
+@Html.Raw(HttpUtility.HtmlDecode(htmlText));
 
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
+@*@if (Context.Kentico().PageBuilder().EditMode)
     {
-        PropertyName = "Text",
-        Text = Model.Properties.Text,
-        Class = Model.Properties.Class,
-        Id = Model.Properties.Id
-    });
-}
-else
-{
-    @Html.Raw(HttpUtility.HtmlDecode(htmlText));
-}
+        <div style="height: 50px; font-weight: bold">
+            <p>Static Text Widget</p>
+            <p>Input HTML code:</p>
+        </div>
+
+        Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
+        {
+            PropertyName = "Text",
+            Text = Model.Properties.Text,
+            Class = Model.Properties.Class,
+            Id = Model.Properties.Id
+        });
+    }
+    else
+    {
+        @Html.Raw(HttpUtility.HtmlDecode(htmlText));
+    }*@

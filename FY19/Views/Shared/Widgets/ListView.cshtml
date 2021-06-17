@@ -117,7 +117,30 @@
     { text10 = Model.Properties.Text10; }
 }
 
-@if (Context.Kentico().PageBuilder().EditMode)
+<ul class="listBasic @if (id != null) { @className; } " id="@id">
+        @if (text1 != null)
+        { <li>@Html.Raw(HttpUtility.HtmlDecode(text1.Replace(Environment.NewLine, "<br/>")))</li> }
+        @if (text2 != null) 
+        {<li>@Html.Raw(HttpUtility.HtmlDecode(text2.Replace(Environment.NewLine, "<br/>")))</li> }
+        @if (text3 != null)
+        {<li>@Html.Raw(HttpUtility.HtmlDecode(text3.Replace(Environment.NewLine, "<br/>")))</li>}
+        @if (text4 != null)
+        {<li>@Html.Raw(HttpUtility.HtmlDecode(text4.Replace(Environment.NewLine, "<br/>")))</li>}
+        @if (text5 != null)
+        {<li>@Html.Raw(HttpUtility.HtmlDecode(text5.Replace(Environment.NewLine, "<br/>")))</li>}
+        @if (text6 != null)
+        {<li>@Html.Raw(HttpUtility.HtmlDecode(text6.Replace(Environment.NewLine, "<br/>")))</li>}
+        @if (text7 != null)
+        {<li>@Html.Raw(HttpUtility.HtmlDecode(text7.Replace(Environment.NewLine, "<br/>")))</li>}
+        @if (text8 != null)
+        {<li>@Html.Raw(HttpUtility.HtmlDecode(text8.Replace(Environment.NewLine, "<br/>")))</li>}
+        @if (text9 != null)
+        {<li>@Html.Raw(HttpUtility.HtmlDecode(text9.Replace(Environment.NewLine, "<br/>")))</li>}
+        @if (text10 != null)
+        {<li>@Html.Raw(HttpUtility.HtmlDecode(text10.Replace(Environment.NewLine, "<br/>")))</li>}
+    </ul>
+
+@*@if (Context.Kentico().PageBuilder().EditMode)
 {
     <div style="height: 50px; font-weight: bold">
         <p>List Widget:</p>
@@ -207,24 +230,24 @@ else
 {
     <ul class="listBasic @if (id != null) { @className; } " id="@id">
         @if (text1 != null)
-        { <li>@text1</li> }
+        { <li>@Html.Raw(HttpUtility.HtmlDecode(text1.Replace(Environment.NewLine, "<br/>")))</li> }
         @if (text2 != null) 
-        {<li>@text2</li> }
+        {<li>@Html.Raw(HttpUtility.HtmlDecode(text2.Replace(Environment.NewLine, "<br/>")))</li> }
         @if (text3 != null)
-        {<li>@text3</li>}
+        {<li>@Html.Raw(HttpUtility.HtmlDecode(text3.Replace(Environment.NewLine, "<br/>")))</li>}
         @if (text4 != null)
-        {<li>@text4</li>}
+        {<li>@Html.Raw(HttpUtility.HtmlDecode(text4.Replace(Environment.NewLine, "<br/>")))</li>}
         @if (text5 != null)
-        {<li>@text5</li>}
+        {<li>@Html.Raw(HttpUtility.HtmlDecode(text5.Replace(Environment.NewLine, "<br/>")))</li>}
         @if (text6 != null)
-        {<li>@text6</li>}
+        {<li>@Html.Raw(HttpUtility.HtmlDecode(text6.Replace(Environment.NewLine, "<br/>")))</li>}
         @if (text7 != null)
-        {<li>@text7</li>}
+        {<li>@Html.Raw(HttpUtility.HtmlDecode(text7.Replace(Environment.NewLine, "<br/>")))</li>}
         @if (text8 != null)
-        {<li>@text8</li>}
+        {<li>@Html.Raw(HttpUtility.HtmlDecode(text8.Replace(Environment.NewLine, "<br/>")))</li>}
         @if (text9 != null)
-        {<li>@text9</li>}
+        {<li>@Html.Raw(HttpUtility.HtmlDecode(text9.Replace(Environment.NewLine, "<br/>")))</li>}
         @if (text10 != null)
-        {<li>@text10</li>}
+        {<li>@Html.Raw(HttpUtility.HtmlDecode(text10.Replace(Environment.NewLine, "<br/>")))</li>}
     </ul>
-}
+}*@

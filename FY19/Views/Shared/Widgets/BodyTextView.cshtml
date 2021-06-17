@@ -35,10 +35,11 @@
 
     if (Model.Properties.TextContent != null)
     { bodyText = HtmlToPlainText(Model.Properties.TextContent); }
-    else { bodyText = Model.Properties.TextContent; }
 }
 
-@if (Context.Kentico().PageBuilder().EditMode)
+    <p class="textRead @if (Model.Properties.Id != null) { @Model.Properties.Class; } " id="@Model.Properties.Id">@Html.Raw(HttpUtility.HtmlDecode(bodyText.Replace(Environment.NewLine, "<br/>")))</p>
+
+@*@if (Context.Kentico().PageBuilder().EditMode)
 {
     Html.RenderPartial("InlineEditors/HeaderEditor", new TextEditorViewModel
     {
@@ -50,5 +51,5 @@
 }
 else
 {
-<p class="textRead @if (Model.Properties.Id != null) { @Model.Properties.Class; } " id="@Model.Properties.Id">@Html.Raw(Model.Properties.TextContent)</p>
-}
+    <p class="textRead @if (Model.Properties.Id != null) { @Model.Properties.Class; } " id="@Model.Properties.Id">@Html.Raw(HttpUtility.HtmlDecode(bodyText.Replace(Environment.NewLine, "<br/>")))</p>
+}*@

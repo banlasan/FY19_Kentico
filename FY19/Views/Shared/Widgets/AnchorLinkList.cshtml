@@ -238,7 +238,158 @@
     }
 }
 
-@if (Context.Kentico().PageBuilder().EditMode)
+    <ul class="listInternalLink @if (id != null) { @className; } " id="@id">
+
+        @if (text1 != null)
+        {
+            <li>
+                @if (url1 != null)
+                {
+                <a href="https://@url1" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text1.Replace(Environment.NewLine, "<br/>")))</a>
+                }
+                else
+                {
+                    @text1
+                }
+
+            </li>
+        }
+
+        @if (text2 != null)
+        {
+            <li>
+                @if (url2 != null)
+                {
+                <a href="https://@url2" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text2.Replace(Environment.NewLine, "<br />")))</a>
+                }
+                else
+                {
+                    @text2
+                }
+            </li>
+        }
+
+        @if (text3 != null)
+        {
+            <li>
+                @if (url3 != null)
+                {
+                <a href="https://@url3" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text3.Replace(Environment.NewLine, "<br />")))</a>
+                }
+                else
+                {
+                    @text3
+                }
+            </li>
+        }
+
+        @if (text4 != null)
+        {
+            <li>
+                @if (url4 != null)
+                {
+                <a href="https://@url4" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text4.Replace(Environment.NewLine, "<br />")))</a>
+                }
+                else
+                {
+                    @text4
+                }
+
+            </li>
+        }
+
+        @if (text5 != null)
+        {
+            <li>
+                @if (url5 != null)
+                {
+                <a href="https://@url5" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text5.Replace(Environment.NewLine, "<br />")))</a>
+                }
+                else
+                {
+                    @text5
+                }
+
+            </li>
+        }
+
+        @if (text6 != null)
+        {
+            <li>
+                @if (url6 != null)
+                {
+                <a href="https://@url6" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text6.Replace(Environment.NewLine, "<br />")))</a>
+                }
+                else
+                {
+                    @text6
+                }
+
+            </li>
+        }
+
+        @if (text7 != null)
+        {
+            <li>
+                @if (url7 != null)
+                {
+                <a href="https://@url7" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text7.Replace(Environment.NewLine, "<br />")))</a>
+                }
+                else
+                {
+                    @text7
+                }
+
+            </li>
+        }
+
+        @if (text8 != null)
+        {
+            <li>
+                @if (url8 != null)
+                {
+                <a href="https://@url8" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text8.Replace(Environment.NewLine, "<br />")))</a>
+                }
+                else
+                {
+                    @text8
+                }
+
+            </li>
+        }
+
+        @if (text9 != null)
+        {
+            <li>
+                @if (url9 != null)
+                {
+                <a href="https://@url9" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text9.Replace(Environment.NewLine, "<br />")))</a>
+                }
+                else
+                {
+                    @text9
+                }
+
+            </li>
+        }
+
+        @if (text10 != null)
+        {
+            <li>
+                @if (url10 != null)
+                {
+                <a href="https://@url10" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text10.Replace(Environment.NewLine, "<br />")))</a>
+                }
+                else
+                {
+                    @text10
+                }
+            </li>
+        }
+
+    </ul>
+
+@*@if (Context.Kentico().PageBuilder().EditMode)
 {
     <div style="height: 50px; font-weight: bold">
         <p>Anchor Link Lists Widget:</p>
@@ -547,4 +698,4 @@ else
       }
 
   </ul>
-}
+}*@

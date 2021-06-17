@@ -42,6 +42,19 @@
     {
         imgSrc = Url.Content(MediaLibraryHelper.GetDirectUrl(MediaFileInfoProvider.GetMediaFileInfo(Model.Properties.Image.FirstOrDefault().FileGuid, SiteContext.CurrentSiteName)));
     }
+
+    string tBlank = string.Empty;
+
+    if (Model.Properties.Url == null)
+    {
+        tBlank = "target = _blank";
+    }
+
+    string contentText = string.Empty;
+    if (Model.Properties.ContentText != null)
+    {
+        contentText = Model.Properties.ContentText;
+    }
 }
 
 
@@ -70,6 +83,14 @@
     }
 }
 
+    <div class="catalog-row__col">
+        <a href="@Model.Properties.Url" class="catalog-row__col__img @if(Model.Properties.NewIcon == "display"){ @newIcon } " @tBlank><img src="@imgSrc" alt="" class="center-block img-responsive"></a>
+        <p class="catalog-row__col__ttl">@Model.Properties.Title</p>
+        <p class="catalog-row__col__txt">@contentText.Replace("\r\n","<br>")</p>
+        <p class="catalog-row__col__btn"><a href="@Model.Properties.Url" @tBlank>Click here to download</a></p>
+        <!--/catalog-row__col-->
+    </div>
+
 @*@if (Context.Kentico().PageBuilder().EditMode)
     {
         Html.RenderPartial("InlineEditors/ImageUploaderEditor", new ImageUploaderEditorViewModel
@@ -82,7 +103,7 @@
         });
     }*@
 
-<div class="catalog-row__col">
+@*<div class="catalog-row__col">
     <a href="@url" class="catalog-row__col__img @if (Model.Properties.NewIcon == "display") { @newIcon } " target="_blank">
         @if (Context.Kentico().PageBuilder().EditMode)
         {
@@ -97,7 +118,6 @@
             <img src="@imgSrc" alt="" class="center-block img-responsive">
         }
 
-        @*@Html.AttachmentImage(Model.Properties.ImageAttachment, cssClassName: "img-responsive")*@
     </a>
     <p class="catalog-row__col__ttl">
         @if (Context.Kentico().PageBuilder().EditMode)
@@ -146,5 +166,4 @@
             }
         </a>
     </p>
-    <!--/catalog-row__col-->
-</div>
+</div>*@

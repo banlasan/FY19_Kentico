@@ -4,139 +4,149 @@
 
 @{ 
     string blank1 = string.Empty, blank2 = string.Empty, blank3 = string.Empty, blank4 = string.Empty, blank5 = string.Empty, blank6 = string.Empty, blank7 = string.Empty, blank8 = string.Empty, blank9 = string.Empty, blank10 = string.Empty;
+    string tBlank = "target=_blank";
 
-    if (Model.Properties.Blank1)
+    if (Model.Properties.Blank1 && Model.Properties.Url1 == null)
     {
-        blank1 = "_blank";
+        blank1 = tBlank;
     }
 
-    if (Model.Properties.Blank2)
+    if (Model.Properties.Blank2 && Model.Properties.Url2 == null)
     {
-        blank2 = "_blank";
+        blank2 = tBlank;
     }
 
-    if (Model.Properties.Blank3)
+    if (Model.Properties.Blank3 && Model.Properties.Url3 == null)
     {
-        blank3 = "_blank";
+        blank3 = tBlank;
     }
 
-    if (Model.Properties.Blank4)
+    if (Model.Properties.Blank4 && Model.Properties.Url4 == null)
     {
-        blank4 = "_blank";
+        blank4 = tBlank;
     }
 
-    if (Model.Properties.Blank5)
+    if (Model.Properties.Blank5 && Model.Properties.Url5 == null)
     {
-        blank5 = "_blank";
+        blank5 = tBlank;
     }
 
-    if (Model.Properties.Blank6)
+    if (Model.Properties.Blank6 && Model.Properties.Url6 == null)
     {
-        blank6 = "_blank";
+        blank6 = tBlank;
     }
 
-    if (Model.Properties.Blank7)
+    if (Model.Properties.Blank7 && Model.Properties.Url7 == null)
     {
-        blank7 = "_blank";
+        blank7 = tBlank;
     }
 
-    if (Model.Properties.Blank8)
+    if (Model.Properties.Blank8 && Model.Properties.Url8 == null)
     {
-        blank8 = "_blank";
+        blank8 = tBlank;
     }
 
-    if (Model.Properties.Blank9)
+    if (Model.Properties.Blank9 && Model.Properties.Url9 == null)
     {
-        blank9 = "_blank";
+        blank9 = tBlank;
     }
 
-    if (Model.Properties.Blank10)
+    if (Model.Properties.Blank10 && Model.Properties.Url10 == null)
     {
-        blank10 = "_blank";
+        blank10 = tBlank;
     }
 }
-
 
 <div class="listLink @if (Model.Properties.Id != null) { @Model.Properties.Class; } " id="@Model.Properties.Id">
     <ul class="listLinkList">
        @if (Model.Properties.Text1 != null || Model.Properties.Description1 != null)
-       { 
+       {
            <li class="listItem">
-                <a href="@Model.Properties.Url1" target="@blank1" >@Model.Properties.Text1</a>
+               @if (Model.Properties.Text1 != null)
+               {<a href="@Model.Properties.Url1" @blank1>@Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Text1.Replace(Environment.NewLine, "<br/>")))</a>}
                 @if (Model.Properties.Description1 != null)
-                { <p>@Model.Properties.Description1</p> }
+                { <p>@Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Description1.Replace(Environment.NewLine, "<br/>")))</p> }
             </li>
        }
        @if (Model.Properties.Text2 != null || Model.Properties.Description2 != null)
        {
             <li class="listItem">
-                <a href="@Model.Properties.Url2" target="@blank2">@Model.Properties.Text2</a>
+                @if (Model.Properties.Text2 != null)
+                {<a href="@Model.Properties.Url2" @blank2>@Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Text2.Replace(Environment.NewLine, "<br/>")))</a>}
                 @if (Model.Properties.Description2 != null)
-                { <p>@Model.Properties.Description2</p> }
+                { <p>@Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Description2.Replace(Environment.NewLine, "<br/>")))</p> }
             </li>
        }
        @if (Model.Properties.Text3 != null || Model.Properties.Description3 != null)
        {
             <li class="listItem">
-                <a href="@Model.Properties.Url3" target="@blank3">@Model.Properties.Text3</a>
+                @if (Model.Properties.Text3 != null)
+                {<a href="@Model.Properties.Url3" @blank3>@Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Text3.Replace(Environment.NewLine, "<br/>")))</a>}
                 @if (Model.Properties.Description3 != null)
-                {<p>@Model.Properties.Description3</p> }
+                {<p>@Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Description3.Replace(Environment.NewLine, "<br/>")))</p> }
             </li>
        }
        @if (Model.Properties.Text4 != null || Model.Properties.Description4 != null)
        {
             <li class="listItem">
-                <a href="@Model.Properties.Url4" target="@blank4">@Model.Properties.Text4</a>
+                @if (Model.Properties.Text4 != null)
+                {<a href="@Model.Properties.Url4" @blank4>@Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Text4.Replace(Environment.NewLine, "<br/>")))</a>}
                 @if (Model.Properties.Description4 != null)
-                { <p>@Model.Properties.Description4</p> }
+                { <p>@Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Description4.Replace(Environment.NewLine, "<br/>")))</p> }
             </li>
        }
        @if (Model.Properties.Text5 != null || Model.Properties.Description5 != null)
        {
             <li class="listItem">
-                <a href="@Model.Properties.Url5" target="@blank5">@Model.Properties.Text5</a>
+                @if (Model.Properties.Text5 != null)
+                {<a href="@Model.Properties.Url5" @blank5>@Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Text5.Replace(Environment.NewLine, "<br/>")))</a>}
                 @if (Model.Properties.Description5 != null)
-                { <p>@Model.Properties.Description5</p> }
+                { <p>@Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Description5.Replace(Environment.NewLine, "<br/>")))</p> }
             </li>
        }
        @if (Model.Properties.Text6 != null || Model.Properties.Description6 != null)
        {
             <li class="listItem">
-                <a href="@Model.Properties.Url6" target="@blank6">@Model.Properties.Text6</a>
+                @if (Model.Properties.Text6 != null)
+                {<a href="@Model.Properties.Url6" @blank6>@Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Text6.Replace(Environment.NewLine, "<br/>")))</a>}
                 @if (Model.Properties.Description6 != null)
-                {<p>@Model.Properties.Description6</p> }
+                {<p>@Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Description6.Replace(Environment.NewLine, "<br/>")))</p> }
             </li>
        }
        @if (Model.Properties.Text7 != null || Model.Properties.Description7 != null)
        {
             <li class="listItem">
-                <a href="@Model.Properties.Url7" target="@blank7">@Model.Properties.Text7</a>
+                @if (Model.Properties.Text7 != null)
+                {<a href="@Model.Properties.Url7" @blank7>@Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Text7.Replace(Environment.NewLine, "<br/>")))</a>}
                 @if (Model.Properties.Description7 != null)
-                {<p>@Model.Properties.Description7</p> }
+                {<p>@Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Description7.Replace(Environment.NewLine, "<br/>")))</p> }
             </li>
        }
        @if (Model.Properties.Text8 != null || Model.Properties.Description8 != null)
        {
             <li class="listItem">
-                <a href="@Model.Properties.Url8" target="@blank8">@Model.Properties.Text8</a>
+                @if (Model.Properties.Text8 != null)
+                {<a href="@Model.Properties.Url8" @blank8>@Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Text8.Replace(Environment.NewLine, "<br/>")))</a>}
                 @if (Model.Properties.Description8 != null)
-                { <p>@Model.Properties.Description8</p> }
+                { <p>@Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Description8.Replace(Environment.NewLine, "<br/>")))</p> }
             </li>
        }
        @if (Model.Properties.Text9 != null || Model.Properties.Description9 != null)
        {
             <li class="listItem">
-                <a href="@Model.Properties.Url9" target="@blank9">@Model.Properties.Text9</a>
+                @if (Model.Properties.Text9 != null)
+                {<a href="@Model.Properties.Url9" @blank9>@Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Text9.Replace(Environment.NewLine, "<br/>")))</a>}
                 @if (Model.Properties.Description9 != null)
-                {<p>@Model.Properties.Description9</p> }
+                {<p>@Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Description9.Replace(Environment.NewLine, "<br/>")))</p> }
             </li>
        }
        @if (Model.Properties.Text10 != null || Model.Properties.Description10 != null)
        {
             <li class="listItem">
-                <a href="@Model.Properties.Url10" target="@blank10">@Model.Properties.Text10</a>
+                @if (Model.Properties.Text10 != null)
+                {<a href="@Model.Properties.Url10" @blank10>@Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Text10.Replace(Environment.NewLine, "<br/>")))</a>}
                 @if (Model.Properties.Description10 != null)
-                { <p>@Model.Properties.Description10</p> }
+                { <p>@Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Description10.Replace(Environment.NewLine, "<br/>")))</p> }
             </li>
        }
     </ul>

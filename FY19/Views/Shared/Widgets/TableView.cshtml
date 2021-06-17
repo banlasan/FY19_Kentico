@@ -7,18 +7,22 @@
 
 @if (Context.Kentico().PageBuilder().EditMode)
 {
-    Html.RenderPartial("InlineEditors/TableView_WysiwygInlineEditor", new CKEditor4_WysiwygViewModel
+    Html.RenderPartial("InlineEditors/TableView_WysiwygInlineEditor", new KMJ_TableViewModel
     {
         PropertyName = nameof(Model.Properties.Html),
-        Html = Model.Properties.Html
+        EditorModel = new CKEditor4_WysiwygViewModel(),
+        Html = Model.Properties.Html,
+        Id = Model.Properties.Id,
+        Class = Model.Properties.Class
     });
 }
 else
 {
     if (Model.Properties.Html != "" && Model.Properties.Html != null)
     {
-        <div class="scroll @if (Model.Properties.Id != null) { @Model.Properties.Class; } " id="@Model.Properties.Id">
-            @Html.Kentico().ResolveUrls(Model.Properties.Html)
-        </div>
+        @*<div class="scroll @if (Model.Properties.Id != null) { @Model.Properties.Class; } " id="@Model.Properties.Id">
+                @Html.Kentico().ResolveUrls(Model.Properties.Html)
+            </div>*@
+        @Html.Kentico().ResolveUrls(Model.Properties.Html)
     }
 }

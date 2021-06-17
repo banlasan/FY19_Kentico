@@ -1354,6 +1354,7 @@
     <Compile Include="Models\Widgets\KMJ_ListProperties.cs" />
     <Compile Include="Models\Widgets\KMJ_PlaceholderProperties.cs" />
     <Compile Include="Models\Widgets\KMJ_TableProperties.cs" />
+    <Compile Include="Models\Widgets\KMJ_TableViewModel.cs" />
     <Compile Include="Models\Widgets\KMJ_TextContentProperties.cs" />
     <Compile Include="Models\Widgets\StaticTextModelProperties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

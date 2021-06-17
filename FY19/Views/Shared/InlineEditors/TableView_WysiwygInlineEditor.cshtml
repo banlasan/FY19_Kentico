@@ -1,12 +1,15 @@
-﻿@model SeventyeightDigital.CKEditor4_Wysiwyg.CKEditor4_WysiwygViewModel
+﻿@*@model SeventyeightDigital.CKEditor4_Wysiwyg.CKEditor4_WysiwygViewModel*@
+
+@model FY19.Models.Widgets.KMJ_TableViewModel
+
 
 @using (Html.Kentico().BeginInlineEditor("ckeditor", Model.PropertyName,
     new
     {
-        @class = "inline-editor ckeditor-" + Model.myID.ToString(),
-        @id = "editor" + Model.myID.ToString(),
+        @class = "inline-editor ckeditor-" + Model.EditorModel.myID.ToString(),
+        @id = "editor" + Model.EditorModel.myID.ToString(),
         @contenteditable = true,
-        data_divid = Model.myID.ToString()
+        data_divid = Model.EditorModel.myID.ToString()
     }))
 {
     if (Model != null && !String.IsNullOrEmpty(Model.Html))
@@ -16,7 +19,7 @@
 
     else
     {
-        <div>
+        <div class="scroll @if (Model.Id != null) { @Model.Class; }" id="@Model.Id">
             <table class="table table001">
                 <tbody>
                     <tr>
@@ -40,53 +43,123 @@
                         <td>Data</td>
                     </tr>
                 </tbody>
-            </table><table class="table table001">
-                <tbody>
-                    <tr>
-                        <th>&nbsp;</th>
-                        <th>Head</th>
-                        <th>Head</th>
-                    </tr>
-                    <tr>
-                        <td>Data</td>
-                        <td>Data</td>
-                        <td>Data</td>
-                    </tr>
-                    <tr>
-                        <td>Data</td>
-                        <td>Data</td>
-                        <td>Data</td>
-                    </tr>
-                    <tr>
-                        <td>Data</td>
-                        <td>Data</td>
-                        <td>Data</td>
-                    </tr>
-                </tbody>
-            </table><table class="table table001">
-                <tbody>
-                    <tr>
-                        <th>&nbsp;</th>
-                        <th>Head</th>
-                        <th>Head</th>
-                    </tr>
-                    <tr>
-                        <td>Data</td>
-                        <td>Data</td>
-                        <td>Data</td>
-                    </tr>
-                    <tr>
-                        <td>Data</td>
-                        <td>Data</td>
-                        <td>Data</td>
-                    </tr>
-                    <tr>
-                        <td>Data</td>
-                        <td>Data</td>
-                        <td>Data</td>
-                    </tr>
-                </tbody>
             </table>
-        </div>
+            <table class="table table001">
+                    <tbody>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Head</th>
+                            <th>Head</th>
+                        </tr>
+                        <tr>
+                            <td>Data</td>
+                            <td>Data</td>
+                            <td>Data</td>
+                        </tr>
+                        <tr>
+                            <td>Data</td>
+                            <td>Data</td>
+                            <td>Data</td>
+                        </tr>
+                        <tr>
+                            <td>Data</td>
+                            <td>Data</td>
+                            <td>Data</td>
+                        </tr>
+                    </tbody>
+                </table><table class="table table002">
+                    <tbody>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Head</th>
+                            <th>Head</th>
+                        </tr>
+                        <tr>
+                            <td>Data</td>
+                            <td>Data</td>
+                            <td>Data</td>
+                        </tr>
+                        <tr>
+                            <td>Data</td>
+                            <td>Data</td>
+                            <td>Data</td>
+                        </tr>
+                        <tr>
+                            <td>Data</td>
+                            <td>Data</td>
+                            <td>Data</td>
+                        </tr>
+                    </tbody>
+                </table><table class="table table003">
+                    <tbody>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Head</th>
+                            <th>Head</th>
+                        </tr>
+                        <tr>
+                            <td>Data</td>
+                            <td>Data</td>
+                            <td>Data</td>
+                        </tr>
+                        <tr>
+                            <td>Data</td>
+                            <td>Data</td>
+                            <td>Data</td>
+                        </tr>
+                        <tr>
+                            <td>Data</td>
+                            <td>Data</td>
+                            <td>Data</td>
+                        </tr>
+                    </tbody>
+                </table><table class="table table004">
+                    <tbody>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Head</th>
+                            <th>Head</th>
+                        </tr>
+                        <tr>
+                            <td>Data</td>
+                            <td>Data</td>
+                            <td>Data</td>
+                        </tr>
+                        <tr>
+                            <td>Data</td>
+                            <td>Data</td>
+                            <td>Data</td>
+                        </tr>
+                        <tr>
+                            <td>Data</td>
+                            <td>Data</td>
+                            <td>Data</td>
+                        </tr>
+                    </tbody>
+                </table><table class="table table005">
+                    <tbody>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Head</th>
+                            <th>Head</th>
+                        </tr>
+                        <tr>
+                            <td>Data</td>
+                            <td>Data</td>
+                            <td>Data</td>
+                        </tr>
+                        <tr>
+                            <td>Data</td>
+                            <td>Data</td>
+                            <td>Data</td>
+                        </tr>
+                        <tr>
+                            <td>Data</td>
+                            <td>Data</td>
+                            <td>Data</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
     }
-}
+}                                                                 
