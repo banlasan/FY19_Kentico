@@ -39,8 +39,7 @@
     }
 }
 
-    <h4 class="h4 @if (Model.Properties.Id != null) { @Model.Properties.Class }" id="@Model.Properties.Id" style="word-wrap: break-word;
-        white-space: pre-wrap;">
+    <h4 class="h4 @if (Model.Properties.Id != null) { @Model.Properties.Class }" id="@Model.Properties.Id">
         @Html.Raw(HttpUtility.HtmlDecode(headText.Replace(Environment.NewLine, "<br/>")))
     </h4>
 
