@@ -86,7 +86,7 @@
     <div class="catalog-row__col">
         <a href="@Model.Properties.Url" class="catalog-row__col__img @if(Model.Properties.NewIcon == "display"){ @newIcon } " @tBlank><img src="@imgSrc" alt="" class="center-block img-responsive"></a>
         <p class="catalog-row__col__ttl">@Model.Properties.Title</p>
-        <p class="catalog-row__col__txt">@contentText.Replace("\r\n","<br>")</p>
+        <p class="catalog-row__col__txt">@Html.Raw(HttpUtility.HtmlDecode(contentText.Replace(Environment.NewLine, "<br/>")))</p>
         <p class="catalog-row__col__btn"><a href="@Model.Properties.Url" @tBlank>Click here to download</a></p>
         <!--/catalog-row__col-->
     </div>
