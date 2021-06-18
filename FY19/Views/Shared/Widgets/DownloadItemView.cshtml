@@ -22,8 +22,7 @@
     string url = string.Empty;
     if (Model.Properties.Url != null)
     {
-        string tmpUrl = HtmlToPlainText(Model.Properties.Url);
-        url = tmpUrl.Length > 1000 ? tmpUrl.Substring(0, 1000) : tmpUrl;
+        url = Model.Properties.Url.Contains("https://") ? "href=" + Model.Properties.Url : "href=https://" + Model.Properties.Url;
     }
 
     string newIcon = string.Empty;
@@ -84,10 +83,10 @@
 }
 
     <div class="catalog-row__col">
-        <a href="@Model.Properties.Url" class="catalog-row__col__img @if(Model.Properties.NewIcon == "display"){ @newIcon } " @tBlank><img src="@imgSrc" alt="" class="center-block img-responsive"></a>
+        <a @url class="catalog-row__col__img @if(Model.Properties.NewIcon == "display"){ @newIcon } " @tBlank><img src="@imgSrc" alt="" class="center-block img-responsive"></a>
         <p class="catalog-row__col__ttl">@Model.Properties.Title</p>
         <p class="catalog-row__col__txt">@Html.Raw(HttpUtility.HtmlDecode(contentText.Replace(Environment.NewLine, "<br/>")))</p>
-        <p class="catalog-row__col__btn"><a href="@Model.Properties.Url" @tBlank>ダウンロードはこちら</a></p>
+        <p class="catalog-row__col__btn"><a @url @tBlank>ダウンロードはこちら</a></p>
         <!--/catalog-row__col-->
     </div>
 
