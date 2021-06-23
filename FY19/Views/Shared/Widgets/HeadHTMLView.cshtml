@@ -52,9 +52,7 @@
 
     Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
     {
-        PropertyName = "Heading_Text",
-        //old approach
-        //Text = headText
+        PropertyName = "Head",
         Text = headText != null ? headText.Trim() : ""
     });
 
@@ -64,16 +62,6 @@
 }
 else
 {
-    //old approach
-    @*<head id="@Model.Properties.Id">
-            @headText
-        </head>*@
-
-    //edit by von 11:24pm 6/02/2021
-    @*<head id="@Model.Properties.Id">
-            @Html.Raw(HttpUtility.HtmlDecode(Model.Properties.Heading_Text))
-        </head>*@
-
     <script type="text/javascript">
         document.head.innerHTML += @headText;
     </script>

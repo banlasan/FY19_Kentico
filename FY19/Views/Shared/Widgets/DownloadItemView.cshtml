@@ -7,18 +7,6 @@
 @model ComponentViewModel<KMJ_DownloadItemProperties>
 
 @{
-    //string classEx = string.Empty;
-    //if (Model.NewIcon == "Display")
-    //{
-    //    classEx = "catalog-row__col__img--new";
-    //}
-
-    //string styleAttribute = null;
-    //if (Model.Properties.Image != null)
-    //{
-    //    styleAttribute = $"style=\"background-image: url('{Url.Content(MediaLibraryHelper.GetDirectUrl(Model.Properties.Image))}');\"";
-    //}
-
     string url = string.Empty;
     if (Model.Properties.Url != null)
     {
@@ -82,6 +70,7 @@
     }
 }
 
+<div class="KMJ_DownloadItem">
     <div class="catalog-row__col">
         <a @url class="catalog-row__col__img @if(Model.Properties.NewIcon == "display"){ @newIcon } " @tBlank><img src="@imgSrc" alt="" class="center-block img-responsive"></a>
         <p class="catalog-row__col__ttl">@Model.Properties.Title</p>
@@ -89,80 +78,4 @@
         <p class="catalog-row__col__btn"><a @url @tBlank>ダウンロードはこちら</a></p>
         <!--/catalog-row__col-->
     </div>
-
-@*@if (Context.Kentico().PageBuilder().EditMode)
-    {
-        Html.RenderPartial("InlineEditors/ImageUploaderEditor", new ImageUploaderEditorViewModel
-        {
-            ImageType = ImageTypeEnum.MediaFile,
-            PropertyName = nameof(KMJ_DownloadItemProperties.Image),
-            HasImage = Model.Image != null,
-            MessagePosition = PanelPositionEnum.Top,
-            UseAbsolutePosition = true
-        });
-    }*@
-
-@*<div class="catalog-row__col">
-    <a href="@url" class="catalog-row__col__img @if (Model.Properties.NewIcon == "display") { @newIcon } " target="_blank">
-        @if (Context.Kentico().PageBuilder().EditMode)
-        {
-            Html.RenderPartial("InlineEditors/ImageUploaderEditor", new ImageUploaderEditorViewModel
-            {
-                PropertyName = nameof(ImageWidgetProperties.ImageGuid),
-                HasImage = Model.Properties.Image != null
-            });
-        }
-        else
-        {
-            <img src="@imgSrc" alt="" class="center-block img-responsive">
-        }
-
-    </a>
-    <p class="catalog-row__col__ttl">
-        @if (Context.Kentico().PageBuilder().EditMode)
-        {
-            Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-            {
-                PropertyName = nameof(KMJ_DownloadItemProperties.Title),
-                Text = Model.Properties.Title,
-                EnableFormatting = false
-            });
-        }
-        else
-        {
-            @Html.Raw(Model.Properties.Title)
-        }
-    </p>
-    <p class="catalog-row__col__txt">
-        @if (Context.Kentico().PageBuilder().EditMode)
-        {
-            Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-            {
-                PropertyName = nameof(KMJ_DownloadItemProperties.ContentText),
-                Text = Model.Properties.ContentText,
-                EnableFormatting = false
-            });
-        }
-        else
-        {
-            @Html.Raw(Model.Properties.ContentText)
-        }
-    </p>
-    <p class="catalog-row__col__btn">
-        <a href="@url" target="_blank">
-            @if (Context.Kentico().PageBuilder().EditMode)
-            {
-                Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-                {
-                    PropertyName = nameof(KMJ_DownloadItemProperties.Url),
-                    Text = url,
-                    EnableFormatting = false
-                });
-            }
-            else
-            {
-                @HtmlToPlainText(url)
-            }
-        </a>
-    </p>
-</div>*@
+</div>

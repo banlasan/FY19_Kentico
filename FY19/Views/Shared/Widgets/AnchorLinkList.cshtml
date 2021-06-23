@@ -238,14 +238,15 @@
     }
 }
 
-    <ul class="listInternalLink @if (id != null) { @className; } " id="@id">
+<div class="KMJ_AnchorLinkList">
+    <ul class="listInternalLink @if (id != null) { @className; }" id="@id">
 
         @if (text1 != null)
         {
             <li>
                 @if (url1 != null)
                 {
-                <a href="https://@url1" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text1.Replace(Environment.NewLine, "<br/>")))</a>
+                    <a href="https://@url1" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text1.Replace(Environment.NewLine, "<br/>")))</a>
                 }
                 else
                 {
@@ -260,7 +261,7 @@
             <li>
                 @if (url2 != null)
                 {
-                <a href="https://@url2" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text2.Replace(Environment.NewLine, "<br />")))</a>
+                    <a href="https://@url2" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text2.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
@@ -274,7 +275,7 @@
             <li>
                 @if (url3 != null)
                 {
-                <a href="https://@url3" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text3.Replace(Environment.NewLine, "<br />")))</a>
+                    <a href="https://@url3" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text3.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
@@ -288,7 +289,7 @@
             <li>
                 @if (url4 != null)
                 {
-                <a href="https://@url4" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text4.Replace(Environment.NewLine, "<br />")))</a>
+                    <a href="https://@url4" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text4.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
@@ -303,7 +304,7 @@
             <li>
                 @if (url5 != null)
                 {
-                <a href="https://@url5" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text5.Replace(Environment.NewLine, "<br />")))</a>
+                    <a href="https://@url5" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text5.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
@@ -318,7 +319,7 @@
             <li>
                 @if (url6 != null)
                 {
-                <a href="https://@url6" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text6.Replace(Environment.NewLine, "<br />")))</a>
+                    <a href="https://@url6" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text6.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
@@ -333,7 +334,7 @@
             <li>
                 @if (url7 != null)
                 {
-                <a href="https://@url7" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text7.Replace(Environment.NewLine, "<br />")))</a>
+                    <a href="https://@url7" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text7.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
@@ -348,7 +349,7 @@
             <li>
                 @if (url8 != null)
                 {
-                <a href="https://@url8" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text8.Replace(Environment.NewLine, "<br />")))</a>
+                    <a href="https://@url8" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text8.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
@@ -363,7 +364,7 @@
             <li>
                 @if (url9 != null)
                 {
-                <a href="https://@url9" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text9.Replace(Environment.NewLine, "<br />")))</a>
+                    <a href="https://@url9" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text9.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
@@ -378,7 +379,7 @@
             <li>
                 @if (url10 != null)
                 {
-                <a href="https://@url10" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text10.Replace(Environment.NewLine, "<br />")))</a>
+                    <a href="https://@url10" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text10.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
@@ -388,314 +389,4 @@
         }
 
     </ul>
-
-@*@if (Context.Kentico().PageBuilder().EditMode)
-{
-    <div style="height: 50px; font-weight: bold">
-        <p>Anchor Link Lists Widget:</p>
-    </div>
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text1",
-        Text = "Label: &nbsp;" + text1,
-        Class = className,
-        Id = id
-    });
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Url1",
-        Text = "URL: https://" + url1,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text2",
-        Text = "Label: &nbsp;" + text2,
-        Class = className,
-        Id = id
-    });
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Url2",
-        Text = "URL: https://" + url2,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text3",
-        Text = "Label: &nbsp;" + text3,
-        Class = className,
-        Id = id
-    });
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Url3",
-        Text = "URL: https://" + url3,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text4",
-        Text = "Label: &nbsp;" + text4,
-        Class = className,
-        Id = id
-    });
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Url4",
-        Text = "URL: https://" + url4,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text5",
-        Text = "Label: &nbsp;" + text5,
-        Class = className,
-        Id = id
-    });
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Url5",
-        Text = "URL: https://" + url5,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text6",
-        Text = "Label: &nbsp;" + text6,
-        Class = className,
-        Id = id
-    });
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Url6",
-        Text = "URL: https://" + url6,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text7",
-        Text = "Label: &nbsp;" + text7,
-        Class = className,
-        Id = id
-    });
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Url7",
-        Text = "URL: https://" + url7,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text8",
-        Text = "Label: &nbsp;" + text8,
-        Class = className,
-        Id = id
-    });
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Url8",
-        Text = "URL: https://" + url8,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text9",
-        Text = "Label: &nbsp;" + text9,
-        Class = className,
-        Id = id
-    });
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Url9",
-        Text = "URL: https://" + url9,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text10",
-        Text = "Label: &nbsp;" + text10,
-        Class = className,
-        Id = id
-    });
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Url10",
-        Text = "URL: https://" + url10,
-        Class = className,
-        Id = id
-    });
-
-}
-else
-{
-  <ul class="listInternalLink @if (id != null) { @className; } " id="@id">
-
-      @if (text1 != null)
-      {
-          <li>
-              @if (url1 != null)
-              {
-                  <a href="https://@url1" target="_blank">@text1</a>
-              }
-              else
-              {
-                  @text1
-              }
-
-          </li>
-      }
-
-      @if (text2 != null)
-      {
-          <li>
-              @if (url2 != null)
-              {
-                  <a href="https://@url2" target="_blank">@text2</a>
-              }
-              else
-              {
-                  @text2
-              }
-          </li>
-      }
-
-      @if (text3 != null)
-      {
-          <li>
-              @if (url3 != null)
-              {
-                  <a href="https://@url3" target="_blank">@text3</a>
-              }
-              else
-              {
-                  @text3
-              }
-          </li>
-      }
-
-      @if (text4 != null)
-      {
-          <li>
-              @if (url4 != null)
-              {
-                  <a href="https://@url4" target="_blank">@text4</a>
-              }
-              else
-              {
-                  @text4
-              }
-
-          </li>
-      }
-
-      @if (text5 != null)
-      {
-          <li>
-              @if (url5 != null)
-              {
-                  <a href="https://@url5" target="_blank">@text5</a>
-              }
-              else
-              {
-                  @text5
-              }
-
-          </li>
-      }
-
-      @if (text6 != null)
-      {
-          <li>
-              @if (url6 != null)
-              {
-                  <a href="https://@url6" target="_blank">@text6</a>
-              }
-              else
-              {
-                  @text6
-              }
-
-          </li>
-      }
-
-      @if (text7 != null)
-      {
-          <li>
-              @if (url7 != null)
-              {
-                  <a href="https://@url7" target="_blank">@text7</a>
-              }
-              else
-              {
-                  @text7
-              }
-
-          </li>
-      }
-
-      @if (text8 != null)
-      {
-          <li>
-              @if (url8 != null)
-              {
-                  <a href="https://@url8" target="_blank">@text8</a>
-              }
-              else
-              {
-                  @text8
-              }
-
-          </li>
-      }
-
-      @if (text9 != null)
-      {
-          <li>
-              @if (url9 != null)
-              {
-                  <a href="https://@url9" target="_blank">@text9</a>
-              }
-              else
-              {
-                  @text9
-              }
-
-          </li>
-      }
-
-      @if (text10 != null)
-      {
-          <li>
-              @if (url10 != null)
-              {
-                 <a href="https://@url10" target="_blank">@text10</a>
-              }
-              else
-              { 
-                @text10
-              }
-          </li>
-      }
-
-  </ul>
-}*@
+</div>

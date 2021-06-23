@@ -39,23 +39,8 @@
     }
 }
 
+<div class="KMJ_H4Heading">
     <h4 class="h4 @if (Model.Properties.Id != null) { @Model.Properties.Class }" id="@Model.Properties.Id">
         @Html.Raw(HttpUtility.HtmlDecode(headText.Replace(Environment.NewLine, "<br/>")))
     </h4>
-
-@*@if (Context.Kentico().PageBuilder().EditMode)
-{
-
-    Html.RenderPartial("InlineEditors/HeaderEditor", new TextEditorViewModel
-    {
-        PropertyWidget = "H4",  
-        PropertyName = "Heading_Text",
-        Text = headText.Replace(Environment.NewLine, "<br/>"),
-        Class = "h4 " + Model.Properties.Class
-    });
-}
-else
-{
-<h4 class="h4 @if (Model.Properties.Id != null) { @Model.Properties.Class }" id="@Model.Properties.Id" style="word-wrap: break-word;
-        white-space: pre-wrap;">@Html.Raw(HttpUtility.HtmlDecode(headText.Replace(Environment.NewLine, "<br/>")))</h4>
-}*@
+</div>

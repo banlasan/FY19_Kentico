@@ -39,24 +39,6 @@
     }
 }
 
-    <h2 class="h2 mt-lg-80 mb-lg-40 mt-sm-50 mb-sm-20 @if (Model.Properties.Id != null) { @Model.Properties.Class } " id="@Model.Properties.Id">@Html.Raw(HttpUtility.HtmlDecode(headText.Replace(Environment.NewLine, "<br/>")))</h2>
-
-
-@*@if (Context.Kentico().PageBuilder().EditMode)
-{
-    Type propType = typeof(KMJ_TextContentProperties);
-    System.Reflection.PropertyInfo pInfo = propType.GetProperty("TextContent");
-
-    Html.RenderPartial("InlineEditors/HeaderEditor", new TextEditorViewModel
-    {
-        PropertyWidget = "H2",
-        PropertyName = "Heading_Text",
-        Text = headText.Replace(Environment.NewLine, "<br/>"),
-        Class = "h2 mt-lg-80 mb-lg-40 mt-sm-50 mb-sm-20 " + Model.Properties.Class
-    });
-}
-else
-{
-
-    <h2 class="h2 mt-lg-80 mb-lg-40 mt-sm-50 mb-sm-20 @if (Model.Properties.Id != null) { @Model.Properties.Class } " id="@Model.Properties.Id" style="word-wrap: break-word;">@Html.Raw(HttpUtility.HtmlDecode(headText.Replace(Environment.NewLine, "<br/>")))</h2>
-}*@
+<div class="KMJ_H2Heading">
+    <h2 class="h2 mt-lg-80 mb-lg-40 mt-sm-50 mb-sm-20 @if (Model.Properties.Id != null) { @Model.Properties.Class }" id="@Model.Properties.Id">@Html.Raw(HttpUtility.HtmlDecode(headText.Replace(Environment.NewLine, "<br/>")))</h2>
+</div>    

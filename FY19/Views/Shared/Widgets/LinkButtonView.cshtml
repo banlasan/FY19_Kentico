@@ -67,28 +67,11 @@
     }
 }
 
+<div class="KMJ_LinkButton">
     <div class="btn btn001 @if (Model.Properties.Id != null) { @Model.Properties.Class; }" @if (Model.Properties.Id != null) { @thisId }>
-        <a href="https://@url" @if (Model.Properties.Blank) { @tBlank }>@if (textContent != null)
-        {@Html.Raw(HttpUtility.HtmlDecode(textContent.Replace(Environment.NewLine, "<br/>")))}</a>
+        <a href="https://@url" @if (Model.Properties.Blank) { @tBlank }>
+            @if (textContent != null)
+            {@Html.Raw(HttpUtility.HtmlDecode(textContent.Replace(Environment.NewLine, "<br/>")))}
+        </a>
     </div>
-
-@*@if (Context.Kentico().PageBuilder().EditMode)
-{
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "TextContent",
-        Text = "Label: &nbsp;" + (textContent != null ? textContent.Replace(Environment.NewLine, "<br/>") : "")
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Url",
-        Text = "URL: https://" + url
-    });
-}
-else
-{
-    <div class="btn btn001 @if (Model.Properties.Id != null) { @Model.Properties.Class; } " id="@if (Model.Properties.Id != null) { @Model.Properties.Id.Replace(" ", ""); }">
-        <a href="https://@url" target="_blank">@if (textContent != null) { @Html.Raw(HttpUtility.HtmlDecode(textContent.Replace(Environment.NewLine, "<br/>")))}</a>
-    </div>
-}*@
+</div>

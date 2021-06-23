@@ -20,9 +20,6 @@ else
 {
     if (Model.Properties.Html != "" && Model.Properties.Html != null)
     {
-        @*<div class="scroll @if (Model.Properties.Id != null) { @Model.Properties.Class; } " id="@Model.Properties.Id">
-                @Html.Kentico().ResolveUrls(Model.Properties.Html)
-            </div>*@
         @Html.Kentico().ResolveUrls(Model.Properties.Html)
     }
 }

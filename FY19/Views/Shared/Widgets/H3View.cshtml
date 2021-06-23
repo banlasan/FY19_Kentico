@@ -39,25 +39,8 @@
     }
 }
 
-    <h3 class="h3 @if (Model.Properties.Id != null) { @Model.Properties.Class } " id="@Model.Properties.Id" >
+<div class="KMJ_H3Heading">
+    <h3 class="h3 @if (Model.Properties.Id != null) { @Model.Properties.Class }" id="@Model.Properties.Id">
         @Html.Raw(HttpUtility.HtmlDecode(headText.Replace(Environment.NewLine, "<br/>")))
     </h3>
-
-@*@if (Context.Kentico().PageBuilder().EditMode)
-{
-    Type propType = typeof(KMJ_TextContentProperties);
-    System.Reflection.PropertyInfo pInfo = propType.GetProperty("TextContent");
-
-    Html.RenderPartial("InlineEditors/HeaderEditor", new TextEditorViewModel
-    {
-        PropertyWidget = "H3",
-        PropertyName = "Heading_Text",
-        Text = headText.Replace(Environment.NewLine, "<br/>"),
-        Class = "h3 " + Model.Properties.Class
-    });
-}
-else
-{
-<h3 class="h3 @if (Model.Properties.Id != null) { @Model.Properties.Class } " id="@Model.Properties.Id" style="word-wrap: break-word;
-white-space: pre-wrap;">@Html.Raw(HttpUtility.HtmlDecode(headText.Replace(Environment.NewLine, "<br/>")))</h3>
-}*@
+</div>

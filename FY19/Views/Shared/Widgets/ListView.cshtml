@@ -117,7 +117,8 @@
     { text10 = Model.Properties.Text10; }
 }
 
-<ul class="listBasic @if (id != null) { @className; } " id="@id">
+<div class="KMJ_GeneralList">
+    <ul class="listBasic @if (id != null) { @className; }" id="@id">
         @if (text1 != null)
         { <li>@Html.Raw(HttpUtility.HtmlDecode(text1.Replace(Environment.NewLine, "<br/>")))</li> }
         @if (text2 != null) 
@@ -139,115 +140,4 @@
         @if (text10 != null)
         {<li>@Html.Raw(HttpUtility.HtmlDecode(text10.Replace(Environment.NewLine, "<br/>")))</li>}
     </ul>
-
-@*@if (Context.Kentico().PageBuilder().EditMode)
-{
-    <div style="height: 50px; font-weight: bold">
-        <p>List Widget:</p>
-    </div>
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = text1Prop,
-        Text = "• " + text1,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text2",
-        Text = "• " + text2,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text3",
-        Text = "• " + text3,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text4",
-        Text = "• " + text4,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text5",
-        Text = "• " + text5,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text6",
-        Text = "• " + text6,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text7",
-        Text = "• " + text7,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text8",
-        Text = "• " + text8,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text9",
-        Text = "• " + text9,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text10",
-        Text = "• " + text10,
-        Class = className,
-        Id = id
-    });
-}
-else
-{
-    <ul class="listBasic @if (id != null) { @className; } " id="@id">
-        @if (text1 != null)
-        { <li>@Html.Raw(HttpUtility.HtmlDecode(text1.Replace(Environment.NewLine, "<br/>")))</li> }
-        @if (text2 != null) 
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text2.Replace(Environment.NewLine, "<br/>")))</li> }
-        @if (text3 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text3.Replace(Environment.NewLine, "<br/>")))</li>}
-        @if (text4 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text4.Replace(Environment.NewLine, "<br/>")))</li>}
-        @if (text5 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text5.Replace(Environment.NewLine, "<br/>")))</li>}
-        @if (text6 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text6.Replace(Environment.NewLine, "<br/>")))</li>}
-        @if (text7 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text7.Replace(Environment.NewLine, "<br/>")))</li>}
-        @if (text8 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text8.Replace(Environment.NewLine, "<br/>")))</li>}
-        @if (text9 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text9.Replace(Environment.NewLine, "<br/>")))</li>}
-        @if (text10 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text10.Replace(Environment.NewLine, "<br/>")))</li>}
-    </ul>
-}*@
+</div>

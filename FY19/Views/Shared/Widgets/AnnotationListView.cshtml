@@ -120,8 +120,8 @@
     else { text10 = Model.Properties.Text10; }
 }
 
-
-    <ul class="@leftFootClass @if (Model.Properties.Id != null) { @Model.Properties.Class; } " id="@Model.Properties.Id">
+<div class="KMJ_AnnotationList">
+    <ul class="@leftFootClass @if (Model.Properties.Id != null) { @Model.Properties.Class; }" id="@Model.Properties.Id">
         @if (text1 != null)
         {<li>@Html.Raw(HttpUtility.HtmlDecode(text1.Replace(Environment.NewLine, "<br/>")))</li>}
         @if (text2 != null)
@@ -143,115 +143,4 @@
         @if (text10 != null)
         {<li>@Html.Raw(HttpUtility.HtmlDecode(text10.Replace(Environment.NewLine, "<br/>")))</li>}
     </ul>
-
-@*@if (Context.Kentico().PageBuilder().EditMode)
-{
-    <div style="height: 50px; font-weight: bold">
-        <p>Annotation List Widget:</p>
-    </div>
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text1",
-        Text = "※ " + text1,
-        Class = Model.Properties.Class,
-        Id = Model.Properties.Id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text2",
-        Text = "※ " + text2,
-        Class = Model.Properties.Class,
-        Id = Model.Properties.Id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text3",
-        Text = "※ " + text3,
-        Class = Model.Properties.Class,
-        Id = Model.Properties.Id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text4",
-        Text = "※ " + text4,
-        Class = Model.Properties.Class,
-        Id = Model.Properties.Id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text5",
-        Text = "※ " + text5,
-        Class = Model.Properties.Class,
-        Id = Model.Properties.Id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text6",
-        Text = "※ " + text6,
-        Class = Model.Properties.Class,
-        Id = Model.Properties.Id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text7",
-        Text = "※ " + text7,
-        Class = Model.Properties.Class,
-        Id = Model.Properties.Id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text8",
-        Text = "※ " + text8,
-        Class = Model.Properties.Class,
-        Id = Model.Properties.Id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text9",
-        Text = "※ " + text9,
-        Class = Model.Properties.Class,
-        Id = Model.Properties.Id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text10",
-        Text = "※ " + text10,
-        Class = Model.Properties.Class,
-        Id = Model.Properties.Id
-    });
-}
-else
-{
-    <ul class="@leftFootClass @if (Model.Properties.Id != null) { @Model.Properties.Class; } " id="@Model.Properties.Id">
-        @if (text1 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text1.Replace(Environment.NewLine, "<br/>")))</li>}
-        @if (text2 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text2.Replace(Environment.NewLine, "<br/>")))</li>}
-        @if (text3 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text3.Replace(Environment.NewLine, "<br/>")))</li>}
-        @if (text4 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text4.Replace(Environment.NewLine, "<br/>")))</li>}
-        @if (text5 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text5.Replace(Environment.NewLine, "<br/>")))</li>}
-        @if (text6 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text6.Replace(Environment.NewLine, "<br/>")))</li>}
-        @if (text7 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text7.Replace(Environment.NewLine, "<br/>")))</li>}
-        @if (text8 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text8.Replace(Environment.NewLine, "<br/>")))</li>}
-        @if (text9 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text9.Replace(Environment.NewLine, "<br/>")))</li>}
-        @if (text10 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text10.Replace(Environment.NewLine, "<br/>")))</li>}
-    </ul>
-}*@
+</div>
