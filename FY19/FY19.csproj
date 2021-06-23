@@ -726,25 +726,6 @@
     <Folder Include="Scripts\AlloyEditor\assets\css\skin\atlas\" />
     <Folder Include="Scripts\AlloyEditor\assets\css\skin\moono\" />
     <Folder Include="Scripts\AlloyEditor\assets\css\skin\ocean\" />
-    <Folder Include="Views\Antivirus\" />
-    <Folder Include="Views\Cost\" />
-    <Folder Include="Views\DocumentSolution\" />
-    <Folder Include="Views\Document\" />
-    <Folder Include="Views\Document_Sitemap\" />
-    <Folder Include="Views\Helpdesk\" />
-    <Folder Include="Views\ImplementationSupport\" />
-    <Folder Include="Views\ListOfServices\" />
-    <Folder Include="Views\Office365\" />
-    <Folder Include="Views\Office365_Sitemap\" />
-    <Folder Include="Views\Printing\" />
-    <Folder Include="Views\ProblemSolving\" />
-    <Folder Include="Views\RakuRaku\" />
-    <Folder Include="Views\RemoteView\" />
-    <Folder Include="Views\Security\" />
-    <Folder Include="Views\System\" />
-    <Folder Include="Views\Telework\" />
-    <Folder Include="Views\UTMService\" />
-    <Folder Include="Views\XPointCloud\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\document-sitemap.xml" />
@@ -1258,9 +1239,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\DynamicPageTemplate\UnregisteredTemplate.cshtml" />
     <Content Include="Views\HttpErrors\Index.cshtml" />
-    <Content Include="Views\Catalog\Index.cshtml" />
     <Content Include="Views\Shared\PageTemplates\Sitemaps\KMJ_ITGSitemap.cshtml" />
-    <Content Include="Views\ITG_Sitemap\Index.cshtml" />
     <Content Include="Views\Shared\InlineEditors\HeaderEditor.cshtml" />
   </ItemGroup>
   <ItemGroup>
