@@ -11,7 +11,8 @@ namespace FY19.Models.Widgets
         [RegularExpression(@"^\S*$", ErrorMessage = "No white space allowed")]
         public string Id { get; set; }
 
-        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 1, Label = "Class")]
+        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 2, Label = "Class")]
+        [StringLength(200, ErrorMessage = "Limit 200 characters")]
         public string Class { get; set; }
     }
 }

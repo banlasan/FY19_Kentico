@@ -5,6 +5,11 @@
 
 @model ComponentViewModel<KMJ_TableProperties>
 
+@{ 
+    string strID = Model.Properties.Id;
+    string htmlCode = HttpUtility.HtmlDecode(Model.Properties.Html);
+}
+
 @if (Context.Kentico().PageBuilder().EditMode)
 {
     Html.RenderPartial("InlineEditors/TableView_WysiwygInlineEditor", new KMJ_TableViewModel
@@ -18,8 +23,7 @@
 }
 else
 {
-    if (Model.Properties.Html != "" && Model.Properties.Html != null)
-    {
-        @Html.Kentico().ResolveUrls(Model.Properties.Html)
-    }
+    <div class="scroll @if (Model.Properties.Id != null) { @Model.Properties.Class; }" id="@Model.Properties.Id">
+        @Html.Raw(htmlCode)
+    </div>
 }

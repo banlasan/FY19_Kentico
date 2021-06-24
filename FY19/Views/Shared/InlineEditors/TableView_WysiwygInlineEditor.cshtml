@@ -1,165 +1,33 @@
 ﻿@*@model SeventyeightDigital.CKEditor4_Wysiwyg.CKEditor4_WysiwygViewModel*@
-
+@using SeventyeightDigital.CKEditor4_Wysiwyg
 @model FY19.Models.Widgets.KMJ_TableViewModel
 
 
-@using (Html.Kentico().BeginInlineEditor("ckeditor", Model.PropertyName,
+@if (Context.Kentico().PageBuilder().EditMode)
+{
+    using (Html.Kentico().BeginInlineEditor("ckeditor", Model.PropertyName,
     new
     {
-        @class = "inline-editor ckeditor-" + Model.EditorModel.myID.ToString(),
-        @id = "editor" + Model.EditorModel.myID.ToString(),
-        @contenteditable = true,
-        data_divid = Model.EditorModel.myID.ToString()
+        //@class = "inline-editor ckeditor-" + Model.EditorModel.myID.ToString(),
+        //@id = "editor" + Model.EditorModel.myID.ToString(),
+        //@contenteditable = true,
+        //data_divid = Model.EditorModel.myID.ToString()
     }))
-{
-    if (Model != null && !String.IsNullOrEmpty(Model.Html))
     {
-        @Html.Raw(Model.Html.Replace('~', ' '))
-    }
+        if(Model.Class == "no class selected")
+        {
+            Model.Class = string.Empty;
+        }
 
-    else
-    {
-        <div class="scroll @if (Model.Id != null) { @Model.Class; }" id="@Model.Id">
-            <table class="table table001">
-                <tbody>
-                    <tr>
-                        <th>&nbsp;</th>
-                        <th>Head</th>
-                        <th>Head</th>
-                    </tr>
-                    <tr>
-                        <td>Data</td>
-                        <td>Data</td>
-                        <td>Data</td>
-                    </tr>
-                    <tr>
-                        <td>Data</td>
-                        <td>Data</td>
-                        <td>Data</td>
-                    </tr>
-                    <tr>
-                        <td>Data</td>
-                        <td>Data</td>
-                        <td>Data</td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table001">
-                    <tbody>
-                        <tr>
-                            <th>&nbsp;</th>
-                            <th>Head</th>
-                            <th>Head</th>
-                        </tr>
-                        <tr>
-                            <td>Data</td>
-                            <td>Data</td>
-                            <td>Data</td>
-                        </tr>
-                        <tr>
-                            <td>Data</td>
-                            <td>Data</td>
-                            <td>Data</td>
-                        </tr>
-                        <tr>
-                            <td>Data</td>
-                            <td>Data</td>
-                            <td>Data</td>
-                        </tr>
-                    </tbody>
-                </table><table class="table table002">
-                    <tbody>
-                        <tr>
-                            <th>&nbsp;</th>
-                            <th>Head</th>
-                            <th>Head</th>
-                        </tr>
-                        <tr>
-                            <td>Data</td>
-                            <td>Data</td>
-                            <td>Data</td>
-                        </tr>
-                        <tr>
-                            <td>Data</td>
-                            <td>Data</td>
-                            <td>Data</td>
-                        </tr>
-                        <tr>
-                            <td>Data</td>
-                            <td>Data</td>
-                            <td>Data</td>
-                        </tr>
-                    </tbody>
-                </table><table class="table table003">
-                    <tbody>
-                        <tr>
-                            <th>&nbsp;</th>
-                            <th>Head</th>
-                            <th>Head</th>
-                        </tr>
-                        <tr>
-                            <td>Data</td>
-                            <td>Data</td>
-                            <td>Data</td>
-                        </tr>
-                        <tr>
-                            <td>Data</td>
-                            <td>Data</td>
-                            <td>Data</td>
-                        </tr>
-                        <tr>
-                            <td>Data</td>
-                            <td>Data</td>
-                            <td>Data</td>
-                        </tr>
-                    </tbody>
-                </table><table class="table table004">
-                    <tbody>
-                        <tr>
-                            <th>&nbsp;</th>
-                            <th>Head</th>
-                            <th>Head</th>
-                        </tr>
-                        <tr>
-                            <td>Data</td>
-                            <td>Data</td>
-                            <td>Data</td>
-                        </tr>
-                        <tr>
-                            <td>Data</td>
-                            <td>Data</td>
-                            <td>Data</td>
-                        </tr>
-                        <tr>
-                            <td>Data</td>
-                            <td>Data</td>
-                            <td>Data</td>
-                        </tr>
-                    </tbody>
-                </table><table class="table table005">
-                    <tbody>
-                        <tr>
-                            <th>&nbsp;</th>
-                            <th>Head</th>
-                            <th>Head</th>
-                        </tr>
-                        <tr>
-                            <td>Data</td>
-                            <td>Data</td>
-                            <td>Data</td>
-                        </tr>
-                        <tr>
-                            <td>Data</td>
-                            <td>Data</td>
-                            <td>Data</td>
-                        </tr>
-                        <tr>
-                            <td>Data</td>
-                            <td>Data</td>
-                            <td>Data</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        if(Model.Html == null || Model.Html == string.Empty)
+        {
+            Model.Html = @"<table class='table table001'><tbody><tr><th>&nbsp;</th><th>Head</th><th>Head</th></tr><tr><td>Data</td><td>Data</td><td>Data</td></tr><tr><td>Data</td><td>Data</td><td>Data</td></tr><tr><td>Data</td><td>Data</td><td>Data</td></tr></tbody></table><table class='table table001'><tbody><tr><th>&nbsp;</th><th>Head</th><th>Head</th></tr><tr><td>Data</td><td>Data</td><td>Data</td></tr><tr><td>Data</td><td>Data</td><td>Data</td></tr><tr><td>Data</td><td>Data</td><td>Data</td></tr></tbody></table><table class='table table001'><tbody><tr><th>&nbsp;</th><th>Head</th><th>Head</th></tr><tr><td>Data</td><td>Data</td><td>Data</td></tr><tr><td>Data</td><td>Data</td><td>Data</td></tr><tr><td>Data</td><td>Data</td><td>Data</td></tr></tbody></table>";
+        }
+
+        Html.RenderPartial("InlineEditors/CKEditor4_WysiwygInlineEditor", new CKEditor4_WysiwygViewModel
+        {
+            PropertyName = nameof(Model.Html),
+            Html = Model.Html,
+        });
     }
-}                                                                 
+}                                                          
