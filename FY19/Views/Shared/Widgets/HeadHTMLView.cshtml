@@ -4,7 +4,6 @@
 @using System.Text.RegularExpressions;
 @model ComponentViewModel<KMJ_HeadHTMLProperties>
 
-
 @functions
 {
     private static string HtmlToPlainText(string html)
@@ -32,37 +31,47 @@
 
 @{
     string headText = string.Empty;
-    headText = Model.Properties.Heading_Text;
 
-    //if (Model.Properties.Heading_Text != null)
-    //{
-    //    headText = HtmlToPlainText(Model.Properties.Heading_Text);
-    //}
-    //else
-    //{
-    //    headText = Model.Properties.Heading_Text;
+    if (Model.Properties.HeadTags != null)
+    {
+        headText = Model.Properties.HeadTags;
+
+        if (headText.Contains("</script>"))
+        {
+            //replace script end tag
+            //HTML parser doesn't recognize Javascript strings or nested <script> tags
+            headText = headText.Replace("</script>", "<\\/script>");
+        }
+
+        if (headText.Contains("\""))
+        {
+            //use escape keys for HTML parser since it doesn't recognize Javascript strings with quotes
+            headText = headText.Replace("\"", "\\\"");
+        }
+    }
+
+    var myHtmlString = new HtmlString(headText.Replace("\n", "").Replace("\r", "").Replace("\t", ""));
 }
-
 
 @if (Context.Kentico().PageBuilder().EditMode)
 {
-
-    Type propType = typeof(KMJ_TextContentProperties);
-    System.Reflection.PropertyInfo pInfo = propType.GetProperty("TextContent");
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Head",
-        Text = headText != null ? headText.Trim() : ""
-    });
+    <div>
+        Scripts are hidden. Inspect element inside head tag...
+    </div>
 
     <script type="text/javascript">
-        document.head.innerHTML += @headText;
+        window.onload = function () {
+            console.log("Scripts inserted to head tag.");
+            document.head.innerHTML += "@myHtmlString";
+    };
     </script>
 }
 else
 {
     <script type="text/javascript">
-        document.head.innerHTML += @headText;
+        window.onload = function () {
+            console.log("Scripts inserted to head tag.");
+            document.head.innerHTML += "@myHtmlString";
+    };
     </script>
 }
