@@ -465,7 +465,24 @@
                 <div id="contentsInner">
                     <div class="main">
 
-                        @Html.Kentico().EditableArea("ContentZone", defaultSectionIdentifier: null, allowedWidgets: new[] { "FY19.FreeHTML" })
+                        @Html.Kentico().EditableArea("ContentZone",
+                                                    defaultSectionIdentifier: null,
+                                                    allowedWidgets: new[] { "FY19.Image",
+                                                                            "FY19.H2Header",
+                                                                            "FY19.H3Header",
+                                                                            "FY19.H4Header",
+                                                                            "FY19.BodyText",
+                                                                            "FY19.StaticText",
+                                                                            "FY19.AnnotationList",
+                                                                            "FY19.LinkList",
+                                                                            "FY19.BreadCrumbs",
+                                                                            "FY19.List",
+                                                                            "FY19.AnchorList",
+                                                                            "FY19.LinkButton",
+                                                                            "FY19.HeadHTML",
+                                                                            "FY19.FreeHTML",
+                                                                            "FY19.Table",
+                                                                            "FY19.Placeholder"})
 
                         <div class="footer-btn">
                             <div class="footer-btn__wrapper">

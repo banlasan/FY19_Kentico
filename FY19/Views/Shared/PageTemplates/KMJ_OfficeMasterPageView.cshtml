@@ -531,7 +531,24 @@
                             <section class="content-inner">
                                 <p class="textRead">Microsoft社のOffice365は、Officeアプリケーションとクラウドグループウェアをセットにした、クラウドサービス型のOfficeです。Office アプリケーションを従来通りPC にインストールして使えることはもちろん、Exchange Online によるメール・スケジュール・連絡先管理、SharePoint Online による情報・ドキュメント共有、Teams によるインスタントメッセージ、オンライン会議も可能です。</p>
 
-                                @Html.Kentico().EditableArea("ContentZone")
+                                @Html.Kentico().EditableArea("ContentZone",
+                                                            defaultSectionIdentifier: null,
+                                                            allowedWidgets: new[] { "FY19.Image",
+                                                                                    "FY19.H2Header",
+                                                                                    "FY19.H3Header",
+                                                                                    "FY19.H4Header",
+                                                                                    "FY19.BodyText",
+                                                                                    "FY19.StaticText",
+                                                                                    "FY19.AnnotationList",
+                                                                                    "FY19.LinkList",
+                                                                                    "FY19.BreadCrumbs",
+                                                                                    "FY19.List",
+                                                                                    "FY19.AnchorList",
+                                                                                    "FY19.LinkButton",
+                                                                                    "FY19.HeadHTML",
+                                                                                    "FY19.FreeHTML",
+                                                                                    "FY19.Table",
+                                                                                    "FY19.Placeholder"})
 
                                 <p class="dl-brochure"><a href="https://www.konicaminolta.com/web-contents/kmj/assets/office365/pdf/office365.pdf" target="_blank" class="btn-brochure-line-multi"><i>このサービスのカタログ<br class="hidden-lg">ダウンロード<br class="hidden-sm"><small>(PDF:835KB)</small></i></a></p>
                                 <!-- / #contentsInner -->

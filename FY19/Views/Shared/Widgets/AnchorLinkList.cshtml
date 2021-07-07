@@ -47,7 +47,7 @@
     }
     if (Model.Properties.Url1 != null)
     {
-        string tmpUrl = HtmlToPlainText(Model.Properties.Url1.Replace("URL: https://", ""));
+        string tmpUrl = Model.Properties.Url1;
 
         url1 = tmpUrl.Length > 992 ? tmpUrl.Substring(0, 992) : tmpUrl;
     }
@@ -67,7 +67,7 @@
     }
     if (Model.Properties.Url2 != null)
     {
-        string tmpUrl = HtmlToPlainText(Model.Properties.Url2.Replace("URL: https://", ""));
+        string tmpUrl = Model.Properties.Url2;
 
         url2 = tmpUrl.Length > 992 ? tmpUrl.Substring(0, 992) : tmpUrl;
     }
@@ -88,7 +88,7 @@
     }
     if (Model.Properties.Url3 != null)
     {
-        string tmpUrl = HtmlToPlainText(Model.Properties.Url3.Replace("URL: https://", ""));
+        string tmpUrl = Model.Properties.Url3;
 
         url3 = tmpUrl.Length > 992 ? tmpUrl.Substring(0, 992) : tmpUrl;
     }
@@ -108,7 +108,7 @@
     }
     if (Model.Properties.Url4 != null)
     {
-        string tmpUrl = HtmlToPlainText(Model.Properties.Url4.Replace("URL: https://", ""));
+        string tmpUrl = Model.Properties.Url4;
 
         url4 = tmpUrl.Length > 992 ? tmpUrl.Substring(0, 992) : tmpUrl;
     }
@@ -128,7 +128,7 @@
     }
     if (Model.Properties.Url5 != null)
     {
-        string tmpUrl = HtmlToPlainText(Model.Properties.Url5.Replace("URL: https://", ""));
+        string tmpUrl = Model.Properties.Url5;
 
         url5 = tmpUrl.Length > 992 ? tmpUrl.Substring(0, 992) : tmpUrl;
     }
@@ -148,7 +148,7 @@
     }
     if (Model.Properties.Url6 != null)
     {
-        string tmpUrl = HtmlToPlainText(Model.Properties.Url6.Replace("URL: https://", ""));
+        string tmpUrl = Model.Properties.Url6;
 
         url6 = tmpUrl.Length > 992 ? tmpUrl.Substring(0, 992) : tmpUrl;
     }
@@ -168,7 +168,7 @@
     }
     if (Model.Properties.Url7 != null)
     {
-        string tmpUrl = HtmlToPlainText(Model.Properties.Url7.Replace("URL: https://", ""));
+        string tmpUrl = Model.Properties.Url7;
 
         url7 = tmpUrl.Length > 992 ? tmpUrl.Substring(0, 992) : tmpUrl;
     }
@@ -188,7 +188,7 @@
     }
     if (Model.Properties.Url8 != null)
     {
-        string tmpUrl = HtmlToPlainText(Model.Properties.Url8.Replace("URL: https://", ""));
+        string tmpUrl = Model.Properties.Url8;
 
         url8 = tmpUrl.Length > 992 ? tmpUrl.Substring(0, 992) : tmpUrl;
     }
@@ -208,7 +208,7 @@
     }
     if (Model.Properties.Url9 != null)
     {
-        string tmpUrl = HtmlToPlainText(Model.Properties.Url9.Replace("URL: https://", ""));
+        string tmpUrl = Model.Properties.Url9;
 
         url9 = tmpUrl.Length > 992 ? tmpUrl.Substring(0, 992) : tmpUrl;
     }
@@ -228,9 +228,9 @@
     }
     if (Model.Properties.Url10 != null)
     {
-        string tmpUrl = HtmlToPlainText(Model.Properties.Url10.Replace("URL: https://", ""));
+        string tmpUrl = Model.Properties.Url10;
 
-        url10 = HtmlToPlainText(Model.Properties.Url10.Replace("URL: https://", ""));
+        url10 = tmpUrl.Length > 992 ? tmpUrl.Substring(0, 992) : tmpUrl;
     }
     else
     {
@@ -246,7 +246,7 @@
             <li>
                 @if (url1 != null)
                 {
-                    <a href="https://@url1" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text1.Replace(Environment.NewLine, "<br/>")))</a>
+                    <a href="@url1" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text1.Replace(Environment.NewLine, "<br/>")))</a>
                 }
                 else
                 {
@@ -261,7 +261,7 @@
             <li>
                 @if (url2 != null)
                 {
-                    <a href="https://@url2" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text2.Replace(Environment.NewLine, "<br />")))</a>
+                    <a href="@url2" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text2.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
@@ -275,7 +275,7 @@
             <li>
                 @if (url3 != null)
                 {
-                    <a href="https://@url3" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text3.Replace(Environment.NewLine, "<br />")))</a>
+                    <a href="@url3" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text3.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
@@ -289,7 +289,7 @@
             <li>
                 @if (url4 != null)
                 {
-                    <a href="https://@url4" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text4.Replace(Environment.NewLine, "<br />")))</a>
+                    <a href="@url4" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text4.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
@@ -304,7 +304,7 @@
             <li>
                 @if (url5 != null)
                 {
-                    <a href="https://@url5" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text5.Replace(Environment.NewLine, "<br />")))</a>
+                    <a href="@url5" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text5.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
@@ -319,7 +319,7 @@
             <li>
                 @if (url6 != null)
                 {
-                    <a href="https://@url6" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text6.Replace(Environment.NewLine, "<br />")))</a>
+                    <a href="@url6" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text6.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
@@ -334,7 +334,7 @@
             <li>
                 @if (url7 != null)
                 {
-                    <a href="https://@url7" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text7.Replace(Environment.NewLine, "<br />")))</a>
+                    <a href="@url7" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text7.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
@@ -349,7 +349,7 @@
             <li>
                 @if (url8 != null)
                 {
-                    <a href="https://@url8" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text8.Replace(Environment.NewLine, "<br />")))</a>
+                    <a href="@url8" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text8.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
@@ -364,7 +364,7 @@
             <li>
                 @if (url9 != null)
                 {
-                    <a href="https://@url9" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text9.Replace(Environment.NewLine, "<br />")))</a>
+                    <a href="@url9" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text9.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
@@ -379,7 +379,7 @@
             <li>
                 @if (url10 != null)
                 {
-                    <a href="https://@url10" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text10.Replace(Environment.NewLine, "<br />")))</a>
+                    <a href="@url10" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text10.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {

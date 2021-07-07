@@ -48,7 +48,7 @@
 
     if (Model.Properties.Url != null)
     {
-        string tmpUrl = HtmlToPlainText(Model.Properties.Url.Replace("URL: https://", ""));
+        string tmpUrl = Model.Properties.Url;
         url = tmpUrl.Length > 992 ? tmpUrl.Substring(0, 992) : tmpUrl;
     }
     else
@@ -69,7 +69,7 @@
 
 <div class="KMJ_LinkButton">
     <div class="btn btn001 @if (Model.Properties.Id != null) { @Model.Properties.Class; }" @if (Model.Properties.Id != null) { @thisId }>
-        <a href="https://@url" @if (Model.Properties.Blank) { @tBlank }>
+        <a href="@url" @if (Model.Properties.Blank) { @tBlank }>
             @if (textContent != null)
             {@Html.Raw(HttpUtility.HtmlDecode(textContent.Replace(Environment.NewLine, "<br/>")))}
         </a>
