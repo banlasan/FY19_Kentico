@@ -39,8 +39,17 @@
     }
 }
 
-<div class="KMJ_H4Heading">
+@if (Context.Kentico().PageBuilder().EditMode)
+{
+    <div class="KMJ_H4Heading">
+        <h4 class="h4 @if (Model.Properties.Id != null) { @Model.Properties.Class }" id="@Model.Properties.Id">
+            @Html.Raw(HttpUtility.HtmlDecode(headText.Replace(Environment.NewLine, "<br/>")))
+        </h4>
+    </div>
+}
+else
+{
     <h4 class="h4 @if (Model.Properties.Id != null) { @Model.Properties.Class }" id="@Model.Properties.Id">
         @Html.Raw(HttpUtility.HtmlDecode(headText.Replace(Environment.NewLine, "<br/>")))
     </h4>
-</div>
+}

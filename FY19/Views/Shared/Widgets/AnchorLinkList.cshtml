@@ -36,357 +36,297 @@
     string className = Model.Properties.Class; // "anchorLinkClass";
     string id = Model.Properties.Id; // "anchorLinkId";
 
-    if (Model.Properties.Text1 != null)
-    {
-        string tmpText = HtmlToPlainText(Model.Properties.Text1.Replace("Label:", ""));
-        text1 = tmpText.Length > 200 ? tmpText.Substring(0, 200) : tmpText;
-    }
-    else
-    {
-        text1 = Model.Properties.Text1;
-    }
-    if (Model.Properties.Url1 != null)
-    {
-        string tmpUrl = Model.Properties.Url1;
+    text1 = (Model.Properties.Text1 != null) ? (Model.Properties.Text1.Length > 200 ? Model.Properties.Text1.Substring(0, 200) : Model.Properties.Text1) : (null);
 
-        url1 = tmpUrl.Length > 992 ? tmpUrl.Substring(0, 992) : tmpUrl;
-    }
-    else
-    {
-        url1 = Model.Properties.Url1;
-    }
+    url1 = (Model.Properties.Url1 != null) ? (Model.Properties.Url1.Length > 992 ? Model.Properties.Url1.Substring(0, 992) : Model.Properties.Url1) : (null);
 
-    if (Model.Properties.Text2 != null)
-    {
-        string tmpText = HtmlToPlainText(Model.Properties.Text2.Replace("Label:", ""));
-        text2 = tmpText.Length > 200 ? tmpText.Substring(0, 200) : tmpText;
-    }
-    else
-    {
-        text2 = Model.Properties.Text2;
-    }
-    if (Model.Properties.Url2 != null)
-    {
-        string tmpUrl = Model.Properties.Url2;
+    text2 = (Model.Properties.Text2 != null) ? (Model.Properties.Text2.Length > 200 ? Model.Properties.Text2.Substring(0, 200) : Model.Properties.Text2) : (null);
 
-        url2 = tmpUrl.Length > 992 ? tmpUrl.Substring(0, 992) : tmpUrl;
-    }
-    else
-    {
-        url2 = Model.Properties.Url2;
-    }
+    url2 = (Model.Properties.Url2 != null) ? (Model.Properties.Url2.Length > 992 ? Model.Properties.Url2.Substring(0, 992) : Model.Properties.Url2) : (null);
 
+    text3 = (Model.Properties.Text3 != null) ? (Model.Properties.Text3.Length > 200 ? Model.Properties.Text3.Substring(0, 200) : Model.Properties.Text3) : (null);
 
-    if (Model.Properties.Text3 != null)
-    {
-        string tmpText = HtmlToPlainText(Model.Properties.Text3.Replace("Label:", ""));
-        text3 = tmpText.Length > 200 ? tmpText.Substring(0, 200) : tmpText;
-    }
-    else
-    {
-        text3 = Model.Properties.Text3;
-    }
-    if (Model.Properties.Url3 != null)
-    {
-        string tmpUrl = Model.Properties.Url3;
+    url3 = (Model.Properties.Url3 != null) ? (Model.Properties.Url3.Length > 992 ? Model.Properties.Url3.Substring(0, 992) : Model.Properties.Url3) : (null);
 
-        url3 = tmpUrl.Length > 992 ? tmpUrl.Substring(0, 992) : tmpUrl;
-    }
-    else
-    {
-        url3 = Model.Properties.Url3;
-    }
+    text4 = (Model.Properties.Text4 != null) ? (Model.Properties.Text4.Length > 200 ? Model.Properties.Text4.Substring(0, 200) : Model.Properties.Text4) : (null);
 
-    if (Model.Properties.Text4 != null)
-    {
-        string tmpText = HtmlToPlainText(Model.Properties.Text4.Replace("Label:", ""));
-        text4 = tmpText.Length > 200 ? tmpText.Substring(0, 200) : tmpText;
-    }
-    else
-    {
-        text4 = Model.Properties.Text4;
-    }
-    if (Model.Properties.Url4 != null)
-    {
-        string tmpUrl = Model.Properties.Url4;
+    url4 = (Model.Properties.Url4 != null) ? (Model.Properties.Url4.Length > 992 ? Model.Properties.Url4.Substring(0, 992) : Model.Properties.Url4) : (null);
 
-        url4 = tmpUrl.Length > 992 ? tmpUrl.Substring(0, 992) : tmpUrl;
-    }
-    else
-    {
-        url4 = Model.Properties.Url4;
-    }
+    text5 = (Model.Properties.Text5 != null) ? (Model.Properties.Text5.Length > 200 ? Model.Properties.Text5.Substring(0, 200) : Model.Properties.Text5) : (null);
 
-    if (Model.Properties.Text5 != null)
-    {
-        string tmpText = HtmlToPlainText(Model.Properties.Text5.Replace("Label:", ""));
-        text5 = tmpText.Length > 200 ? tmpText.Substring(0, 200) : tmpText;
-    }
-    else
-    {
-        text5 = Model.Properties.Text5;
-    }
-    if (Model.Properties.Url5 != null)
-    {
-        string tmpUrl = Model.Properties.Url5;
+    url5 = (Model.Properties.Url5 != null) ? (Model.Properties.Url5.Length > 992 ? Model.Properties.Url5.Substring(0, 992) : Model.Properties.Url5) : (null);
 
-        url5 = tmpUrl.Length > 992 ? tmpUrl.Substring(0, 992) : tmpUrl;
-    }
-    else
-    {
-        url5 = Model.Properties.Url5;
-    }
+    text6 = (Model.Properties.Text6 != null) ? (Model.Properties.Text6.Length > 200 ? Model.Properties.Text6.Substring(0, 200) : Model.Properties.Text6) : (null);
 
-    if (Model.Properties.Text6 != null)
-    {
-        string tmpText = HtmlToPlainText(Model.Properties.Text6.Replace("Label:", ""));
-        text6 = tmpText.Length > 200 ? tmpText.Substring(0, 200) : tmpText;
-    }
-    else
-    {
-        text6 = Model.Properties.Text6;
-    }
-    if (Model.Properties.Url6 != null)
-    {
-        string tmpUrl = Model.Properties.Url6;
+    url6 = (Model.Properties.Url6 != null) ? (Model.Properties.Url6.Length > 992 ? Model.Properties.Url6.Substring(0, 992) : Model.Properties.Url6) : (null);
 
-        url6 = tmpUrl.Length > 992 ? tmpUrl.Substring(0, 992) : tmpUrl;
-    }
-    else
-    {
-        url6 = Model.Properties.Url6;
-    }
+    text7 = (Model.Properties.Text7 != null) ? (Model.Properties.Text7.Length > 200 ? Model.Properties.Text7.Substring(0, 200) : Model.Properties.Text7) : (null);
 
-    if (Model.Properties.Text7 != null)
-    {
-        string tmpText = HtmlToPlainText(Model.Properties.Text7.Replace("Label:", ""));
-        text7 = tmpText.Length > 200 ? tmpText.Substring(0, 200) : tmpText;
-    }
-    else
-    {
-        text7 = Model.Properties.Text7;
-    }
-    if (Model.Properties.Url7 != null)
-    {
-        string tmpUrl = Model.Properties.Url7;
+    url7 = (Model.Properties.Url7 != null) ? (Model.Properties.Url7.Length > 992 ? Model.Properties.Url7.Substring(0, 992) : Model.Properties.Url7) : (null);
 
-        url7 = tmpUrl.Length > 992 ? tmpUrl.Substring(0, 992) : tmpUrl;
-    }
-    else
-    {
-        url7 = Model.Properties.Url7;
-    }
+    text8 = (Model.Properties.Text8 != null) ? (Model.Properties.Text8.Length > 200 ? Model.Properties.Text8.Substring(0, 200) : Model.Properties.Text8) : (null);
 
-    if (Model.Properties.Text8 != null)
-    {
-        string tmpText = HtmlToPlainText(Model.Properties.Text8.Replace("Label:", ""));
-        text8 = tmpText.Length > 200 ? tmpText.Substring(0, 200) : tmpText;
-    }
-    else
-    {
-        text8 = Model.Properties.Text8;
-    }
-    if (Model.Properties.Url8 != null)
-    {
-        string tmpUrl = Model.Properties.Url8;
+    url8 = (Model.Properties.Url8 != null) ? (Model.Properties.Url8.Length > 992 ? Model.Properties.Url8.Substring(0, 992) : Model.Properties.Url8) : (null);
 
-        url8 = tmpUrl.Length > 992 ? tmpUrl.Substring(0, 992) : tmpUrl;
-    }
-    else
-    {
-        url8 = Model.Properties.Url8;
-    }
+    text9 = (Model.Properties.Text9 != null) ? (Model.Properties.Text9.Length > 200 ? Model.Properties.Text9.Substring(0, 200) : Model.Properties.Text9) : (null);
 
-    if (Model.Properties.Text9 != null)
-    {
-        string tmpText = HtmlToPlainText(Model.Properties.Text9.Replace("Label:", ""));
-        text9 = tmpText.Length > 200 ? tmpText.Substring(0, 200) : tmpText;
-    }
-    else
-    {
-        text9 = Model.Properties.Text9;
-    }
-    if (Model.Properties.Url9 != null)
-    {
-        string tmpUrl = Model.Properties.Url9;
+    url9 = (Model.Properties.Url9 != null) ? (Model.Properties.Url9.Length > 992 ? Model.Properties.Url9.Substring(0, 992) : Model.Properties.Url9) : (null);
 
-        url9 = tmpUrl.Length > 992 ? tmpUrl.Substring(0, 992) : tmpUrl;
-    }
-    else
-    {
-        url9 = Model.Properties.Url9;
-    }
+    text10 = (Model.Properties.Text10 != null) ? (Model.Properties.Text10.Length > 200 ? Model.Properties.Text10.Substring(0, 200) : Model.Properties.Text10) : (null);
 
-    if (Model.Properties.Text10 != null)
-    {
-        string tmpText = HtmlToPlainText(Model.Properties.Text10.Replace("Label:", ""));
-        text10 = tmpText.Length > 200 ? tmpText.Substring(0, 200) : tmpText;
-    }
-    else
-    {
-        text10 = Model.Properties.Text10;
-    }
-    if (Model.Properties.Url10 != null)
-    {
-        string tmpUrl = Model.Properties.Url10;
-
-        url10 = tmpUrl.Length > 992 ? tmpUrl.Substring(0, 992) : tmpUrl;
-    }
-    else
-    {
-        url10 = Model.Properties.Url10;
-    }
+    url10 = (Model.Properties.Url10 != null) ? (Model.Properties.Url10.Length > 992 ? Model.Properties.Url10.Substring(0, 992) : Model.Properties.Url10) : (null);
 }
 
-<div class="KMJ_AnchorLinkList">
+
+@if (Context.Kentico().PageBuilder().EditMode)
+{
+    <div class="KMJ_AnchorLinkList">
+        <ul class="listInternalLink @if (id != null) { @className; }" id="@id">
+
+            @if (text1 != null)
+            {
+                <li>@if (url1 != null)
+                    {
+                        <a href="@url1" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text1.Replace(Environment.NewLine, "<br/>")))</a>
+                    }
+                    else
+                    {
+                        @text1
+                    }</li>
+            }
+
+            @if (text2 != null)
+            {
+                <li>@if (url2 != null)
+                    {
+                        <a href="@url2" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text2.Replace(Environment.NewLine, "<br />")))</a>
+                    }
+                    else
+                    {
+                        @text2
+                    }</li>
+            }
+
+            @if (text3 != null)
+            {
+                <li>@if (url3 != null)
+                    {
+                        <a href="@url3" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text3.Replace(Environment.NewLine, "<br />")))</a>
+                    }
+                    else
+                    {
+                        @text3
+                    }</li>
+            }
+
+            @if (text4 != null)
+            {
+                <li>@if (url4 != null)
+                    {
+                        <a href="@url4" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text4.Replace(Environment.NewLine, "<br />")))</a>
+                    }
+                    else
+                    {
+                        @text4
+                    }</li>
+            }
+
+            @if (text5 != null)
+            {
+                <li>@if (url5 != null)
+                    {
+                        <a href="@url5" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text5.Replace(Environment.NewLine, "<br />")))</a>
+                    }
+                    else
+                    {
+                        @text5
+                    }</li>
+            }
+
+            @if (text6 != null)
+            {
+                <li>@if (url6 != null)
+                    {
+                        <a href="@url6" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text6.Replace(Environment.NewLine, "<br />")))</a>
+                    }
+                    else
+                    {
+                        @text6
+                    }</li>
+            }
+
+            @if (text7 != null)
+            {
+                <li>@if (url7 != null)
+                    {
+                        <a href="@url7" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text7.Replace(Environment.NewLine, "<br />")))</a>
+                    }
+                    else
+                    {
+                        @text7
+                    }</li>
+            }
+
+            @if (text8 != null)
+            {
+                <li>@if (url8 != null)
+                    {
+                        <a href="@url8" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text8.Replace(Environment.NewLine, "<br />")))</a>
+                    }
+                    else
+                    {
+                        @text8
+                    }</li>
+            }
+
+            @if (text9 != null)
+            {
+                <li>@if (url9 != null)
+                    {
+                        <a href="@url9" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text9.Replace(Environment.NewLine, "<br />")))</a>
+                    }
+                    else
+                    {
+                        @text9
+                    }</li>
+            }
+
+            @if (text10 != null)
+            {
+                <li>@if (url10 != null)
+                    {
+                        <a href="@url10" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text10.Replace(Environment.NewLine, "<br />")))</a>
+                    }
+                    else
+                    {
+                        @text10
+                    }</li>
+            }
+        </ul>
+    </div>
+}
+else
+{
     <ul class="listInternalLink @if (id != null) { @className; }" id="@id">
 
         @if (text1 != null)
         {
-            <li>
-                @if (url1 != null)
+            <li>@if (url1 != null)
                 {
                     <a href="@url1" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text1.Replace(Environment.NewLine, "<br/>")))</a>
                 }
                 else
                 {
                     @text1
-                }
-
-            </li>
+                }</li>
         }
 
         @if (text2 != null)
         {
-            <li>
-                @if (url2 != null)
+            <li>@if (url2 != null)
                 {
                     <a href="@url2" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text2.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
                     @text2
-                }
-            </li>
+                }</li>
         }
 
         @if (text3 != null)
         {
-            <li>
-                @if (url3 != null)
+            <li>@if (url3 != null)
                 {
                     <a href="@url3" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text3.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
                     @text3
-                }
-            </li>
+                }</li>
         }
 
         @if (text4 != null)
         {
-            <li>
-                @if (url4 != null)
+            <li>@if (url4 != null)
                 {
                     <a href="@url4" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text4.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
                     @text4
-                }
-
-            </li>
+                }</li>
         }
 
         @if (text5 != null)
         {
-            <li>
-                @if (url5 != null)
+            <li>@if (url5 != null)
                 {
                     <a href="@url5" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text5.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
                     @text5
-                }
-
-            </li>
+                }</li>
         }
 
         @if (text6 != null)
         {
-            <li>
-                @if (url6 != null)
+            <li>@if (url6 != null)
                 {
                     <a href="@url6" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text6.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
                     @text6
-                }
-
-            </li>
+                }</li>
         }
 
         @if (text7 != null)
         {
-            <li>
-                @if (url7 != null)
+            <li>@if (url7 != null)
                 {
                     <a href="@url7" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text7.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
                     @text7
-                }
-
-            </li>
+                }</li>
         }
 
         @if (text8 != null)
         {
-            <li>
-                @if (url8 != null)
+            <li>@if (url8 != null)
                 {
                     <a href="@url8" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text8.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
                     @text8
-                }
-
-            </li>
+                }</li>
         }
 
         @if (text9 != null)
         {
-            <li>
-                @if (url9 != null)
+            <li>@if (url9 != null)
                 {
                     <a href="@url9" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text9.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
                     @text9
-                }
-
-            </li>
+                }</li>
         }
 
         @if (text10 != null)
         {
-            <li>
-                @if (url10 != null)
+            <li>@if (url10 != null)
                 {
                     <a href="@url10" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text10.Replace(Environment.NewLine, "<br />")))</a>
                 }
                 else
                 {
                     @text10
-                }
-            </li>
+                }</li>
         }
-
     </ul>
-</div>
+}

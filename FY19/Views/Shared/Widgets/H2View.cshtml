@@ -39,6 +39,13 @@
     }
 }
 
-<div class="KMJ_H2Heading">
+@if (Context.Kentico().PageBuilder().EditMode)
+{
+    <div class="KMJ_H2Heading">
+        <h2 class="h2 mt-lg-80 mb-lg-40 mt-sm-50 mb-sm-20 @if (Model.Properties.Id != null) { @Model.Properties.Class }" id="@Model.Properties.Id">@Html.Raw(HttpUtility.HtmlDecode(headText.Replace(Environment.NewLine, "<br/>")))</h2>
+    </div>
+}
+else
+{
     <h2 class="h2 mt-lg-80 mb-lg-40 mt-sm-50 mb-sm-20 @if (Model.Properties.Id != null) { @Model.Properties.Class }" id="@Model.Properties.Id">@Html.Raw(HttpUtility.HtmlDecode(headText.Replace(Environment.NewLine, "<br/>")))</h2>
-</div>    
+}

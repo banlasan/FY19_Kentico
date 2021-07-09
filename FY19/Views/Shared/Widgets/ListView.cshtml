@@ -45,7 +45,7 @@
     { text1 = Model.Properties.Text1; }
 
     if (Model.Properties.Text2 != null)
-    { 
+    {
         string tmpText = HtmlToPlainText(Model.Properties.Text2.Replace("•", string.Empty));
         text2 = tmpText.Length > 1000 ? tmpText.Substring(0, 1000) : tmpText;
     }
@@ -53,7 +53,7 @@
     { text2 = Model.Properties.Text2; }
 
     if (Model.Properties.Text3 != null)
-    { 
+    {
         string tmpText = HtmlToPlainText(Model.Properties.Text3.Replace("•", string.Empty));
         text3 = tmpText.Length > 1000 ? tmpText.Substring(0, 1000) : tmpText;
     }
@@ -61,7 +61,7 @@
     { text3 = Model.Properties.Text3; }
 
     if (Model.Properties.Text4 != null)
-    { 
+    {
         string tmpText = HtmlToPlainText(Model.Properties.Text4.Replace("•", string.Empty));
         text4 = tmpText.Length > 1000 ? tmpText.Substring(0, 1000) : tmpText;
     }
@@ -69,7 +69,7 @@
     { text4 = Model.Properties.Text4; }
 
     if (Model.Properties.Text5 != null)
-    { 
+    {
         string tmpText = HtmlToPlainText(Model.Properties.Text5.Replace("•", string.Empty));
         text5 = tmpText.Length > 1000 ? tmpText.Substring(0, 1000) : tmpText;
     }
@@ -77,7 +77,7 @@
     { text5 = Model.Properties.Text5; }
 
     if (Model.Properties.Text6 != null)
-    { 
+    {
         string tmpText = HtmlToPlainText(Model.Properties.Text6.Replace("•", string.Empty));
         text6 = tmpText.Length > 1000 ? tmpText.Substring(0, 1000) : tmpText;
     }
@@ -85,7 +85,7 @@
     { text6 = Model.Properties.Text6; }
 
     if (Model.Properties.Text7 != null)
-    { 
+    {
         string tmpText = HtmlToPlainText(Model.Properties.Text7.Replace("•", string.Empty));
         text7 = tmpText.Length > 1000 ? tmpText.Substring(0, 1000) : tmpText;
     }
@@ -93,7 +93,7 @@
     { text7 = Model.Properties.Text7; }
 
     if (Model.Properties.Text8 != null)
-    { 
+    {
         string tmpText = HtmlToPlainText(Model.Properties.Text8.Replace("•", string.Empty));
         text8 = tmpText.Length > 1000 ? tmpText.Substring(0, 1000) : tmpText;
     }
@@ -101,7 +101,7 @@
     { text8 = Model.Properties.Text8; }
 
     if (Model.Properties.Text9 != null)
-    { 
+    {
         string tmpText = HtmlToPlainText(Model.Properties.Text9.Replace("•", string.Empty));
         text9 = tmpText.Length > 1000 ? tmpText.Substring(0, 1000) : tmpText;
     }
@@ -109,7 +109,7 @@
     { text9 = Model.Properties.Text9; }
 
     if (Model.Properties.Text10 != null)
-    { 
+    {
         string tmpText = HtmlToPlainText(Model.Properties.Text10.Replace("•", string.Empty));
         text10 = tmpText.Length > 1000 ? tmpText.Substring(0, 1000) : tmpText;
     }
@@ -117,27 +117,95 @@
     { text10 = Model.Properties.Text10; }
 }
 
-<div class="KMJ_GeneralList">
+@if (Context.Kentico().PageBuilder().EditMode)
+{
+    <div class="KMJ_GeneralList">
+        <ul class="listBasic @if (id != null) { @className; }" id="@id">
+            @if (text1 != null)
+            {
+                <li>@Html.Raw(HttpUtility.HtmlDecode(text1.Replace(Environment.NewLine, "<br/>")))</li>
+            }
+            @if (text2 != null)
+            {
+                <li>@Html.Raw(HttpUtility.HtmlDecode(text2.Replace(Environment.NewLine, "<br/>")))</li>
+            }
+            @if (text3 != null)
+            {
+                <li>@Html.Raw(HttpUtility.HtmlDecode(text3.Replace(Environment.NewLine, "<br/>")))</li>
+            }
+            @if (text4 != null)
+            {
+                <li>@Html.Raw(HttpUtility.HtmlDecode(text4.Replace(Environment.NewLine, "<br/>")))</li>
+            }
+            @if (text5 != null)
+            {
+                <li>@Html.Raw(HttpUtility.HtmlDecode(text5.Replace(Environment.NewLine, "<br/>")))</li>
+            }
+            @if (text6 != null)
+            {
+                <li>@Html.Raw(HttpUtility.HtmlDecode(text6.Replace(Environment.NewLine, "<br/>")))</li>
+            }
+            @if (text7 != null)
+            {
+                <li>@Html.Raw(HttpUtility.HtmlDecode(text7.Replace(Environment.NewLine, "<br/>")))</li>
+            }
+            @if (text8 != null)
+            {
+                <li>@Html.Raw(HttpUtility.HtmlDecode(text8.Replace(Environment.NewLine, "<br/>")))</li>
+            }
+            @if (text9 != null)
+            {
+                <li>@Html.Raw(HttpUtility.HtmlDecode(text9.Replace(Environment.NewLine, "<br/>")))</li>
+            }
+            @if (text10 != null)
+            {
+                <li>@Html.Raw(HttpUtility.HtmlDecode(text10.Replace(Environment.NewLine, "<br/>")))</li>
+            }
+        </ul>
+    </div>
+}
+else
+{
     <ul class="listBasic @if (id != null) { @className; }" id="@id">
         @if (text1 != null)
-        { <li>@Html.Raw(HttpUtility.HtmlDecode(text1.Replace(Environment.NewLine, "<br/>")))</li> }
-        @if (text2 != null) 
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text2.Replace(Environment.NewLine, "<br/>")))</li> }
+        {
+            <li>@Html.Raw(HttpUtility.HtmlDecode(text1.Replace(Environment.NewLine, "<br/>")))</li>
+        }
+        @if (text2 != null)
+        {
+            <li>@Html.Raw(HttpUtility.HtmlDecode(text2.Replace(Environment.NewLine, "<br/>")))</li>
+        }
         @if (text3 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text3.Replace(Environment.NewLine, "<br/>")))</li>}
+        {
+            <li>@Html.Raw(HttpUtility.HtmlDecode(text3.Replace(Environment.NewLine, "<br/>")))</li>
+        }
         @if (text4 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text4.Replace(Environment.NewLine, "<br/>")))</li>}
+        {
+            <li>@Html.Raw(HttpUtility.HtmlDecode(text4.Replace(Environment.NewLine, "<br/>")))</li>
+        }
         @if (text5 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text5.Replace(Environment.NewLine, "<br/>")))</li>}
+        {
+            <li>@Html.Raw(HttpUtility.HtmlDecode(text5.Replace(Environment.NewLine, "<br/>")))</li>
+        }
         @if (text6 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text6.Replace(Environment.NewLine, "<br/>")))</li>}
+        {
+            <li>@Html.Raw(HttpUtility.HtmlDecode(text6.Replace(Environment.NewLine, "<br/>")))</li>
+        }
         @if (text7 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text7.Replace(Environment.NewLine, "<br/>")))</li>}
+        {
+            <li>@Html.Raw(HttpUtility.HtmlDecode(text7.Replace(Environment.NewLine, "<br/>")))</li>
+        }
         @if (text8 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text8.Replace(Environment.NewLine, "<br/>")))</li>}
+        {
+            <li>@Html.Raw(HttpUtility.HtmlDecode(text8.Replace(Environment.NewLine, "<br/>")))</li>
+        }
         @if (text9 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text9.Replace(Environment.NewLine, "<br/>")))</li>}
+        {
+            <li>@Html.Raw(HttpUtility.HtmlDecode(text9.Replace(Environment.NewLine, "<br/>")))</li>
+        }
         @if (text10 != null)
-        {<li>@Html.Raw(HttpUtility.HtmlDecode(text10.Replace(Environment.NewLine, "<br/>")))</li>}
+        {
+            <li>@Html.Raw(HttpUtility.HtmlDecode(text10.Replace(Environment.NewLine, "<br/>")))</li>
+        }
     </ul>
-</div>
+}

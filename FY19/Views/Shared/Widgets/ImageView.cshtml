@@ -5,20 +5,39 @@
 @model ComponentViewModel<KMJ_ImageProperties>
 
 
-@if (Model.Properties.ImageSP == null)
+@if (Context.Kentico().PageBuilder().EditMode)
 {
-    <div class="KMJ_Image">
-        <div class="imgBlock @Model.Properties.Image_class" id="@Model.Properties.Id">
-            <img src="@if (Model.Properties.Image != null && Model.Properties.ImageSP == null) { @Url.Content(MediaLibraryHelper.GetDirectUrl(MediaFileInfoProvider.GetMediaFileInfo(Model.Properties.Image.FirstOrDefault().FileGuid, SiteContext.CurrentSiteName))); }  " alt="@Model.Properties.Alt">
+    @if (Model.Properties.ImageSP == null)
+    {
+        <div class="KMJ_Image">
+            <div class="imgBlock @Model.Properties.Image_class" id="@Model.Properties.Id">
+                <img src="@if (Model.Properties.Image != null && Model.Properties.ImageSP == null) { @Url.Content(MediaLibraryHelper.GetDirectUrl(MediaFileInfoProvider.GetMediaFileInfo(Model.Properties.Image.FirstOrDefault().FileGuid, SiteContext.CurrentSiteName))); }  " alt="@Model.Properties.Alt">
+            </div>
         </div>
-    </div>
+    }
+    else
+    {
+        <div class="KMJ_Image">
+            <div class="imgBlock @Model.Properties.Image_class" id="@Model.Properties.Id">
+                <div class="hidden-sm"><img src="@Url.Content(MediaLibraryHelper.GetDirectUrl(MediaFileInfoProvider.GetMediaFileInfo(Model.Properties.Image.FirstOrDefault().FileGuid, SiteContext.CurrentSiteName)))" alt="@Model.Properties.Alt"></div>
+                <div class="hidden-lg"><img src="@Url.Content(MediaLibraryHelper.GetDirectUrl(MediaFileInfoProvider.GetMediaFileInfo(Model.Properties.ImageSP.FirstOrDefault().FileGuid, SiteContext.CurrentSiteName)))" alt="@Model.Properties.Alt"></div>
+            </div>
+        </div>
+    }
 }
 else
 {
-    <div class="KMJ_Image">
+    @if (Model.Properties.ImageSP == null)
+    {
+        <div class="imgBlock @Model.Properties.Image_class" id="@Model.Properties.Id">
+            <img src="@if (Model.Properties.Image != null && Model.Properties.ImageSP == null) { @Url.Content(MediaLibraryHelper.GetDirectUrl(MediaFileInfoProvider.GetMediaFileInfo(Model.Properties.Image.FirstOrDefault().FileGuid, SiteContext.CurrentSiteName))); }  " alt="@Model.Properties.Alt">
+        </div>
+    }
+    else
+    {
         <div class="imgBlock @Model.Properties.Image_class" id="@Model.Properties.Id">
             <div class="hidden-sm"><img src="@Url.Content(MediaLibraryHelper.GetDirectUrl(MediaFileInfoProvider.GetMediaFileInfo(Model.Properties.Image.FirstOrDefault().FileGuid, SiteContext.CurrentSiteName)))" alt="@Model.Properties.Alt"></div>
             <div class="hidden-lg"><img src="@Url.Content(MediaLibraryHelper.GetDirectUrl(MediaFileInfoProvider.GetMediaFileInfo(Model.Properties.ImageSP.FirstOrDefault().FileGuid, SiteContext.CurrentSiteName)))" alt="@Model.Properties.Alt"></div>
         </div>
-    </div>
+    }
 }
