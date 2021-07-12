@@ -78,255 +78,125 @@
 }
 
 
-@if (Context.Kentico().PageBuilder().EditMode)
-{
-    <div class="KMJ_AnchorLinkList">
-        <ul class="listInternalLink @if (id != null) { @className; }" id="@id">
+<ul class="listInternalLink @if (id != null) { @className; }" id="@id">
 
-            @if (text1 != null)
+    @if (text1 != null)
+    {
+        <li>@if (url1 != null)
             {
-                <li>@if (url1 != null)
-                    {
-                        <a href="@url1" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text1.Replace(Environment.NewLine, "<br/>")))</a>
-                    }
-                    else
-                    {
-                        @text1
-                    }</li>
+                <a href="@url1" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text1.Replace(Environment.NewLine, "<br/>")))</a>
             }
-
-            @if (text2 != null)
+            else
             {
-                <li>@if (url2 != null)
-                    {
-                        <a href="@url2" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text2.Replace(Environment.NewLine, "<br />")))</a>
-                    }
-                    else
-                    {
-                        @text2
-                    }</li>
-            }
+                @text1
+            }</li>
+    }
 
-            @if (text3 != null)
+    @if (text2 != null)
+    {
+        <li>@if (url2 != null)
             {
-                <li>@if (url3 != null)
-                    {
-                        <a href="@url3" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text3.Replace(Environment.NewLine, "<br />")))</a>
-                    }
-                    else
-                    {
-                        @text3
-                    }</li>
+                <a href="@url2" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text2.Replace(Environment.NewLine, "<br />")))</a>
             }
-
-            @if (text4 != null)
+            else
             {
-                <li>@if (url4 != null)
-                    {
-                        <a href="@url4" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text4.Replace(Environment.NewLine, "<br />")))</a>
-                    }
-                    else
-                    {
-                        @text4
-                    }</li>
-            }
+                @text2
+            }</li>
+    }
 
-            @if (text5 != null)
+    @if (text3 != null)
+    {
+        <li>@if (url3 != null)
             {
-                <li>@if (url5 != null)
-                    {
-                        <a href="@url5" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text5.Replace(Environment.NewLine, "<br />")))</a>
-                    }
-                    else
-                    {
-                        @text5
-                    }</li>
+                <a href="@url3" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text3.Replace(Environment.NewLine, "<br />")))</a>
             }
-
-            @if (text6 != null)
+            else
             {
-                <li>@if (url6 != null)
-                    {
-                        <a href="@url6" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text6.Replace(Environment.NewLine, "<br />")))</a>
-                    }
-                    else
-                    {
-                        @text6
-                    }</li>
-            }
+                @text3
+            }</li>
+    }
 
-            @if (text7 != null)
+    @if (text4 != null)
+    {
+        <li>@if (url4 != null)
             {
-                <li>@if (url7 != null)
-                    {
-                        <a href="@url7" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text7.Replace(Environment.NewLine, "<br />")))</a>
-                    }
-                    else
-                    {
-                        @text7
-                    }</li>
+                <a href="@url4" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text4.Replace(Environment.NewLine, "<br />")))</a>
             }
-
-            @if (text8 != null)
+            else
             {
-                <li>@if (url8 != null)
-                    {
-                        <a href="@url8" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text8.Replace(Environment.NewLine, "<br />")))</a>
-                    }
-                    else
-                    {
-                        @text8
-                    }</li>
-            }
+                @text4
+            }</li>
+    }
 
-            @if (text9 != null)
+    @if (text5 != null)
+    {
+        <li>@if (url5 != null)
             {
-                <li>@if (url9 != null)
-                    {
-                        <a href="@url9" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text9.Replace(Environment.NewLine, "<br />")))</a>
-                    }
-                    else
-                    {
-                        @text9
-                    }</li>
+                <a href="@url5" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text5.Replace(Environment.NewLine, "<br />")))</a>
             }
-
-            @if (text10 != null)
+            else
             {
-                <li>@if (url10 != null)
-                    {
-                        <a href="@url10" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text10.Replace(Environment.NewLine, "<br />")))</a>
-                    }
-                    else
-                    {
-                        @text10
-                    }</li>
+                @text5
+            }</li>
+    }
+
+    @if (text6 != null)
+    {
+        <li>@if (url6 != null)
+            {
+                <a href="@url6" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text6.Replace(Environment.NewLine, "<br />")))</a>
             }
-        </ul>
-    </div>
-}
-else
-{
-    <ul class="listInternalLink @if (id != null) { @className; }" id="@id">
+            else
+            {
+                @text6
+            }</li>
+    }
 
-        @if (text1 != null)
-        {
-            <li>@if (url1 != null)
-                {
-                    <a href="@url1" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text1.Replace(Environment.NewLine, "<br/>")))</a>
-                }
-                else
-                {
-                    @text1
-                }</li>
-        }
+    @if (text7 != null)
+    {
+        <li>@if (url7 != null)
+            {
+                <a href="@url7" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text7.Replace(Environment.NewLine, "<br />")))</a>
+            }
+            else
+            {
+                @text7
+            }</li>
+    }
 
-        @if (text2 != null)
-        {
-            <li>@if (url2 != null)
-                {
-                    <a href="@url2" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text2.Replace(Environment.NewLine, "<br />")))</a>
-                }
-                else
-                {
-                    @text2
-                }</li>
-        }
+    @if (text8 != null)
+    {
+        <li>@if (url8 != null)
+            {
+                <a href="@url8" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text8.Replace(Environment.NewLine, "<br />")))</a>
+            }
+            else
+            {
+                @text8
+            }</li>
+    }
 
-        @if (text3 != null)
-        {
-            <li>@if (url3 != null)
-                {
-                    <a href="@url3" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text3.Replace(Environment.NewLine, "<br />")))</a>
-                }
-                else
-                {
-                    @text3
-                }</li>
-        }
+    @if (text9 != null)
+    {
+        <li>@if (url9 != null)
+            {
+                <a href="@url9" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text9.Replace(Environment.NewLine, "<br />")))</a>
+            }
+            else
+            {
+                @text9
+            }</li>
+    }
 
-        @if (text4 != null)
-        {
-            <li>@if (url4 != null)
-                {
-                    <a href="@url4" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text4.Replace(Environment.NewLine, "<br />")))</a>
-                }
-                else
-                {
-                    @text4
-                }</li>
-        }
-
-        @if (text5 != null)
-        {
-            <li>@if (url5 != null)
-                {
-                    <a href="@url5" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text5.Replace(Environment.NewLine, "<br />")))</a>
-                }
-                else
-                {
-                    @text5
-                }</li>
-        }
-
-        @if (text6 != null)
-        {
-            <li>@if (url6 != null)
-                {
-                    <a href="@url6" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text6.Replace(Environment.NewLine, "<br />")))</a>
-                }
-                else
-                {
-                    @text6
-                }</li>
-        }
-
-        @if (text7 != null)
-        {
-            <li>@if (url7 != null)
-                {
-                    <a href="@url7" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text7.Replace(Environment.NewLine, "<br />")))</a>
-                }
-                else
-                {
-                    @text7
-                }</li>
-        }
-
-        @if (text8 != null)
-        {
-            <li>@if (url8 != null)
-                {
-                    <a href="@url8" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text8.Replace(Environment.NewLine, "<br />")))</a>
-                }
-                else
-                {
-                    @text8
-                }</li>
-        }
-
-        @if (text9 != null)
-        {
-            <li>@if (url9 != null)
-                {
-                    <a href="@url9" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text9.Replace(Environment.NewLine, "<br />")))</a>
-                }
-                else
-                {
-                    @text9
-                }</li>
-        }
-
-        @if (text10 != null)
-        {
-            <li>@if (url10 != null)
-                {
-                    <a href="@url10" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text10.Replace(Environment.NewLine, "<br />")))</a>
-                }
-                else
-                {
-                    @text10
-                }</li>
-        }
-    </ul>
-}
+    @if (text10 != null)
+    {
+        <li>@if (url10 != null)
+            {
+                <a href="@url10" target="_blank">@Html.Raw(HttpUtility.HtmlDecode(text10.Replace(Environment.NewLine, "<br />")))</a>
+            }
+            else
+            {
+                @text10
+            }</li>
+    }
+</ul>

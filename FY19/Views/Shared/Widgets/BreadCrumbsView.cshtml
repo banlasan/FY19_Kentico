@@ -208,194 +208,35 @@
     }
 }
 
-@if (Context.Kentico().PageBuilder().EditMode)
-{
-    <div style="height: 50px; font-weight: bold">
-        <p>Breadcrumbs Widget:</p>
-    </div>
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text1",
-        Text = "Label: " + text1,
-        Class = className,
-        Id = id
-    });
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Url1",
-        Text = "URL: https://" + url1,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text2",
-        Text = "Label: " + text2,
-        Class = className,
-        Id = id
-    });
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Url2",
-        Text = "URL: https://" + url2,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text3",
-        Text = "Label: " + text3,
-        Class = className,
-        Id = id
-    });
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Url3",
-        Text = "URL: https://" + url3,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text4",
-        Text = "Label: " + text4,
-        Class = className,
-        Id = id
-    });
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Url4",
-        Text = "URL: https://" + url4,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text5",
-        Text = "Label: " + text5,
-        Class = className,
-        Id = id
-    });
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Url5",
-        Text = "URL: https://" + url5,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text6",
-        Text = "Label: " + text6,
-        Class = className,
-        Id = id
-    });
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Url6",
-        Text = "URL: https://" + url6,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text7",
-        Text = "Label: " + text7,
-        Class = className,
-        Id = id
-    });
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Url7",
-        Text = "URL: https://" + url7,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text8",
-        Text = "Label: " + text8,
-        Class = className,
-        Id = id
-    });
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Url8",
-        Text = "URL: https://" + url8,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text9",
-        Text = "Label: " + text9,
-        Class = className,
-        Id = id
-    });
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Url9",
-        Text = "URL: https://" + url9,
-        Class = className,
-        Id = id
-    });
-
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Text10",
-        Text = "Label: " + text10,
-        Class = className,
-        Id = id
-    });
-    Html.RenderPartial("InlineEditors/TextEditor", new TextEditorViewModel
-    {
-        PropertyName = "Url10",
-        Text = "URL: https://" + url10,
-        Class = className,
-        Id = id
-    });
-}
-else
-{
-    <ul class="breadcrumbs @className" id="@id">
-        <li>
-            <a href="https://@url1" target="_blank">@text1</a>
-        </li>
-        <li>
-            <a href="https://@url2" target="_blank">@text2</a>
-        </li>
-        <li>
-            <a href="https://@url3" target="_blank">@text3</a>
-        </li>
-        <li>
-            <a href="https://@url4" target="_blank">@text4</a>
-        </li>
-        <li>
-            <a href="https://@url5" target="_blank">@text5</a>
-        </li>
-        <li>
-            <a href="https://@url6" target="_blank">@text6</a>
-        </li>
-        <li>
-            <a href="https://@url7" target="_blank">@text7</a>
-        </li>
-        <li>
-            <a href="https://@url8" target="_blank">@text8</a>
-        </li>
-        <li>
-            <a href="https://@url9" target="_blank">@text9</a>
-        </li>
-        <li>
-            <a href="https://@url10" target="_blank">@text10</a>
-        </li>
-    </ul>
-}
+<ul class="breadcrumbs @className" id="@id">
+    <li>
+        <a href="https://@url1" target="_blank">@text1</a>
+    </li>
+    <li>
+        <a href="https://@url2" target="_blank">@text2</a>
+    </li>
+    <li>
+        <a href="https://@url3" target="_blank">@text3</a>
+    </li>
+    <li>
+        <a href="https://@url4" target="_blank">@text4</a>
+    </li>
+    <li>
+        <a href="https://@url5" target="_blank">@text5</a>
+    </li>
+    <li>
+        <a href="https://@url6" target="_blank">@text6</a>
+    </li>
+    <li>
+        <a href="https://@url7" target="_blank">@text7</a>
+    </li>
+    <li>
+        <a href="https://@url8" target="_blank">@text8</a>
+    </li>
+    <li>
+        <a href="https://@url9" target="_blank">@text9</a>
+    </li>
+    <li>
+        <a href="https://@url10" target="_blank">@text10</a>
+    </li>
+</ul>

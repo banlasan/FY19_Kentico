@@ -38,13 +38,4 @@
 }
 
 
-@if (Context.Kentico().PageBuilder().EditMode)
-{
-    <div class="KMJ_TextContent">
-        <p class="textRead @if (Model.Properties.Id != null) { @Model.Properties.Class; }" id="@Model.Properties.Id">@Html.Raw(HttpUtility.HtmlDecode(bodyText.Replace(Environment.NewLine, "<br/>")))</p>
-    </div>
-}
-else
-{
-    <p class="textRead @if (Model.Properties.Id != null) { @Model.Properties.Class; }" id="@Model.Properties.Id">@Html.Raw(HttpUtility.HtmlDecode(bodyText.Replace(Environment.NewLine, "<br/>")))</p>
-}
+<p class="textRead @if (Model.Properties.Id != null) { @Model.Properties.Class; }" id="@Model.Properties.Id">@Html.Raw(HttpUtility.HtmlDecode(bodyText.Replace(Environment.NewLine, "<br/>")))</p>

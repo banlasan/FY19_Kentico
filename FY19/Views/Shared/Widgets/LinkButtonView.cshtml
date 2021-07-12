@@ -67,23 +67,9 @@
     }
 }
 
-@if (Context.Kentico().PageBuilder().EditMode)
-{
-    <div class="KMJ_LinkButton">
-        <div class="btn btn001 @if (Model.Properties.Id != null) { @Model.Properties.Class; }" @if (Model.Properties.Id != null) { @thisId }>
-            <a href="@url" @if (Model.Properties.Blank) { @tBlank }>
-                @if (textContent != null)
-                {@Html.Raw(HttpUtility.HtmlDecode(textContent.Replace(Environment.NewLine, "<br/>")))}
-            </a>
-        </div>
-    </div>
-}
-else
-{
-    <div class="btn btn001 @if (Model.Properties.Id != null) { @Model.Properties.Class; }" @if (Model.Properties.Id != null) { @thisId }>
-        <a href="@url" @if (Model.Properties.Blank) { @tBlank }>
-            @if (textContent != null)
-            {@Html.Raw(HttpUtility.HtmlDecode(textContent.Replace(Environment.NewLine, "<br/>")))}
-        </a>
-    </div>
-}
+<div class="btn btn001 @if (Model.Properties.Id != null) { @Model.Properties.Class; }" @if (Model.Properties.Id != null) { @thisId }>
+    <a href="@url" @if (Model.Properties.Blank) { @tBlank }>
+        @if (textContent != null)
+        {@Html.Raw(HttpUtility.HtmlDecode(textContent.Replace(Environment.NewLine, "<br/>")))}
+    </a>
+</div>
