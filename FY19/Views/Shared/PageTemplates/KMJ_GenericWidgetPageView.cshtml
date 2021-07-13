@@ -496,25 +496,31 @@
                         </div>
 
                         @Html.Kentico().EditableArea("HeadHTMLZone", defaultSectionIdentifier: null, allowedWidgets: new[] { "FY19.HeadHTML" })
-                        @Html.Kentico().EditableArea("HeaderZone", defaultSectionIdentifier: null, allowedWidgets: new[] { "FY19.H2Header", "FY19.H3Header", "FY19.H4Header" })
-                        @Html.Kentico().EditableArea("ContentZone",
-                                                    defaultSectionIdentifier: null,
-                                                    allowedWidgets: new[] { "FY19.Image",
-                                                                            "FY19.H2Header",
-                                                                            "FY19.H3Header",
-                                                                            "FY19.H4Header",
-                                                                            "FY19.BodyText",
-                                                                            "FY19.StaticText",
-                                                                            "FY19.AnnotationList",
-                                                                            "FY19.LinkList",
-                                                                            "FY19.BreadCrumbs",
-                                                                            "FY19.List",
-                                                                            "FY19.AnchorList",
-                                                                            "FY19.LinkButton",
-                                                                            "FY19.HeadHTML",
-                                                                            "FY19.FreeHTML",
-                                                                            "FY19.Table",
-                                                                            "FY19.Placeholder"})
+
+                        <div class="content-wrapper">
+                            @Html.Kentico().EditableArea("HeaderZone", defaultSectionIdentifier: null, allowedWidgets: new[] { "FY19.H2Header", "FY19.H3Header", "FY19.H4Header" })
+
+                            <section class="content-inner">
+                                @Html.Kentico().EditableArea("ContentZone",
+                                                            defaultSectionIdentifier: null,
+                                                            allowedWidgets: new[] { "FY19.Image",
+                                                                                    "FY19.H2Header",
+                                                                                    "FY19.H3Header",
+                                                                                    "FY19.H4Header",
+                                                                                    "FY19.BodyText",
+                                                                                    "FY19.StaticText",
+                                                                                    "FY19.AnnotationList",
+                                                                                    "FY19.LinkList",
+                                                                                    "FY19.BreadCrumbs",
+                                                                                    "FY19.List",
+                                                                                    "FY19.AnchorList",
+                                                                                    "FY19.LinkButton",
+                                                                                    "FY19.HeadHTML",
+                                                                                    "FY19.FreeHTML",
+                                                                                    "FY19.Table",
+                                                                                    "FY19.Placeholder"})
+                            </section>
+                        </div>
 
                         <div class="footer-btn">
                             <div class="footer-btn__wrapper">
