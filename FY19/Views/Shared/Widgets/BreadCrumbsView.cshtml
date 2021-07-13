@@ -208,35 +208,67 @@
     }
 }
 
-<ul class="breadcrumbs @className" id="@id">
-    <li>
-        <a href="https://@url1" target="_blank">@text1</a>
-    </li>
-    <li>
-        <a href="https://@url2" target="_blank">@text2</a>
-    </li>
-    <li>
-        <a href="https://@url3" target="_blank">@text3</a>
-    </li>
-    <li>
-        <a href="https://@url4" target="_blank">@text4</a>
-    </li>
-    <li>
-        <a href="https://@url5" target="_blank">@text5</a>
-    </li>
-    <li>
-        <a href="https://@url6" target="_blank">@text6</a>
-    </li>
-    <li>
-        <a href="https://@url7" target="_blank">@text7</a>
-    </li>
-    <li>
-        <a href="https://@url8" target="_blank">@text8</a>
-    </li>
-    <li>
-        <a href="https://@url9" target="_blank">@text9</a>
-    </li>
-    <li>
-        <a href="https://@url10" target="_blank">@text10</a>
-    </li>
-</ul>
+<nav class="localnavigation sticky">
+    <ul class="@className" id="@id">
+        @if (text1 != null)
+        {
+            <li>
+                <a href="https://@url1" target="_blank">@text1</a>
+            </li>
+        }
+        @if (text2 != null)
+        {
+            <li>
+                <a href="https://@url2" target="_blank">@text2</a>
+            </li>
+        }
+        @if (text3 != null)
+        {
+            <li>
+                <a href="https://@url3" target="_blank">@text3</a>
+            </li>
+        }
+        @if (text4 != null)
+        {
+            <li>
+                <a href="https://@url4" target="_blank">@text4</a>
+            </li>
+        }
+        @if (text5 != null)
+        {
+            <li>
+                <a href="https://@url5" target="_blank">@text5</a>
+            </li>
+        }
+        @if (text6 != null)
+        {
+            <li>
+                <a href="https://@url6" target="_blank">@text6</a>
+            </li>
+        }
+        @if (text7 != null)
+        {
+            <li>
+                <a href="https://@url7" target="_blank">@text7</a>
+            </li>
+        }
+        @if (text8 != null)
+        {
+            <li>
+                <a href="https://@url8" target="_blank">@text8</a>
+            </li>
+        }
+        @if (text9 != null)
+        {
+            <li>
+                <a href="https://@url9" target="_blank">@text9</a>
+            </li>
+        }
+        @if (text10 != null)
+        {
+            <li>
+                <a href="https://@url10" target="_blank">@text10</a>
+            </li>
+        }
+    </ul>
+</nav>

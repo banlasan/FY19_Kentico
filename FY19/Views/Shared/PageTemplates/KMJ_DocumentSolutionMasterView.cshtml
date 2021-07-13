@@ -318,8 +318,8 @@
                                     <p>印刷工程の自動化でオペレーションを効率化させるデジタル印刷システムのフラッグシップモデル</p>
                                 </li>
                                 <!--<li><p><a href="/business/products/graphic/ondemand_print/color/accurio_press_c2070_c2070p_c2060/index.html"><img src="https://www.konicaminolta.jp/business/common/img/megamenu/img_072.jpg" width="155" height="110" alt=""><span>AccurioPress C2070 / C2070P / C2060</span></a></p>
-                                <p>進化し続けるマルチロールプロダクション印刷システム「AccurioPress C2070 / C2070P / C2060」</p></li><li><p><a href="/business/products/copiers/bw/bizhub_558_458_368_308/index.html"><img src="https://www.konicaminolta.jp/business/common/img/megamenu/img_065.jpg" width="155" height="110" alt=""><span>bizhub 558 / 458 / 368 / 308</span></a></p>
-                                <p>快適な環境を構築し、業務効率化をサポートする「bizhub 558 / 458 / 368 / 308」</p></li>-->
+                        <p>進化し続けるマルチロールプロダクション印刷システム「AccurioPress C2070 / C2070P / C2060」</p></li><li><p><a href="/business/products/copiers/bw/bizhub_558_458_368_308/index.html"><img src="https://www.konicaminolta.jp/business/common/img/megamenu/img_065.jpg" width="155" height="110" alt=""><span>bizhub 558 / 458 / 368 / 308</span></a></p>
+                        <p>快適な環境を構築し、業務効率化をサポートする「bizhub 558 / 458 / 368 / 308」</p></li>-->
                             </ul>
                             <!-- / .colR -->
                         </div>
@@ -497,128 +497,53 @@
             </div>
 
             <div id="navcontainer">
-                <ul id="navlist">
-                    <li><a href="/business/index.html">ビジネスソリューション</a></li>
-                    <li><a href="/business/solution_service/index.html">ソリューション&amp;サービス</a></li>
-                    <li>ドキュメントソリューション</li>
-                </ul>
-                <!-- /.navcontainer -->
+                @Html.Kentico().EditableArea("GlobalBreadCrumbZone",
+                            defaultSectionIdentifier: null,
+                            allowedWidgets: new[] { "FY19.StaticText" })
             </div>
-            <div id="contentsArea">
-                <div id="contentsInner">
-                    <div class="main">
 
-                        <div class="content-wrapper">
-                            <section class="content-inner content-inner-top">
-                                @Html.Kentico().EditableArea("ContentZone",
-                                                            defaultSectionIdentifier: null,
-                                                            allowedWidgets: new[] { "FY19.Image",
-                                                                                    "FY19.H2Header",
-                                                                                    "FY19.H3Header",
-                                                                                    "FY19.H4Header",
-                                                                                    "FY19.BodyText",
-                                                                                    "FY19.StaticText",
-                                                                                    "FY19.AnnotationList",
-                                                                                    "FY19.LinkList",
-                                                                                    "FY19.BreadCrumbs",
-                                                                                    "FY19.List",
-                                                                                    "FY19.AnchorList",
-                                                                                    "FY19.LinkButton",
-                                                                                    "FY19.HeadHTML",
-                                                                                    "FY19.FreeHTML",
-                                                                                    "FY19.Table",
-                                                                                    "FY19.Placeholder"})
-                            </section>
-                            <!--/content-wrapper-->
-                        </div>
 
-                        <div class="footer-btn">
-                            <div class="footer-btn__wrapper">
+            @Html.Kentico().EditableArea("HeaderZone",
+                                        defaultSectionIdentifier: null,
+                                        allowedWidgets: new[] { "FY19.StaticText" })
 
-                                <div class="footer-btn-content">
-                                    <p class="footer-btn-content__txt">お客様のお悩みに合わせた解決策をご提案します。まずはお気軽にお問合せください。</p>
 
-                                    <p class="footer-btn-content__link"><a href="https://bs-offers.konicaminolta.jp/ejikan/fm-ds-contact.html" target="_blank">お問い合わせ</a></p>
-                                </div>
-                            </div>
-                        </div>
+            @Html.Kentico().EditableArea("BreadcrumbsZone",
+                                        defaultSectionIdentifier: null,
+                                        allowedWidgets: new[] { "FY19.BreadCrumbs" })
 
-                        <nav class="footer-navigation">
-                            <ul>
-                                <li><a href="/business/solution/document/index.html">サービスTOP</a></li>
-                                <li><a href="/business/seminar_schedule/index.html">セミナー・イベント</a></li>
-                                <li><a href="/business/solution/document/index.html#internalLink000">課題解決</a></li>
-                                <li><a href="https://bs-offers.konicaminolta.jp/ejikan/fm-ds-contact.html" target="_blank">お問い合わせ</a></li>
-                            </ul>
-                        </nav>
-
-                        <div class="to-top"><p><a href="#top"><span></span></a></p></div>
-                    </div>
-                </div>
+            <div id="content-wrapper">
+                <section id="content-inner content-inner-top">
+                    @Html.Kentico().EditableArea("ContentZone",
+                                                defaultSectionIdentifier: null,
+                                                allowedWidgets: new[] { "FY19.Image",
+                                                                        "FY19.H2Header",
+                                                                        "FY19.H3Header",
+                                                                        "FY19.H4Header",
+                                                                        "FY19.BodyText",
+                                                                        "FY19.StaticText",
+                                                                        "FY19.AnnotationList",
+                                                                        "FY19.LinkList",
+                                                                        "FY19.BreadCrumbs",
+                                                                        "FY19.List",
+                                                                        "FY19.AnchorList",
+                                                                        "FY19.LinkButton",
+                                                                        "FY19.HeadHTML",
+                                                                        "FY19.FreeHTML",
+                                                                        "FY19.Table",
+                                                                        "FY19.Placeholder"})
+                </section>
             </div>
-            <!-- BEGIN VersaTag -->
-            <script>
-                var versaTag = {};
-                versaTag.id = "2203";
-                versaTag.sync = 0;
-                versaTag.dispType = "js";
-                versaTag.ptcl = "HTTPS";
-                versaTag.bsUrl = "bs.serving-sys.com/BurstingPipe";
-                versaTag.activityParams = {
-                    "Session": ""
-                };
-                versaTag.retargetParams = {};
-                versaTag.dynamicRetargetParams = {};
-                versaTag.conditionalParams = {};
-            </script>
-            <script id="ebOneTagUrlId" src="https://secure-ds.serving-sys.com/SemiCachedScripts/ebOneTag.js"></script>
-            <noscript>
-                <iframe src="https://bs.serving-sys.com/BurstingPipe?
-cn=ot&amp;
-onetagid=2203&amp;
-ns=1&amp;
-activityValues=$$Session=[Session]$$&amp;
-retargetingValues=$$$$&amp;
-dynamicRetargetingValues=$$$$&amp;
-acp=$$$$&amp;"
-                        style="display:none;width:0px;height:0px"></iframe>
-            </noscript>
-            <!-- END VersaTag -->
-            <!-- Start of Konica Minolta_Cvtag, Konica_Information equipment_RTtag and Pandora_tag for Web Ad Trucking -->
-            <script language='JavaScript1.1' src='//pixel.mathtag.com/event/js?mt_id=679956&mt_adid=135663&v1=&v2=&v3=&s1=&s2=&s3='></script>
 
-            <script language='JavaScript1.1' src='//pixel.mathtag.com/event/js?mt_id=681494&mt_adid=135663&v1=&v2=&v3=&s1=&s2=&s3='></script>
+            @Html.Kentico().EditableArea("FooterZone",
+                                        defaultSectionIdentifier: null,
+                                        allowedWidgets: new[] { "FY19.StaticText" })
 
-            @*<script type="text/javascript">
-                    function PAGODA_prepClient(fn) {
-                        fn.setClientCode('konicaminolta');
-                        if (typeof (PAGODA_conversion) == "function") { PAGODA_conversion(fn); }
-                    }
-                    var host = (("https:" == document.location.protocol) ? "https://ssl" : "http://s") + '.pagoda56.com';
-                    document.write(unescape("%3Cscript src='" + host + "/pagoda/pagoda.js' type='text/javascript'%3E%3C/script%3E"));
-                </script>*@
-            <!-- End of Konica Minolta_Cvtag, Konica_Information equipment_RTtag and Pandora_tag for Web Ad Trucking -->
-            <!-- Start of Konica Inc._LinkedInInsightTag -->
+            @Html.Kentico().EditableArea("FooterScriptZone",
+                            defaultSectionIdentifier: null,
+                            allowedWidgets: new[] { "FY19.StaticText" })
 
-            <script type="text/javascript">
-                _bizo_data_partner_id = "7603";
-            </script>
 
-            <script type="text/javascript">
-                (function () {
-                    var s = document.getElementsByTagName("script")[0];
-                    var b = document.createElement("script");
-                    b.type = "text/javascript";
-                    b.async = true;
-                    b.src = (window.location.protocol === "https:" ? "https://sjs" : "http://js") + ".bizographics.com/insight.min.js";
-                    s.parentNode.insertBefore(b, s);
-                })();
-            </script>
-
-            <noscript>
-                <img height="1" width="1" alt="" style="display:none;" src="//www.bizographics.com/collect/?pid=7603&fmt=gif" />
-            </noscript>
-            <!-- end of Konica Inc._LinkedInInsightTag -->
             <footer>
                 <article>
                     <ul class="leftNav">
@@ -640,18 +565,15 @@ acp=$$$$&amp;"
             </footer>
         </div>
 
-
-
         <script type="text/javascript">
-            //<![CDATA[
-
+        //<![CDATA[
             WebForm_InitCallback();
             theForm.oldSubmit = theForm.submit;
             theForm.submit = WebForm_SaveScrollPositionSubmit;
 
             theForm.oldOnSubmit = theForm.onsubmit;
             theForm.onsubmit = WebForm_SaveScrollPositionOnSubmit;
-//]]>
+        //]]>
         </script>
     </form>
 
