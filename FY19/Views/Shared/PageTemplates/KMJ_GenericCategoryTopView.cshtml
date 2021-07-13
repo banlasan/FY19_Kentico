@@ -309,8 +309,8 @@
                                     <p>印刷工程の自動化でオペレーションを効率化させるデジタル印刷システムのフラッグシップモデル</p>
                                 </li>
                                 <!--<li><p><a href="/business/products/graphic/ondemand_print/color/accurio_press_c2070_c2070p_c2060/index.html"><img src="https://www.konicaminolta.jp/business/common/img/megamenu/img_072.jpg" width="155" height="110" alt=""><span>AccurioPress C2070 / C2070P / C2060</span></a></p>
-                                <p>進化し続けるマルチロールプロダクション印刷システム「AccurioPress C2070 / C2070P / C2060」</p></li><li><p><a href="/business/products/copiers/bw/bizhub_558_458_368_308/index.html"><img src="https://www.konicaminolta.jp/business/common/img/megamenu/img_065.jpg" width="155" height="110" alt=""><span>bizhub 558 / 458 / 368 / 308</span></a></p>
-                                <p>快適な環境を構築し、業務効率化をサポートする「bizhub 558 / 458 / 368 / 308」</p></li>-->
+                        <p>進化し続けるマルチロールプロダクション印刷システム「AccurioPress C2070 / C2070P / C2060」</p></li><li><p><a href="/business/products/copiers/bw/bizhub_558_458_368_308/index.html"><img src="https://www.konicaminolta.jp/business/common/img/megamenu/img_065.jpg" width="155" height="110" alt=""><span>bizhub 558 / 458 / 368 / 308</span></a></p>
+                        <p>快適な環境を構築し、業務効率化をサポートする「bizhub 558 / 458 / 368 / 308」</p></li>-->
                             </ul>
                             <!-- / .colR -->
                         </div>
@@ -487,98 +487,74 @@
                 <!-- / .skipLink -->
             </div>
 
-
-            <cms:CMSWebPartZone ZoneID="HeadHTMLZone" runat="server" />
-            <div class="content-wrapper">
-                <cms:CMSWebPartZone ZoneID="HeaderZone" runat="server" />
-                <section class="content-inner">
-                    <cms:CMSWebPartZone ZoneID="ContentZone" runat="server" />
-                    <!-- / #contentsInner -->
-                </section>
-                <!--/content-wrapper-->
-            </div>
-
-            <cms:CMSWebPartZone ZoneID="HeadHTMLZone" runat="server" />
-            <div class="content-wrapper">
-                <cms:CMSWebPartZone ZoneID="HeaderZone" runat="server" />
-                <section class="content-inner">
-                    <cms:CMSWebPartZone ZoneID="ContentZone" runat="server" />
-                    <!-- / #contentsInner -->
-                </section>
-                <!--/content-wrapper-->
-            </div>
-
             @Html.Kentico().EditableArea("HeadHTMLZone", defaultSectionIdentifier: null, allowedWidgets: new[] { "FY19.HeadHTML" })
             @Html.Kentico().EditableArea("HeaderZone", defaultSectionIdentifier: null, allowedWidgets: new[] { "FY19.H2Header", "FY19.H3Header", "FY19.H4Header" })
-            <div id="contentsArea" > @*class="content-wrapper"*@
-                <div id="contentsInner"> @*class="content-inner content-inner-top"*@
-                    <div class="main">
-
-                        @Html.Kentico().EditableArea("ContentZone",
-                                                    defaultSectionIdentifier: null,
-                                                    allowedWidgets: new[] { "FY19.Image",
-                                                                            "FY19.H2Header",
-                                                                            "FY19.H3Header",
-                                                                            "FY19.H4Header",
-                                                                            "FY19.BodyText",
-                                                                            "FY19.StaticText",
-                                                                            "FY19.AnnotationList",
-                                                                            "FY19.LinkList",
-                                                                            "FY19.BreadCrumbs",
-                                                                            "FY19.List",
-                                                                            "FY19.AnchorList",
-                                                                            "FY19.LinkButton",
-                                                                            "FY19.HeadHTML",
-                                                                            "FY19.FreeHTML",
-                                                                            "FY19.Table",
-                                                                            "FY19.Placeholder"})
-
-                        <div class="footer-btn">
-
-                            <div class="footer-btn__wrapper">
-
-                                <div class="footer-btn-content">
-                                    <p class="footer-btn-content__txt">
-                                        総合カタログ、サービス別カタログ（PDF）をダウンロード
-                                        することができます。
-                                    </p>
-
-                                    <p class="footer-btn-content__link"><a href="/business/service/it-guardians/catalog/index.html">カタログダウンロード</a></p>
-                                </div>
-
-                                <div class="footer-btn-content">
-                                    <p class="footer-btn-content__txt">
-                                        商品およびサービスについてご不明な点等ございましたら、
-                                        お気軽にお問い合わせください。
-                                    </p>
-
-                                    <p class="footer-btn-content__link"><a href="https://bsoffers.konicaminolta.jp/fm-it-guardians-contact.html" target="_blank">お問い合わせ</a></p>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <nav class="footer-navigation">
-                            <ul>
-                                <li><a href="/business/service/it-guardians/index.html">TOP</a></li>
-                                <li><a href="/business/service/it-guardians/index.html#itg-solution">課題解決</a></li>
-                                <li><a href="/business/service/it-guardians/helpdesk/index.html">ヘルプデスク</a></li>
-                                <li><a href="/business/service/it-guardians/service/index.html">サービス一覧</a></li>
-                                <li><span>ニュース</span></li>
-                                <li><a href="/business/user_case/solution_service_products/it_guardians/index.html" target="_blank">導入事例</a></li>
-                                <li><a href="/business/support/index.html" target="_blank">サポート情報</a></li>
-                                <li><a href="https://bsoffers.konicaminolta.jp/fm-it-guardians-contact.html" target="_blank">お問い合わせ</a></li>
-                                <li><a href="/business/support/it-guardians/products/it_support/index.html" target="_blank">よくあるご質問</a></li>
-                                <!--<li><span></span></li>-->
-                            </ul>
-                        </nav>
-
-                        <div class="to-top"><p><a href="#top"><span></span></a></p></div>
-
-                    </div>
-                </div>
+            <div class="content-wrapper">
+                <section class="content-inner content-inner-top">
+                    @Html.Kentico().EditableArea("ContentZone",
+                                                defaultSectionIdentifier: null,
+                                                allowedWidgets: new[] { "FY19.Image",
+                                                                        "FY19.H2Header",
+                                                                        "FY19.H3Header",
+                                                                        "FY19.H4Header",
+                                                                        "FY19.BodyText",
+                                                                        "FY19.StaticText",
+                                                                        "FY19.AnnotationList",
+                                                                        "FY19.LinkList",
+                                                                        "FY19.BreadCrumbs",
+                                                                        "FY19.List",
+                                                                        "FY19.AnchorList",
+                                                                        "FY19.LinkButton",
+                                                                        "FY19.HeadHTML",
+                                                                        "FY19.FreeHTML",
+                                                                        "FY19.Table",
+                                                                        "FY19.Placeholder"})
+                </section>
             </div>
+
+            <div class="footer-btn">
+
+                <div class="footer-btn__wrapper">
+
+                    <div class="footer-btn-content">
+                        <p class="footer-btn-content__txt">
+                            総合カタログ、サービス別カタログ（PDF）をダウンロード
+                            することができます。
+                        </p>
+
+                        <p class="footer-btn-content__link"><a href="/business/service/it-guardians/catalog/index.html">カタログダウンロード</a></p>
+                    </div>
+
+                    <div class="footer-btn-content">
+                        <p class="footer-btn-content__txt">
+                            商品およびサービスについてご不明な点等ございましたら、
+                            お気軽にお問い合わせください。
+                        </p>
+
+                        <p class="footer-btn-content__link"><a href="https://bsoffers.konicaminolta.jp/fm-it-guardians-contact.html" target="_blank">お問い合わせ</a></p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <nav class="footer-navigation">
+                <ul>
+                    <li><a href="/business/service/it-guardians/index.html">TOP</a></li>
+                    <li><a href="/business/service/it-guardians/index.html#itg-solution">課題解決</a></li>
+                    <li><a href="/business/service/it-guardians/helpdesk/index.html">ヘルプデスク</a></li>
+                    <li><a href="/business/service/it-guardians/service/index.html">サービス一覧</a></li>
+                    <li><span>ニュース</span></li>
+                    <li><a href="/business/user_case/solution_service_products/it_guardians/index.html" target="_blank">導入事例</a></li>
+                    <li><a href="/business/support/index.html" target="_blank">サポート情報</a></li>
+                    <li><a href="https://bsoffers.konicaminolta.jp/fm-it-guardians-contact.html" target="_blank">お問い合わせ</a></li>
+                    <li><a href="/business/support/it-guardians/products/it_support/index.html" target="_blank">よくあるご質問</a></li>
+                    <!--<li><span></span></li>-->
+                </ul>
+            </nav>
+
+            <div class="to-top"><p><a href="#top"><span></span></a></p></div>
+
             <!-- Start of Konica Minolta_Cvtag, Konica_Information equipment_RTtag and Pandora_tag for Web Ad Trucking -->
             <script language='JavaScript1.1' src='//pixel.mathtag.com/event/js?mt_id=679956&mt_adid=135663&v1=&v2=&v3=&s1=&s2=&s3='></script>
 
