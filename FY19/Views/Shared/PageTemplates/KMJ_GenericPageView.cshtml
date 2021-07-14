@@ -465,9 +465,35 @@
                 <div id="contentsInner">
                     <div class="main">
 
-                        @Html.Kentico().EditableArea("ContentZone",
-                                                    defaultSectionIdentifier: null,
-                                                    allowedWidgets: new[] { "FY19.FreeHTML" })
+                        <nav class="localnavigation">
+                            <p class="localnavigation__btn">MENU</p>
+                            <ul>
+                                <li><a href="/business/service/it-guardians/index.html">TOP</a></li>
+                                <li class="current"><a href="/business/service/it-guardians/index.html#itg-solution">課題解決</a></li>
+                                <li><a href="/business/service/it-guardians/helpdesk/index.html">ヘルプデスク</a></li>
+                                <li><a href="/business/service/it-guardians/service/index.html">サービス一覧</a></li>
+                                <li><span>ニュース</span></li>
+                                <li><a href="https://bs-offers.konicaminolta.jp/it-guardians/contact/form/" target="_blank">お問い合わせ</a></li>
+                            </ul>
+                        </nav>
+
+                        <div class="breadcrumb">
+                            <ul>
+                                <li><a href="/business/service/it-guardians/index.html">TOP</a></li>
+                                <li>
+                                    <a href="/business/service/it-guardians/index.html#itg-solution" class="CMSBreadCrumbsLink">課題解決</a>
+                                </li>
+                                <li>セキュリティ対策</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-wrapper">
+                            <section class="content-inner">
+                                @Html.Kentico().EditableArea("ContentZone",
+                                                            defaultSectionIdentifier: null,
+                                                            allowedWidgets: new[] { "FY19.FreeHTML" })
+                            </section>
+                        </div>
 
                         <div class="footer-btn">
                             <div class="footer-btn__wrapper">
@@ -559,7 +585,7 @@
                         <li><a href="https://www.konicaminolta.jp/about/csr/index.html">CSR（社会・環境活動）</a></li>
                     </ul>
                 </article>
-                <p class="copyright"><small>&copy;2011-2019 KONICA MINOLTA JAPAN, INC.</small></p>
+                <p class="copyright"><small>&copy;2011-2021 KONICA MINOLTA JAPAN, INC.</small></p>
                 @*<script type="text/javascript" charset="UTF-8" src="https://www.konicaminolta.jp/js/ext/sug.js#sv=//s.marsfinder.jp/konicaminolta__jp_business__jp_business&amp;input=search"></script>*@
 
                 <p id="page-top"><a href="#anchorPagetop"><img src="https://www.konicaminolta.jp/business/common/img/navi/pagetop.png" width="70" height="50" alt="このページのトップへ"></a></p>
