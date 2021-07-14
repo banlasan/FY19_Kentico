@@ -494,44 +494,29 @@
                             <p class="localnavigation__btn">MENU</p>
                             <ul>
                                 <li><a href="/business/service/it-guardians/index.html">TOP</a></li>
-                                <!--
-                            -->
                                 <li><a href="/business/service/it-guardians/index.html#itg-solution">課題解決</a></li>
-                                <!--
-                            -->
                                 <li><a href="/business/service/it-guardians/helpdesk/index.html">ヘルプデスク</a></li>
-                                <!--
-                            -->
                                 <li><a href="/business/service/it-guardians/service/index.html">サービス一覧</a></li>
-                                <!--
-                            -->
                                 <li><span>ニュース</span></li>
-                                <!--
-                            -->
                                 <li><a href="https://bsoffers.konicaminolta.jp/fm-it-guardians-contact.html" target="_blank">お問い合わせ</a></li>
                             </ul>
                         </nav>
+
                         <div class="breadcrumb">
                             <ul>
                                 <li>
                                     <a href="/business/service/it-guardians/index.html">TOP</a>
-
                                 </li>
                                 <li>カタログダウンロード</li>
                             </ul>
                         </div>
 
-
                         <div class="content-wrapper">
                             <section class="content-inner">
-                                <div class="title-area">
-                                    <h1 class="title-area__ttl"><span class="pr-lg-30 pr-sm-15"><i class="hidden-sm">カタログ</i>ダウンロード</span><small>Catalog Download</small></h1>
-                                    <!--/title-area-->
-                                </div>
 
-                                @Html.Kentico().EditableArea("editor", defaultSectionIdentifier: null, allowedWidgets: new[] { "FY19.FreeHTML" })
+                                @Html.Kentico().EditableArea("ContentZone", defaultSectionIdentifier: null, allowedWidgets: new[] { "FY19.FreeHTML" })
 
-                                @Html.Kentico().EditableArea("ContentZone", defaultSectionIdentifier: null, allowedWidgets: new[] { "FY19.DownloadItem" })
+                                @Html.Kentico().EditableArea("CatalogZone", defaultSectionIdentifier: null, allowedWidgets: new[] { "FY19.DownloadItem" })
 
                                 <!--/content-inner-->
                             </section>
