@@ -117,7 +117,7 @@
     { text10 = Model.Properties.Text10; }
 }
 
-<ul class="listBasic @if (id != null) { @className; }" id="@id">
+<ul class="listBasic @if (className != null) { @className; }" id="@id">
     @if (text1 != null)
     {
         <li>@Html.Raw(HttpUtility.HtmlDecode(text1.Replace(Environment.NewLine, "<br/>")))</li>

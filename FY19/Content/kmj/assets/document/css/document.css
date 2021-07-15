@@ -151,8 +151,7 @@ h2
 .column_2-3 {
     margin: 40px 0 0 0;
     padding: 0 20px;
-    display: flex;
-    flex-direction: column;
+    display: inline-block;
     vertical-align: top;
     box-sizing: border-box;
 }

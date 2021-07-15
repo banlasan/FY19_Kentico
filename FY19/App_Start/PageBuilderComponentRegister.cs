@@ -25,7 +25,7 @@ using Kentico.PageBuilder.Web.Mvc.PageTemplates;
 
 
 //Sections
-[assembly: RegisterSection("FY19.SingColSec", "Single Column", typeof(SingleSectionProperties), "Sections/_SingleColumnView")]
+//[assembly: RegisterSection("FY19.SingColSec", "Single Column", typeof(SingleSectionProperties), "Sections/_SingleColumnView", IconClass = "icon-l-cols-1")]
 [assembly: RegisterSection("FY19.IndexSection", "Index Section", typeof(IndexSectionProperties), "Sections/_IndexSectionView", IconClass = "icon-i-circle")]
 [assembly: RegisterSection("FY19.TwoColumnSection", "Two Columns", typeof(KMJ_1_2ColumnProperties), "Sections/TwoColumnView", IconClass = "icon-l-cols-2")]
 [assembly: RegisterSection("FY19.ThreeColumnSection", "Three Columns", typeof(KMJ_1_3ColumnProperties), "Sections/ThreeColumnView", IconClass = "icon-l-cols-3")]
@@ -37,7 +37,7 @@ using Kentico.PageBuilder.Web.Mvc.PageTemplates;
 [assembly: RegisterPageTemplate("Blank.Widget", "Blank Widget Page", customViewName: "PageTemplates/_BlankWidgetTemplate", Description = "Blank page with a widget zone")]
 [assembly: RegisterPageTemplate("FY19.KMJ_CatalogDownloadPage", "Catalog Page Template", customViewName: "PageTemplates/KMJ_CatalogDownloadView", Description = "", IconClass = "icon-doc-o")]
 [assembly: RegisterPageTemplate("FY19.KMJ_CommonPage", "Common Page Template", customViewName: "PageTemplates/KMJ_CommonPageView", Description = "", IconClass = "icon-doc-o")]
-[assembly: RegisterPageTemplate("FY19.KMJ_DocumentSolutionMasterPage", "Document Solution Page Template", customViewName: "PageTemplates/KMJ_DocumentSolutionMasterView", Description = "", IconClass = "icon-doc-o")]
+[assembly: RegisterPageTemplate("FY19.KMJ_DocumentSolutionMasterPage", "Document Solution Master Page Template", customViewName: "PageTemplates/KMJ_DocumentSolutionMasterView", Description = "", IconClass = "icon-doc-o")]
 [assembly: RegisterPageTemplate("FY19.KMJ_GenericCategoryTopPage", "Generic Category Top Page Template", customViewName: "PageTemplates/KMJ_GenericCategoryTopView", Description = "", IconClass = "icon-doc-o")]
 [assembly: RegisterPageTemplate("FY19.KMJ_GenericPage", "Generic Page Template", customViewName: "PageTemplates/KMJ_GenericPageView", Description = "", IconClass = "icon-doc-o")]
 [assembly: RegisterPageTemplate("FY19.KMJ_GenericWidgetPage", "Generic Widget Page Template", customViewName: "PageTemplates/KMJ_GenericWidgetPageView", Description = "", IconClass = "icon-doc-o")]

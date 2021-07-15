@@ -37,9 +37,8 @@
     <script src="https://www.konicaminolta.jp/common/unchangeable/js/kmjslib.js"></script>
     @*<script src="https://www.konicaminolta.jp/common/unchangeable/js/response-3.0.js"></script>*@
     <script src="https://www.konicaminolta.jp/component/c_common/js/jquery-1.7.1.min.js"></script>
-    <meta property="og:image" content="~/Content/kmj/assets/document/img/bg_keyvisual_sp.jpg?ext=.jpg" />
-    <link rel="stylesheet" href="~/Content/responsive.css">
-    <link rel="stylesheet" href="~/Content/kmj/assets/document/css/responsive.css">
+    <meta property="og:image" content="https://www.konicaminolta.com/web-contents/kmj/assets/document/img/bg_keyvisual_sp.jpg?ext=.jpg">
+    <link rel="stylesheet" href="https://www.konicaminolta.com/web-contents/kmj/assets/document/css/responsive.css">
 
     <!--[if lt IE 9]>
     <script src="https://www.konicaminolta.jp/common/unchangeable/js/html5shiv-printshiv.js"></script>
@@ -68,22 +67,19 @@
         ga('require', 'displayfeatures');
         ga('require', 'linker');
         ga('linker:autoLink', ['konicaminolta.net', 'konicaminolta.jp']);
-        ga('send', 'pageview');
-    </script>
+        ga('send', 'pageview');</script>
     <!-- END JMA Google Analytics -->
-    <link rel="stylesheet" href="https://www.konicaminolta.jp/business/common/css/bcj_component.css" />
-    <link rel="stylesheet" href="https://www.konicaminolta.jp/business/common/css/bcj_component_rwd.css" />
     <script src="https://www.konicaminolta.jp/business/common/js/bcj_globalnav.js"></script>
     <script src="https://www.konicaminolta.jp/business/common/js/rollover.js"></script>
-    <script src="~/Content/kmj/assets/document/js/index.js"></script>
-    <script src="~/Content/kmj/assets/document/js/jquery-smoothscroll.js"></script>
+    <script src="https://www.konicaminolta.com/web-contents/kmj/assets/document/js/index.js"></script>
+    <script src="https://www.konicaminolta.com/web-contents/kmj/assets/document/js/jquery-smoothscroll.js"></script>
 
     <!-- local共通CSS&JS -->
     <link rel="stylesheet" href="~/Content/kmj/assets/document/css/sticky-state.css" />
     <link rel="stylesheet" href="~/Content/kmj/assets/document/css/document.css" />
 
-    <script src="~/Content/kmj/assets/document/js/sticky-state-min.js"></script>
-    <script src="~/Content/kmj/assets/common/js/business.js"></script>
+    <script src="https://www.konicaminolta.com/web-contents/kmj/assets/document/js/sticky-state-min.js"></script>
+    <script src="https://www.konicaminolta.com/web-contents/kmj/assets/common/js/business.js"></script>
     <!-- //local共通CSS&JS -->
     <!--script>
     $(window).scroll(function(){
@@ -92,8 +88,8 @@
     })
     </script-->
     <!-- +++ /local-script +++ -->
-    <link rel="stylesheet" href="~/Content/kmj/assets/common/css/searchbox-kentico.css">
-    <script src="~/Content/kmj/assets/common/js/searchbox-kentico.js"></script>
+    <link rel="stylesheet" href="https://www.konicaminolta.com/web-contents/kmj/assets/common/css/searchbox-kentico.css">
+    <script src="https://www.konicaminolta.com/web-contents/kmj/assets/common/js/searchbox-kentico.js"></script>
 </head>
 <body class="LTR Chrome KMJJA ContentBody" id="top">
     <!-- START OF SmartSource Data Collector TAG -->
@@ -496,73 +492,76 @@
                 <!-- / .skipLink -->
             </div>
 
-            <div id="navcontainer">
-                @Html.Kentico().EditableArea("GlobalBreadCrumbZone",
-                            defaultSectionIdentifier: null,
-                            allowedWidgets: new[] { "FY19.StaticText" })
+            @*<cms:CMSWebPartZone ZoneID="GlobalBreadcrumbsZone" runat="server" />*@
+            @Html.Kentico().EditableArea("GlobalBreadCrumbZone",
+                        defaultSectionIdentifier: null,
+                        allowedWidgets: new[] { "FY19.StaticText" })
+
+
+            <div id="contentsArea">
+                <div id="contentsInner">
+                    <div class="main">
+                        @*<cms:CMSWebPartZone ZoneID="HeaderZone" runat="server" />*@
+                        @Html.Kentico().EditableArea("HeaderZone",
+                                                    defaultSectionIdentifier: null,
+                                                    allowedWidgets: new[] { "FY19.StaticText" })
+
+                        @*<cms:CMSWebPartZone ZoneID="BreadcrumbsZone" runat="server" />*@
+                        @Html.Kentico().EditableArea("BreadcrumbsZone",
+                                                    defaultSectionIdentifier: null,
+                                                    allowedWidgets: new[] { "FY19.StaticText" })
+
+                        <div class="content-wrapper">
+                            <section class="content-inner">
+                                @*<cms:CMSWebPartZone ZoneID="ContentZone" runat="server" />*@
+                                @Html.Kentico().EditableArea("ContentZone",
+                                                            defaultSectionIdentifier: null,
+                                                            allowedWidgets: new[] { "FY19.Image",
+                                                                                    "FY19.H2Header",
+                                                                                    "FY19.H3Header",
+                                                                                    "FY19.H4Header",
+                                                                                    "FY19.BodyText",
+                                                                                    "FY19.StaticText",
+                                                                                    "FY19.AnnotationList",
+                                                                                    "FY19.LinkList",
+                                                                                    "FY19.BreadCrumbs",
+                                                                                    "FY19.List",
+                                                                                    "FY19.AnchorList",
+                                                                                    "FY19.LinkButton",
+                                                                                    "FY19.HeadHTML",
+                                                                                    "FY19.FreeHTML",
+                                                                                    "FY19.Table",
+                                                                                    "FY19.Placeholder"})
+                            </section>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-
-            @Html.Kentico().EditableArea("HeaderZone",
-                                        defaultSectionIdentifier: null,
-                                        allowedWidgets: new[] { "FY19.StaticText" })
-
-
-            @Html.Kentico().EditableArea("BreadcrumbsZone",
-                                        defaultSectionIdentifier: null,
-                                        allowedWidgets: new[] { "FY19.BreadCrumbs" })
-
-            <div id="content-wrapper">
-                <section id="content-inner content-inner-top">
-                    @Html.Kentico().EditableArea("ContentZone",
-                                                defaultSectionIdentifier: null,
-                                                allowedWidgets: new[] { "FY19.Image",
-                                                                        "FY19.H2Header",
-                                                                        "FY19.H3Header",
-                                                                        "FY19.H4Header",
-                                                                        "FY19.BodyText",
-                                                                        "FY19.StaticText",
-                                                                        "FY19.AnnotationList",
-                                                                        "FY19.LinkList",
-                                                                        "FY19.BreadCrumbs",
-                                                                        "FY19.List",
-                                                                        "FY19.AnchorList",
-                                                                        "FY19.LinkButton",
-                                                                        "FY19.HeadHTML",
-                                                                        "FY19.FreeHTML",
-                                                                        "FY19.Table",
-                                                                        "FY19.Placeholder"})
-                </section>
-            </div>
-
+            @*<cms:CMSWebPartZone ZoneID="FooterZone" runat="server" />*@
             @Html.Kentico().EditableArea("FooterZone",
                                         defaultSectionIdentifier: null,
-                                        allowedWidgets: new[] { "FY19.StaticText" })
+                                        allowedWidgets: new[] { "FY19.Image",
+                                                                "FY19.H2Header",
+                                                                "FY19.H3Header",
+                                                                "FY19.H4Header",
+                                                                "FY19.BodyText",
+                                                                "FY19.StaticText",
+                                                                "FY19.AnnotationList",
+                                                                "FY19.LinkList",
+                                                                "FY19.BreadCrumbs",
+                                                                "FY19.List",
+                                                                "FY19.AnchorList",
+                                                                "FY19.LinkButton",
+                                                                "FY19.HeadHTML",
+                                                                "FY19.FreeHTML",
+                                                                "FY19.Table",
+                                                                "FY19.Placeholder"})
 
+            @*<cms:CMSWebPartZone ZoneID="FooterScriptZone" runat="server" />*@
             @Html.Kentico().EditableArea("FooterScriptZone",
-                            defaultSectionIdentifier: null,
-                            allowedWidgets: new[] { "FY19.StaticText" })
-
-
-            <footer>
-                <article>
-                    <ul class="leftNav">
-                        <li><a href="https://www.konicaminolta.jp/siteinfo/terms.html">サイトのご利用について</a></li>
-                        <li><a href="https://www.konicaminolta.jp/business/siteinfo/privacypolicy.html">個人情報保護方針</a></li>
-                        <li><a href="https://www.konicaminolta.jp/siteinfo/sitemap.html">サイトマップ</a></li>
-                    </ul>
-                    <ul class="leftNav pcTop"><li><a href="https://www.konicaminolta.jp/">コニカミノルタトップページへ</a></li></ul>
-                    <ul class="rightNav">
-                        <li><a href="https://www.konicaminolta.jp/about/index.html">コニカミノルタグループについて</a></li>
-                        <li><a href="https://www.konicaminolta.jp/about/csr/index.html">CSR（社会・環境活動）</a></li>
-                    </ul>
-                </article>
-                <p class="copyright"><small>&copy;2011-2019 KONICA MINOLTA JAPAN, INC.</small></p>
-                <script type="text/javascript" charset="UTF-8" src="https://www.konicaminolta.jp/js/ext/sug.js#sv=//s.marsfinder.jp/konicaminolta__jp_business__jp_business&amp;input=search"></script>
-
-                <p id="page-top"><a href="#anchorPagetop"><img src="https://www.konicaminolta.jp/business/common/img/navi/pagetop.png" width="70" height="50" alt="このページのトップへ"></a></p>
-
-            </footer>
+                                        defaultSectionIdentifier: null,
+                                        allowedWidgets: new[] { "FY19.StaticText" })
         </div>
 
         <script type="text/javascript">
