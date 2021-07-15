@@ -933,6 +933,7 @@ Media Queries for only sp
         border: 0;
         outline: none;
         font-size: 0;
+        color: #036;
     }
 
     .inherentNavigation ul {

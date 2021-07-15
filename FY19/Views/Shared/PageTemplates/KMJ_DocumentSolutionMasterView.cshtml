@@ -498,42 +498,41 @@
                         allowedWidgets: new[] { "FY19.StaticText" })
 
 
-            <div id="contentsArea">
-                <div id="contentsInner">
-                    <div class="main">
-                        @*<cms:CMSWebPartZone ZoneID="HeaderZone" runat="server" />*@
-                        @Html.Kentico().EditableArea("HeaderZone",
-                                                    defaultSectionIdentifier: null,
-                                                    allowedWidgets: new[] { "FY19.StaticText" })
+        <div id="contentsArea">
+            <div id="contentsInner">
+                <div class="main">
+                    @*<cms:CMSWebPartZone ZoneID="HeaderZone" runat="server" />*@
+                    @Html.Kentico().EditableArea("HeaderZone",
+                                                defaultSectionIdentifier: null,
+                                                allowedWidgets: new[] { "FY19.StaticText" })
 
-                        @*<cms:CMSWebPartZone ZoneID="BreadcrumbsZone" runat="server" />*@
-                        @Html.Kentico().EditableArea("BreadcrumbsZone",
-                                                    defaultSectionIdentifier: null,
-                                                    allowedWidgets: new[] { "FY19.StaticText" })
+                    @*<cms:CMSWebPartZone ZoneID="BreadcrumbsZone" runat="server" />*@
+                    @Html.Kentico().EditableArea("BreadcrumbsZone",
+                                                defaultSectionIdentifier: null,
+                                                allowedWidgets: new[] { "FY19.StaticText" })
 
-                        <div class="content-wrapper">
-                            <section class="content-inner">
-                                @*<cms:CMSWebPartZone ZoneID="ContentZone" runat="server" />*@
-                                @Html.Kentico().EditableArea("ContentZone",
-                                                            defaultSectionIdentifier: null,
-                                                            allowedWidgets: new[] { "FY19.Image",
-                                                                                    "FY19.H2Header",
-                                                                                    "FY19.H3Header",
-                                                                                    "FY19.H4Header",
-                                                                                    "FY19.BodyText",
-                                                                                    "FY19.StaticText",
-                                                                                    "FY19.AnnotationList",
-                                                                                    "FY19.LinkList",
-                                                                                    "FY19.BreadCrumbs",
-                                                                                    "FY19.List",
-                                                                                    "FY19.AnchorList",
-                                                                                    "FY19.LinkButton",
-                                                                                    "FY19.HeadHTML",
-                                                                                    "FY19.FreeHTML",
-                                                                                    "FY19.Table",
-                                                                                    "FY19.Placeholder"})
-                            </section>
-                        </div>
+                    <div class="content-wrapper">
+                        <section class="content-inner">
+                            @*<cms:CMSWebPartZone ZoneID="ContentZone" runat="server" />*@
+                            @Html.Kentico().EditableArea("ContentZone",
+                                                        defaultSectionIdentifier: null,
+                                                        allowedWidgets: new[] { "FY19.Image",
+                                                                                "FY19.H2Header",
+                                                                                "FY19.H3Header",
+                                                                                "FY19.H4Header",
+                                                                                "FY19.BodyText",
+                                                                                "FY19.StaticText",
+                                                                                "FY19.AnnotationList",
+                                                                                "FY19.LinkList",
+                                                                                "FY19.BreadCrumbs",
+                                                                                "FY19.List",
+                                                                                "FY19.AnchorList",
+                                                                                "FY19.LinkButton",
+                                                                                "FY19.HeadHTML",
+                                                                                "FY19.FreeHTML",
+                                                                                "FY19.Table",
+                                                                                "FY19.Placeholder"})
+                        </section>
                     </div>
                 </div>
             </div>
@@ -557,6 +556,7 @@
                                                                 "FY19.FreeHTML",
                                                                 "FY19.Table",
                                                                 "FY19.Placeholder"})
+        </div>
 
             @*<cms:CMSWebPartZone ZoneID="FooterScriptZone" runat="server" />*@
             @Html.Kentico().EditableArea("FooterScriptZone",

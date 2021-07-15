@@ -188,7 +188,7 @@
                 <nav class="localnavigation">
                     <p class="localnavigation__btn">MENU</p>
                     <ul>
-                        <li><a href="/business/service/it-guardians/index.html">TOP</a></li>
+                        <li class="current"><a href="/business/service/it-guardians/index.html">TOP</a></li>
                         <li><a href="/business/service/it-guardians/index.html#itg-solution">Problem solving</a></li>
                         <li> <a href="/business/service/it-guardians/helpdesk/index.html">Help desk</a></li>
                         <li> <a href="/business/service/it-guardians/service/index.html ">Service list</a></li>
@@ -487,73 +487,75 @@
                 <!-- / .skipLink -->
             </div>
 
-            @Html.Kentico().EditableArea("HeadHTMLZone", defaultSectionIdentifier: null, allowedWidgets: new[] { "FY19.HeadHTML" })
-            @Html.Kentico().EditableArea("HeaderZone", defaultSectionIdentifier: null, allowedWidgets: new[] { "FY19.H2Header", "FY19.H3Header", "FY19.H4Header" })
-            <div class="content-wrapper">
-                <section class="content-inner content-inner-top">
-                    @Html.Kentico().EditableArea("ContentZone",
-                                                defaultSectionIdentifier: null,
-                                                allowedWidgets: new[] { "FY19.Image",
-                                                                        "FY19.H2Header",
-                                                                        "FY19.H3Header",
-                                                                        "FY19.H4Header",
-                                                                        "FY19.BodyText",
-                                                                        "FY19.StaticText",
-                                                                        "FY19.AnnotationList",
-                                                                        "FY19.LinkList",
-                                                                        "FY19.BreadCrumbs",
-                                                                        "FY19.List",
-                                                                        "FY19.AnchorList",
-                                                                        "FY19.LinkButton",
-                                                                        "FY19.HeadHTML",
-                                                                        "FY19.FreeHTML",
-                                                                        "FY19.Table",
-                                                                        "FY19.Placeholder"})
-                </section>
-            </div>
+            <div id="contentsArea">
+                <div id="contentsInner">
+                    <div class="main">
+                        @Html.Kentico().EditableArea("HeadHTMLZone", defaultSectionIdentifier: null, allowedWidgets: new[] { "FY19.HeadHTML" })
+                        @Html.Kentico().EditableArea("HeaderZone", defaultSectionIdentifier: null, allowedWidgets: new[] { "FY19.H2Header", "FY19.H3Header", "FY19.H4Header" })
 
-            <div class="footer-btn">
-
-                <div class="footer-btn__wrapper">
-
-                    <div class="footer-btn-content">
-                        <p class="footer-btn-content__txt">
-                            総合カタログ、サービス別カタログ（PDF）をダウンロード
-                            することができます。
-                        </p>
-
-                        <p class="footer-btn-content__link"><a href="/business/service/it-guardians/catalog/index.html">カタログダウンロード</a></p>
+                        <div class="content-wrapper">
+                            <section class="content-inner content-inner-top">
+                                @Html.Kentico().EditableArea("ContentZone",
+                                                            defaultSectionIdentifier: null,
+                                                            allowedWidgets: new[] { "FY19.Image",
+                                                                                    "FY19.H2Header",
+                                                                                    "FY19.H3Header",
+                                                                                    "FY19.H4Header",
+                                                                                    "FY19.BodyText",
+                                                                                    "FY19.StaticText",
+                                                                                    "FY19.AnnotationList",
+                                                                                    "FY19.LinkList",
+                                                                                    "FY19.BreadCrumbs",
+                                                                                    "FY19.List",
+                                                                                    "FY19.AnchorList",
+                                                                                    "FY19.LinkButton",
+                                                                                    "FY19.HeadHTML",
+                                                                                    "FY19.FreeHTML",
+                                                                                    "FY19.Table",
+                                                                                    "FY19.Placeholder"})
+                            </section>
+                        </div>
                     </div>
-
-                    <div class="footer-btn-content">
-                        <p class="footer-btn-content__txt">
-                            商品およびサービスについてご不明な点等ございましたら、
-                            お気軽にお問い合わせください。
-                        </p>
-
-                        <p class="footer-btn-content__link"><a href="https://bsoffers.konicaminolta.jp/fm-it-guardians-contact.html" target="_blank">お問い合わせ</a></p>
-                    </div>
-
                 </div>
 
+                <div class="footer-btn">
+                    <div class="footer-btn__wrapper">
+                        <div class="footer-btn-content">
+                            <p class="footer-btn-content__txt">
+                                総合カタログ、サービス別カタログ（PDF）をダウンロード
+                                することができます。
+                            </p>
+                            <p class="footer-btn-content__link"><a href="/business/service/it-guardians/catalog/index.html">カタログダウンロード</a></p>
+                        </div>
+
+                        <div class="footer-btn-content">
+                            <p class="footer-btn-content__txt">
+                                商品およびサービスについてご不明な点等ございましたら、
+                                お気軽にお問い合わせください。
+                            </p>
+
+                            <p class="footer-btn-content__link"><a href="https://bsoffers.konicaminolta.jp/fm-it-guardians-contact.html" target="_blank">お問い合わせ</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="footer-navigation">
+                    <ul>
+                        <li><a href="/business/service/it-guardians/index.html">TOP</a></li>
+                        <li><a href="/business/service/it-guardians/index.html#itg-solution">課題解決</a></li>
+                        <li><a href="/business/service/it-guardians/helpdesk/index.html">ヘルプデスク</a></li>
+                        <li><a href="/business/service/it-guardians/service/index.html">サービス一覧</a></li>
+                        <li><span>ニュース</span></li>
+                        <li><a href="/business/user_case/solution_service_products/it_guardians/index.html" target="_blank">導入事例</a></li>
+                        <li><a href="/business/support/index.html" target="_blank">サポート情報</a></li>
+                        <li><a href="https://bsoffers.konicaminolta.jp/fm-it-guardians-contact.html" target="_blank">お問い合わせ</a></li>
+                        <li><a href="/business/support/it-guardians/products/it_support/index.html" target="_blank">よくあるご質問</a></li>
+                        <!--<li><span></span></li>-->
+                    </ul>
+                </nav>
+
+                <div class="to-top"><p><a href="#top"><span></span></a></p></div>
             </div>
-
-            <nav class="footer-navigation">
-                <ul>
-                    <li><a href="/business/service/it-guardians/index.html">TOP</a></li>
-                    <li><a href="/business/service/it-guardians/index.html#itg-solution">課題解決</a></li>
-                    <li><a href="/business/service/it-guardians/helpdesk/index.html">ヘルプデスク</a></li>
-                    <li><a href="/business/service/it-guardians/service/index.html">サービス一覧</a></li>
-                    <li><span>ニュース</span></li>
-                    <li><a href="/business/user_case/solution_service_products/it_guardians/index.html" target="_blank">導入事例</a></li>
-                    <li><a href="/business/support/index.html" target="_blank">サポート情報</a></li>
-                    <li><a href="https://bsoffers.konicaminolta.jp/fm-it-guardians-contact.html" target="_blank">お問い合わせ</a></li>
-                    <li><a href="/business/support/it-guardians/products/it_support/index.html" target="_blank">よくあるご質問</a></li>
-                    <!--<li><span></span></li>-->
-                </ul>
-            </nav>
-
-            <div class="to-top"><p><a href="#top"><span></span></a></p></div>
 
             <!-- Start of Konica Minolta_Cvtag, Konica_Information equipment_RTtag and Pandora_tag for Web Ad Trucking -->
             <script language='JavaScript1.1' src='//pixel.mathtag.com/event/js?mt_id=679956&mt_adid=135663&v1=&v2=&v3=&s1=&s2=&s3='></script>
@@ -596,7 +598,7 @@
                         <li><a href="https://www.konicaminolta.jp/about/csr/index.html">CSR（社会・環境活動）</a></li>
                     </ul>
                 </article>
-                <p class="copyright"><small>&copy;2011-2019 KONICA MINOLTA JAPAN, INC.</small></p>
+                <p class="copyright"><small>&copy;2011-2021 KONICA MINOLTA JAPAN, INC.</small></p>
                 <script type="text/javascript" charset="UTF-8" src="https://www.konicaminolta.jp/js/ext/sug.js#sv=//s.marsfinder.jp/konicaminolta__jp_business__jp_business&amp;input=search"></script>
 
                 <p id="page-top"><a href="#anchorPagetop"><img src="https://www.konicaminolta.jp/business/common/img/navi/pagetop.png" width="70" height="50" alt="このページのトップへ"></a></p>
