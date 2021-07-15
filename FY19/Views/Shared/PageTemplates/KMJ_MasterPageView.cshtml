@@ -172,49 +172,9 @@
                             </div>
                         </div>
 
-
-                        <div class="footer-btn">
-
-                            <div class="footer-btn__wrapper">
-
-                                <div class="footer-btn-content">
-                                    <p class="footer-btn-content__txt">
-                                        総合カタログ、サービス別カタログ（PDF）をダウンロード
-                                        することができます。
-                                    </p>
-
-                                    <p class="footer-btn-content__link"><a href="/business/service/it-guardians/catalog/index.html">カタログダウンロード</a></p>
-                                </div>
-
-                                <div class="footer-btn-content">
-                                    <p class="footer-btn-content__txt">
-                                        商品およびサービスについてご不明な点等ございましたら、
-                                        お気軽にお問い合わせください。
-                                    </p>
-
-                                    <p class="footer-btn-content__link"><a href="https://bsoffers.konicaminolta.jp/fm-it-guardians-contact.html" target="_blank">お問い合わせ</a></p>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <nav class="footer-navigation">
-                            <ul>
-                                <li><a href="/business/service/it-guardians/index.html">TOP</a></li>
-                                <li><a href="/business/service/it-guardians/index.html#itg-solution">課題解決</a></li>
-                                <li><a href="/business/service/it-guardians/helpdesk/index.html">ヘルプデスク</a></li>
-                                <li><a href="/business/service/it-guardians/service/index.html">サービス一覧</a></li>
-                                <li><span>ニュース</span></li>
-                                <li><a href="/business/user_case/solution_service_products/it_guardians/index.html" target="_blank">導入事例</a></li>
-                                <li><a href="/business/support/index.html" target="_blank">サポート情報</a></li>
-                                <li><a href="https://bsoffers.konicaminolta.jp/fm-it-guardians-contact.html" target="_blank">お問い合わせ</a></li>
-                                <li><a href="/business/support/it-guardians/products/it_support/index.html" target="_blank">よくあるご質問</a></li>
-                                <!--<li><span></span></li>-->
-                            </ul>
-                        </nav>
-
-                        <div class="to-top"><p><a href="#top"><span></span></a></p></div>
+                        @Html.Kentico().EditableArea("FooterZone",
+                                        defaultSectionIdentifier: null,
+                                        allowedWidgets: new[] { "FY19.StaticText" })
                     </div>
                 </div>
             </div>
@@ -251,10 +211,6 @@
                 <img height="1" width="1" alt="" style="display:none;" src="//www.bizographics.com/collect/?pid=7603&fmt=gif" />
             </noscript>
             <!-- end of Konica Inc._LinkedInInsightTag -->
-
-            @Html.Kentico().EditableArea("FooterZone",
-                            defaultSectionIdentifier: null,
-                            allowedWidgets: new[] { "FY19.StaticText" })
         </div>
 
     </form>
