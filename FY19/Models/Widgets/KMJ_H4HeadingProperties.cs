@@ -7,12 +7,11 @@ namespace FY19.Models.Widgets
 {
     public class KMJ_H4HeadingProperties : IWidgetProperties
     {
-        [EditingComponent(TextAreaComponent.IDENTIFIER, Order = 0, Label = "Heading Text")]
+        [EditingComponent(TextAreaComponent.IDENTIFIER, Order = 0, Label = "Heading")]
         [EditingComponentProperty(nameof(TextAreaProperties.Name), "")]
-       // [StringLength(200, ErrorMessage = "Limit 200 characters")]
-        [StringLengthValidation(200, ErrorMessage = "Limit 200 characters")]
+        [StringLength(200, ErrorMessage = "Limit 200 characters")]
         [Required]
-        public string Heading_Text { get; set; }
+        public string Heading { get; set; }
 
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 1, Label = "Id")]
         [StringLength(200, ErrorMessage = "Limit 200 characters")]

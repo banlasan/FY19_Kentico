@@ -34,6 +34,5 @@ namespace FY19.Models.Widgets
 
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 4, Label = "Class")]
         public string Image_class { get; set; }
-
     }
 }

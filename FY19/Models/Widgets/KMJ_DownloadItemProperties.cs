@@ -51,10 +51,12 @@ namespace FY19.Models.Widgets
 
         [EditingComponent(TextInputComponent.IDENTIFIER, Label = "Title", Order = 1)]
         [EditingComponentProperty(nameof(TextInputProperties.Name), "")]
+        [StringLength(1000, ErrorMessage = "Limit 200 characters")]
         public string Title { get; set; }
 
         [EditingComponent(TextAreaComponent.IDENTIFIER, Label = "Text 1", Order = 2)]
         [EditingComponentProperty(nameof(TextAreaProperties.Name), "")]
+        [StringLength(1000, ErrorMessage = "Limit 1000 characters")]
         public string ContentText { get; set; }
 
         [EditingComponent(TextInputComponent.IDENTIFIER, Label = "URL", Order = 3, DefaultValue = "https://")]

@@ -97,6 +97,7 @@ namespace FY19.Models.Widgets
         public string Url10 { get; set; }
 
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 20, Label = "Id")]
+        [RegularExpression(@"^\S*$", ErrorMessage = "No white space allowed")]
         public string Id { get; set; }
 
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 21, Label = "Class")]

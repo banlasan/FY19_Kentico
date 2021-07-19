@@ -33,12 +33,12 @@
 @{
     string headText = string.Empty;
 
-    if (Model.Properties.Heading_Text != null)
+    if (Model.Properties.Heading != null)
     {
-        headText = HtmlToPlainText(Model.Properties.Heading_Text);
+        headText = HtmlToPlainText(Model.Properties.Heading);
     }
 }
 
-<h4 class="h4 @if (Model.Properties.Id != null) { @Model.Properties.Class }" id="@Model.Properties.Id">
+<h4 class="h4 @if (Model.Properties.Class != null) { @Model.Properties.Class }" id="@Model.Properties.Id">
     @Html.Raw(HttpUtility.HtmlDecode(headText.Replace(Environment.NewLine, "<br/>")))
 </h4>

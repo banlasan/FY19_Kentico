@@ -28,12 +28,13 @@ namespace FY19.Models.Widgets
         public bool IsOpenNewWindow { get; set; }
 
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 1, Label = "Id")]
-            [StringLength(200, ErrorMessage = "Limit 200 characters")]
-            public string Id { get; set; }
+        [RegularExpression(@"^\S*$", ErrorMessage = "No white space allowed")]
+        [StringLength(200, ErrorMessage = "Limit 200 characters")]
+        public string Id { get; set; }
 
-            [EditingComponent(TextInputComponent.IDENTIFIER, Order = 2, Label = "Class")]
-            [StringLength(200, ErrorMessage = "Limit 200 characters")]
-            public string Class { get; set; }
+        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 2, Label = "Class")]
+        [StringLength(200, ErrorMessage = "Limit 200 characters")]
+        public string Class { get; set; }
         
     }
 }

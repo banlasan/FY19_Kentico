@@ -13,6 +13,7 @@ namespace FY19.Models.Widgets
 
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 1, Label = "Id")]
         [StringLength(200, ErrorMessage = "Limit 200 characters")]
+        [RegularExpression(@"^\S*$", ErrorMessage = "No white space allowed")]
         public string Id { get; set; }
 
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 2, Label = "Class")]

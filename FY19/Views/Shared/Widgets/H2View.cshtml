@@ -33,10 +33,10 @@
 @{
     string headText = string.Empty;
 
-    if (Model.Properties.Heading_Text != null)
+    if (Model.Properties.Heading != null)
     {
-        headText = HtmlToPlainText(Model.Properties.Heading_Text);
+        headText = HtmlToPlainText(Model.Properties.Heading);
     }
 }
 
-<h2 class="h2 mt-lg-80 mb-lg-40 mt-sm-50 mb-sm-20 @if (Model.Properties.Id != null) { @Model.Properties.Class }" id="@Model.Properties.Id">@Html.Raw(HttpUtility.HtmlDecode(headText.Replace(Environment.NewLine, "<br/>")))</h2>
+<h2 class="h2 mt-lg-80 mb-lg-40 mt-sm-50 mb-sm-20 @if (Model.Properties.Class != null) { @Model.Properties.Class }" id="@Model.Properties.Id">@Html.Raw(HttpUtility.HtmlDecode(headText.Replace(Environment.NewLine, "<br/>")))</h2>

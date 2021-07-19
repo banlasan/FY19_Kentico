@@ -67,7 +67,7 @@
     }
 }
 
-<div class="btn btn001 @if (Model.Properties.Id != null) { @Model.Properties.Class; }" @if (Model.Properties.Id != null) { @thisId }>
+<div class="btn btn001 @if (Model.Properties.Class != null) { @Model.Properties.Class; }" @if (Model.Properties.Id != null) { @thisId }>
     <a href="@url" @if (Model.Properties.Blank) { @tBlank }>
         @if (textContent != null)
         {@Html.Raw(HttpUtility.HtmlDecode(textContent.Replace(Environment.NewLine, "<br/>")))}
