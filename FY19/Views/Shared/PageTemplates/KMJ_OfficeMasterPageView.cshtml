@@ -563,7 +563,12 @@
                                                                                     "FY19.Table",
                                                                                     "FY19.Placeholder"})
 
+                                @Html.Kentico().EditableArea("FooterScriptZone",
+                                                            defaultSectionIdentifier: null,
+                                                            allowedWidgets: new[] { "FY19.StaticText" })
+
                                 <p class="dl-brochure"><a href="https://www.konicaminolta.com/web-contents/kmj/assets/office365/pdf/office365.pdf" target="_blank" class="btn-brochure-line-multi"><i>このサービスのカタログ<br class="hidden-lg">ダウンロード<br class="hidden-sm"><small>(PDF:835KB)</small></i></a></p>
+
                                 <!-- / #contentsInner -->
                             </section>
                             <!--/content-wrapper-->
@@ -575,14 +580,11 @@
                 </div>
                 <!-- / #contentsArea -->
             </div>
+
             <div class="footerBacktop">
                 <p><a href="#anchorPagetop">ページトップへ戻る</a></p>
                 <!--/.line-->
             </div>
-
-            @Html.Kentico().EditableArea("FooterScriptZone",
-                            defaultSectionIdentifier: null,
-                            allowedWidgets: new[] { "FY19.StaticText" })
 
             <footer>
                 <article>
