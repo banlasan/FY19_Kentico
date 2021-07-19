@@ -18,7 +18,7 @@ namespace FY19.Controllers
         // GET: Antivirus
         public ActionResult Index()
         {
-            TreeNode page = DocumentHelper.GetDocuments().Path("/business/service/it-guardians/ListOfServices/Antivirus").OnCurrentSite().TopN(1).FirstOrDefault();
+            TreeNode page = DocumentHelper.GetDocuments().Path("/business/service/it-guardians/ServiceList/Antivirus").OnCurrentSite().TopN(1).FirstOrDefault();
             if (page == null)
             {
                 return HttpNotFound();

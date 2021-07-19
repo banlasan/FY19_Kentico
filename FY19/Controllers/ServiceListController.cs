@@ -13,12 +13,12 @@ using KMVCHelper;
 namespace FY19.Controllers
 {
     [KMVCRouteOverPathPriority]
-    public class ListOfServicesController : PageTemplateController
+    public class ServiceListController : PageTemplateController
     {
-        // GET: ListOfServices
+        // GET: ServiceList
         public ActionResult Index()
         {
-            TreeNode page = DocumentHelper.GetDocuments().Path("/business/service/it-guardians/ListOfServices").OnCurrentSite().TopN(1).FirstOrDefault();
+            TreeNode page = DocumentHelper.GetDocuments().Path("/business/service/it-guardians/ServiceList").OnCurrentSite().TopN(1).FirstOrDefault();
             if (page == null)
             {
                 return HttpNotFound();

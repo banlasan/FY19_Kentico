@@ -34,8 +34,8 @@
     string bodyText = string.Empty;
 
     if (Model.Properties.TextContent != null)
-    { bodyText = HtmlToPlainText(Model.Properties.TextContent); }
+    { bodyText = Model.Properties.TextContent; }
 }
 
 
-<p class="textRead @if (Model.Properties.Id != null) { @Model.Properties.Class; }" id="@Model.Properties.Id">@Html.Raw(HttpUtility.HtmlDecode(bodyText.Replace(Environment.NewLine, "<br/>")))</p>
+<p class="textRead @if (Model.Properties.Class != null) { @Model.Properties.Class; }" id="@Model.Properties.Id">@Html.Raw(HttpUtility.HtmlDecode(bodyText.Replace(Environment.NewLine, "<br/>")))</p>

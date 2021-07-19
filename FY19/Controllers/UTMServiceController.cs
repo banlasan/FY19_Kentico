@@ -18,7 +18,7 @@ namespace FY19.Controllers
         // GET: UTMService
         public ActionResult Index()
         {
-            TreeNode page = DocumentHelper.GetDocuments().Path("/business/service/it-guardians/ListOfServices/UTMService").OnCurrentSite().TopN(1).FirstOrDefault();
+            TreeNode page = DocumentHelper.GetDocuments().Path("/business/service/it-guardians/ServiceList/UTMService").OnCurrentSite().TopN(1).FirstOrDefault();
             if (page == null)
             {
                 return HttpNotFound();

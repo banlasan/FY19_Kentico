@@ -1,12 +1,33 @@
 ﻿@using Kentico.PageBuilder.Web.Mvc
 @using Kentico.OnlineMarketing.Web.Mvc
 @using Kentico.Web.Mvc
+@using FY19.Models.PageTemplates
+@model ComponentViewModel<PageTemplateProperties>
+
+@{
+    string title = string.Empty;
+    string hiddenClass = string.Empty;
+
+    if (Model.Properties.PageTitle != null)
+    {
+        title = Model.Properties.PageTitle;
+
+        if (title == "IT管理サービス IT-Guardians（ITガーディアンズ） | コニカミノルタ")
+        {
+            hiddenClass = "hidden-lg";
+        }
+    }
+    else
+    {
+        title = "No title";
+    }
+}
 
 <!DOCTYPE html>
 <html lang="ja">
 <head id="head">
     <title>
-        IT管理サービス IT-Guardians（ITガーディアンズ） | コニカミノルタ
+        @title
     </title>
     <meta name="description" content="IT-GuardiansはコニカミノルタのITの設計・導入・保守・運用ノウハウをパッケージ化し、すべての企業の皆様にご利用いただけるようご提供いたします。" />
     <meta charset="UTF-8" />
@@ -468,19 +489,19 @@
                             <ul>
                                 <li><a href="/business/service/it-guardians/index.html">TOP</a></li>
                                 <!--
-            -->
+                                -->
                                 <li><a href="/business/service/it-guardians/index.html#itg-solution">課題解決</a></li>
                                 <!--
-            -->
+                                -->
                                 <li><a href="/business/service/it-guardians/helpdesk/index.html">ヘルプデスク</a></li>
                                 <!--
-            -->
+                                -->
                                 <li class="current"><a href="/business/service/it-guardians/service/index.html">サービス一覧</a></li>
                                 <!--
-            -->
+                                -->
                                 <li><span>ニュース</span></li>
                                 <!--
-            -->
+                                -->
                                 <li><a href="https://bsoffers.konicaminolta.jp/fm-it-guardians-contact.html" target="_blank">お問い合わせ</a></li>
                             </ul>
                         </nav>
@@ -495,11 +516,48 @@
                             </ul>
                         </div>
 
-                        @Html.Kentico().EditableArea("HeadHTMLZone", defaultSectionIdentifier: null, allowedWidgets: new[] { "FY19.HeadHTML" })
+                        @*@Html.Kentico().EditableArea("HeadHTMLZone", defaultSectionIdentifier: null, allowedWidgets: new[] { "FY19.HeadHTML" })*@
+
+                        @Html.Kentico().EditableArea("HeadHTMLZone",
+                                                    defaultSectionIdentifier: null,
+                                                    allowedWidgets: new[] { "FY19.Image",
+                                                                            "FY19.H2Header",
+                                                                            "FY19.H3Header",
+                                                                            "FY19.H4Header",
+                                                                            "FY19.BodyText",
+                                                                            "FY19.StaticText",
+                                                                            "FY19.AnnotationList",
+                                                                            "FY19.LinkList",
+                                                                            "FY19.BreadCrumbs",
+                                                                            "FY19.List",
+                                                                            "FY19.AnchorList",
+                                                                            "FY19.LinkButton",
+                                                                            "FY19.HeadHTML",
+                                                                            "FY19.FreeHTML",
+                                                                            "FY19.Table",
+                                                                            "FY19.Placeholder"})
 
                         <div class="content-wrapper">
-                            @Html.Kentico().EditableArea("HeaderZone", defaultSectionIdentifier: null, allowedWidgets: new[] { "FY19.H2Header", "FY19.H3Header", "FY19.H4Header" })
+                            @*@Html.Kentico().EditableArea("HeaderZone", defaultSectionIdentifier: null, allowedWidgets: new[] { "FY19.H2Header", "FY19.H3Header", "FY19.H4Header" })*@
 
+                            @Html.Kentico().EditableArea("HeaderZone",
+                                                        defaultSectionIdentifier: null,
+                                                        allowedWidgets: new[] { "FY19.Image",
+                                                                                "FY19.H2Header",
+                                                                                "FY19.H3Header",
+                                                                                "FY19.H4Header",
+                                                                                "FY19.BodyText",
+                                                                                "FY19.StaticText",
+                                                                                "FY19.AnnotationList",
+                                                                                "FY19.LinkList",
+                                                                                "FY19.BreadCrumbs",
+                                                                                "FY19.List",
+                                                                                "FY19.AnchorList",
+                                                                                "FY19.LinkButton",
+                                                                                "FY19.HeadHTML",
+                                                                                "FY19.FreeHTML",
+                                                                                "FY19.Table",
+                                                                                "FY19.Placeholder"})
                             <section class="content-inner">
                                 @Html.Kentico().EditableArea("ContentZone",
                                                             defaultSectionIdentifier: null,

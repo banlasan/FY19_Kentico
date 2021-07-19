@@ -18,7 +18,7 @@ namespace FY19.Controllers
         // GET: RemoteView
         public ActionResult Index()
         {
-            TreeNode page = DocumentHelper.GetDocuments().Path("/business/service/it-guardians/ListOfServices/RemoteView").OnCurrentSite().TopN(1).FirstOrDefault();
+            TreeNode page = DocumentHelper.GetDocuments().Path("/business/service/it-guardians/ServiceList/RemoteView").OnCurrentSite().TopN(1).FirstOrDefault();
             if (page == null)
             {
                 return HttpNotFound();

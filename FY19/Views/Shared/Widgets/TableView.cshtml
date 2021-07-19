@@ -23,7 +23,7 @@
 }
 else
 {
-    <div class="scroll @if (Model.Properties.Id != null) { @Model.Properties.Class; }" id="@Model.Properties.Id">
+    <div class="scroll @if (Model.Properties.Class != null) { @Model.Properties.Class; }" id="@Model.Properties.Id">
         @Html.Raw(htmlCode)
     </div>
 }

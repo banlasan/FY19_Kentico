@@ -1,12 +1,33 @@
 ﻿@using Kentico.PageBuilder.Web.Mvc
 @using Kentico.OnlineMarketing.Web.Mvc
 @using Kentico.Web.Mvc
+@using FY19.Models.PageTemplates
+@model ComponentViewModel<PageTemplateProperties>
+
+@{
+    string title = string.Empty;
+    string hiddenClass = string.Empty;
+
+    if (Model.Properties.PageTitle != null)
+    {
+        title = Model.Properties.PageTitle;
+
+        if (title == "IT管理サービス IT-Guardians（ITガーディアンズ） | コニカミノルタ")
+        {
+            hiddenClass = "hidden-lg";
+        }
+    }
+    else
+    {
+        title = "No title";
+    }
+}
 
 <!DOCTYPE html>
 <html lang="ja">
 <head id="head">
     <title>
-        カタログダウンロード | IT管理サービス IT-Guardians | コニカミノルタ
+        @title
     </title>
     <meta name="description" content="IT-Guardiansの各種サービスをご案内する総合カタログや、様々な課題別の解決カタログなど、IT環境構築に役立つ資料をご覧いただけます。" />
     <meta charset="UTF-8" />
@@ -308,8 +329,8 @@
                                     <p>印刷工程の自動化でオペレーションを効率化させるデジタル印刷システムのフラッグシップモデル</p>
                                 </li>
                                 <!--<li><p><a href="/business/products/graphic/ondemand_print/color/accurio_press_c2070_c2070p_c2060/index.html"><img src="https://www.konicaminolta.jp/business/common/img/megamenu/img_072.jpg" width="155" height="110" alt=""><span>AccurioPress C2070 / C2070P / C2060</span></a></p>
-                            <p>進化し続けるマルチロールプロダクション印刷システム「AccurioPress C2070 / C2070P / C2060」</p></li><li><p><a href="/business/products/copiers/bw/bizhub_558_458_368_308/index.html"><img src="https://www.konicaminolta.jp/business/common/img/megamenu/img_065.jpg" width="155" height="110" alt=""><span>bizhub 558 / 458 / 368 / 308</span></a></p>
-                            <p>快適な環境を構築し、業務効率化をサポートする「bizhub 558 / 458 / 368 / 308」</p></li>-->
+                                <p>進化し続けるマルチロールプロダクション印刷システム「AccurioPress C2070 / C2070P / C2060」</p></li><li><p><a href="/business/products/copiers/bw/bizhub_558_458_368_308/index.html"><img src="https://www.konicaminolta.jp/business/common/img/megamenu/img_065.jpg" width="155" height="110" alt=""><span>bizhub 558 / 458 / 368 / 308</span></a></p>
+                                <p>快適な環境を構築し、業務効率化をサポートする「bizhub 558 / 458 / 368 / 308」</p></li>-->
                             </ul>
                             <!-- / .colR -->
                         </div>

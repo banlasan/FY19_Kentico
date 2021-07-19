@@ -726,6 +726,7 @@
     <Folder Include="Scripts\AlloyEditor\assets\css\skin\atlas\" />
     <Folder Include="Scripts\AlloyEditor\assets\css\skin\moono\" />
     <Folder Include="Scripts\AlloyEditor\assets\css\skin\ocean\" />
+    <Folder Include="Views\ServiceList\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\document-sitemap.xml" />
@@ -1260,7 +1261,6 @@
     <Compile Include="Controllers\InlineEditors\ImageUploaderHelper.cs" />
     <Compile Include="Controllers\InlineEditors\MediaFileImageUploader.cs" />
     <Compile Include="Controllers\ITG_SitemapController.cs" />
-    <Compile Include="Controllers\ListOfServicesController.cs" />
     <Compile Include="Controllers\Office365Controller.cs" />
     <Compile Include="Controllers\Office365_SitemapController.cs" />
     <Compile Include="Controllers\PageTemplates\DynamicPageTemplateController.cs" />
@@ -1271,6 +1271,7 @@
     <Compile Include="Controllers\RemoteViewController.cs" />
     <Compile Include="Controllers\Sections\SingleColumnSection.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
+    <Compile Include="Controllers\ServiceListController.cs" />
     <Compile Include="Controllers\SystemController.cs" />
     <Compile Include="Controllers\TeleworkController.cs" />
     <Compile Include="Controllers\TestController.cs" />
@@ -1306,6 +1307,7 @@
     <Compile Include="Models\InlineEditors\InlineEditorViewModel.cs" />
     <Compile Include="Models\InlineEditors\LinkButtonEditor\LinkButtonEditorViewModel.cs" />
     <Compile Include="Models\InlineEditors\TextEditor\TextEditorViewModel.cs" />
+    <Compile Include="Models\PageTemplates\PageTemplateProperties.cs" />
     <Compile Include="Models\Sections\IndexSectionProperties.cs" />
     <Compile Include="Models\Sections\KMJ_1-2ColumnProperties.cs" />
     <Compile Include="Models\Sections\KMJ_1_3ColumnProperties.cs" />

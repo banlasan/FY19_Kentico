@@ -121,7 +121,7 @@
 }
 
 
-<ul class="@leftFootClass @if (Model.Properties.Id != null) { @Model.Properties.Class; }" id="@Model.Properties.Id">
+<ul class="@leftFootClass @if (Model.Properties.Class != null) { @Model.Properties.Class; }" id="@Model.Properties.Id">
     @if (text1 != null)
     {<li>@Html.Raw(HttpUtility.HtmlDecode(text1.Replace(Environment.NewLine, "<br/>")))</li>}
     @if (text2 != null)
