@@ -530,7 +530,7 @@
                         @*<cms:CMSWebPartZone ZoneID="BreadcrumbsZone" runat="server" />*@
                         @Html.Kentico().EditableArea("BreadcrumbsZone",
                                                     defaultSectionIdentifier: null,
-                                                    allowedWidgets: new[] { "FY19.StaticText" })
+                                                    allowedWidgets: new[] { "FY19.BreadCrumbs" })
 
                         <div class="content-wrapper">
                             <section class="content-inner content-inner-top">
@@ -561,22 +561,7 @@
                 @*<cms:CMSWebPartZone ZoneID="FooterZone" runat="server" />*@
                 @Html.Kentico().EditableArea("FooterZone",
                                             defaultSectionIdentifier: null,
-                                            allowedWidgets: new[] { "FY19.Image",
-                                                                    "FY19.H2Header",
-                                                                    "FY19.H3Header",
-                                                                    "FY19.H4Header",
-                                                                    "FY19.BodyText",
-                                                                    "FY19.StaticText",
-                                                                    "FY19.AnnotationList",
-                                                                    "FY19.LinkList",
-                                                                    "FY19.BreadCrumbs",
-                                                                    "FY19.List",
-                                                                    "FY19.AnchorList",
-                                                                    "FY19.LinkButton",
-                                                                    "FY19.HeadHTML",
-                                                                    "FY19.FreeHTML",
-                                                                    "FY19.Table",
-                                                                    "FY19.Placeholder"})
+                                            allowedWidgets: new[] { "FY19.StaticText" })
             </div>
 
             @*<cms:CMSWebPartZone ZoneID="FooterScriptZone" runat="server" />*@
