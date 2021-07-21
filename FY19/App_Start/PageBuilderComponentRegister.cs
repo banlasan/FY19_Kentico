@@ -34,8 +34,7 @@ using FY19.Models.PageTemplates;
 //PageTemplates
 [assembly: RegisterPageTemplate("Empty.Template", "No Template", typeof(PageTemplateProperties), customViewName: "PageTemplates/_EmptyTemplate", Description = "No Template (Use standard Dynamic Routing)", IconClass = "icon-modal-close")]
 [assembly: RegisterPageTemplate("Blank.Widget", "Blank Widget Page", typeof(PageTemplateProperties), customViewName: "PageTemplates/_BlankWidgetTemplate", Description = "Blank page with a widget zone")]
-[assembly: RegisterPageTemplate("FY19.KMJ_CatalogDownloadPage", "Catalog Page Template", typeof(PageTemplateProperties), customViewName: "PageTemplates/KMJ_CatalogDownloadView", Description = "", IconClass = "icon-doc-o")]
-[assembly: RegisterPageTemplate("FY19.KMJ_CommonPage", "Common Page Template", typeof(PageTemplateProperties), customViewName: "PageTemplates/KMJ_CommonPageView", Description = "", IconClass = "icon-doc-o")]
+[assembly: RegisterPageTemplate("FY19.KMJ_CatalogDownloadPage", "Catalog Download Page Template", typeof(PageTemplateProperties), customViewName: "PageTemplates/KMJ_CatalogDownloadView", Description = "", IconClass = "icon-doc-o")]
 [assembly: RegisterPageTemplate("FY19.KMJ_DocumentSolutionMasterPage", "Document Solution Master Page Template", typeof(PageTemplateProperties), customViewName: "PageTemplates/KMJ_DocumentSolutionMasterView", Description = "", IconClass = "icon-doc-o")]
 [assembly: RegisterPageTemplate("FY19.KMJ_GenericCategoryTopPage", "Generic Category Top Page Template", typeof(PageTemplateProperties), customViewName: "PageTemplates/KMJ_GenericCategoryTopView", Description = "", IconClass = "icon-doc-o")]
 [assembly: RegisterPageTemplate("FY19.KMJ_GenericPage", "Generic Page Template", typeof(PageTemplateProperties), customViewName: "PageTemplates/KMJ_GenericPageView", Description = "", IconClass = "icon-doc-o")]

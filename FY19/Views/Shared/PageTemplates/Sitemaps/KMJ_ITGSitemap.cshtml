@@ -1,8 +1,24 @@
-﻿<!DOCTYPE html>
+﻿@using Kentico.PageBuilder.Web.Mvc
+@using Kentico.OnlineMarketing.Web.Mvc
+@using Kentico.Web.Mvc
+@using FY19.Models.PageTemplates
+@model ComponentViewModel<PageTemplateProperties>
+
+@{
+    string title = string.Empty;
+    string hiddenClass = string.Empty;
+
+    if (Model.Properties.PageTitle != null)
+    {
+        title = Model.Properties.PageTitle;
+    }
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="view" content="width=device-width" />
-    <title>itg-guardians sitemap</title>
+    <title>@title</title>
 </head>
 <body>
     <h1>ITG Sitemap</h1>
@@ -11,3 +27,11 @@
     </div>
 </body>
 </html>
+
+@Html.Kentico().PageBuilderScripts()
+@Html.Kentico().PageBuilderStyles()
+
+@Scripts.Render("~/bundles/scripts")
+
+@* Registers scripts that ensure logging of analytics data for A/B tests *@
+@Html.Kentico().ABTestLoggerScript()
