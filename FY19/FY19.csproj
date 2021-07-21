@@ -1308,12 +1308,10 @@
     <Compile Include="Models\InlineEditors\LinkButtonEditor\LinkButtonEditorViewModel.cs" />
     <Compile Include="Models\InlineEditors\TextEditor\TextEditorViewModel.cs" />
     <Compile Include="Models\PageTemplates\PageTemplateProperties.cs" />
-    <Compile Include="Models\Sections\IndexSectionProperties.cs" />
     <Compile Include="Models\Sections\KMJ_1-2ColumnProperties.cs" />
     <Compile Include="Models\Sections\KMJ_1_3ColumnProperties.cs" />
     <Compile Include="Models\Sections\KMJ_2-3ColumnProperties.cs" />
     <Compile Include="Models\Sections\KMJ_ColumnZoneProperties.cs" />
-    <Compile Include="Models\Sections\SingleSectionProperties.cs" />
     <Compile Include="Models\Widgets\BreadCrumbs\BreadCrumbsPaths.cs" />
     <Compile Include="Models\Widgets\BreadCrumbs\BreadCrumbsProperties.cs" />
     <Compile Include="Models\Widgets\BreadCrumbs\BreadCrumbsViewModel.cs" />

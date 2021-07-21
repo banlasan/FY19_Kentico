@@ -18,8 +18,5 @@ namespace FY19.Models.Sections
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 1, Label = "Class")]
         [StringLength(200, ErrorMessage = "Limit 200 characters")]
         public string Class { get; set; }
-
-        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 2, Label = "Color")]
-        public string Color { get; set; } = "#4a2626";
     }
 }

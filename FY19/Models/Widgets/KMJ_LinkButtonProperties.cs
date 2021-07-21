@@ -16,7 +16,7 @@ namespace FY19.Models.Widgets
         [Required]
         public string TextContent { get; set; }
 
-        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 1, Label = "URL", DefaultValue = "https://")]
+        [EditingComponent(TextInputComponent.IDENTIFIER, Order = 1, Label = "URL")]
         [EditingComponentProperty(nameof(TextInputProperties.Name), "")]
         [StringLength(1000, ErrorMessage = "Limit 1000 characters")]
         [Required]

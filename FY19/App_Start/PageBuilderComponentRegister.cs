@@ -26,8 +26,6 @@ using FY19.Models.PageTemplates;
 
 
 //Sections
-//[assembly: RegisterSection("FY19.SingColSec", "Single Column", typeof(SingleSectionProperties), "Sections/_SingleColumnView", IconClass = "icon-l-cols-1")]
-[assembly: RegisterSection("FY19.IndexSection", "Index Section", typeof(IndexSectionProperties), "Sections/_IndexSectionView", IconClass = "icon-i-circle")]
 [assembly: RegisterSection("FY19.TwoColumnSection", "Two Columns", typeof(KMJ_1_2ColumnProperties), "Sections/TwoColumnView", IconClass = "icon-l-cols-2")]
 [assembly: RegisterSection("FY19.ThreeColumnSection", "Three Columns", typeof(KMJ_1_3ColumnProperties), "Sections/ThreeColumnView", IconClass = "icon-l-cols-3")]
 [assembly: RegisterSection("FY19.TwoThirdsColumnSection", "2/3 Columns", typeof(KMJ_2_3ColumnProperties), "Sections/TwoThirdsColumnView", IconClass = "icon-2-cols-3")]
