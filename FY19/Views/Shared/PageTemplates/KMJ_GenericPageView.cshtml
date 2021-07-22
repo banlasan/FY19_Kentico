@@ -21,6 +21,8 @@
     {
         title = "No title";
     }
+
+    string current = "current";
 }
 
 <!DOCTYPE html>
@@ -485,14 +487,13 @@
             <div id="contentsArea">
                 <div id="contentsInner">
                     <div class="main">
-
                         <nav class="localnavigation @hiddenClass">
                             <p class="localnavigation__btn">MENU</p>
                             <ul>
                                 <li><a href="/business/service/it-guardians/index.html">TOP</a></li>
-                                <li class="current"><a href="/business/service/it-guardians/index.html#itg-solution">課題解決</a></li>
-                                <li><a href="/business/service/it-guardians/helpdesk/index.html">ヘルプデスク</a></li>
-                                <li><a href="/business/service/it-guardians/service/index.html">サービス一覧</a></li>
+                                <li class="@if (!title.Contains("ヘルプデスク") && !title.Contains("サービス一覧")) { @current }"><a href="/business/service/it-guardians/index.html#itg-solution">課題解決</a></li>
+                                <li class="@if (title.Contains("ヘルプデスク")){ @current }"><a href="/business/service/it-guardians/helpdesk/index.html">ヘルプデスク</a></li>
+                                <li class="@if (title.Contains("サービス一覧")){ @current }"><a href="/business/service/it-guardians/service/index.html">サービス一覧</a></li>
                                 <li><span>ニュース</span></li>
                                 <li><a href="https://bs-offers.konicaminolta.jp/it-guardians/contact/form/" target="_blank">お問い合わせ</a></li>
                             </ul>
@@ -502,9 +503,55 @@
                             <ul>
                                 <li><a href="/business/service/it-guardians/index.html">TOP</a></li>
                                 <li>
-                                    <a href="/business/service/it-guardians/index.html#itg-solution" class="CMSBreadCrumbsLink">課題解決</a>
+                                    @if (title == "ヘルプデスク | IT管理サービス IT-Guardians | コニカミノルタ")
+                                    {
+                                        @Html.Raw("ヘルプデスク")
+                                    }
+                                    else if (title == "サービス一覧 | IT管理サービス IT-Guardians | コニカミノルタ" && title == "IT-Guardians アンチウイルスサービス | コニカミノルタ" && title == "IT-Guardians リモートビューサービス | コニカミノルタ" && title == "IT-Guardians UTMサービス | コニカミノルタ")
+                                    {
+                                        @Html.Raw("サービス一覧")
+                                    }
+                                    else
+                                    {
+                                        <a href="/business/service/it-guardians/index.html#itg-solution" class="CMSBreadCrumbsLink">課題解決</a>
+                                    }
                                 </li>
-                                <li>セキュリティ対策</li>
+                                @if (title == "情報システムの運用負荷軽減 | IT管理サービス IT-Guardians | コニカミノルタ")
+                                {
+                                    <li>情報システムの運用負荷軽減</li>
+                                }
+                                else if (title == "セキュリティ対策 | IT管理サービス IT-Guardians | コニカミノルタ")
+                                {
+                                    <li>セキュリティ対策</li>
+                                }
+                                else if (title == "情報伝達による生産性向上 | IT管理サービス IT-Guardians | コニカミノルタ")
+                                {
+                                    <li>情報伝達による生産性向上</li>
+                                }
+                                else if (title == "プリンティング環境最適化 | IT管理サービス IT-Guardians | コニカミノルタ")
+                                {
+                                    <li>プリンティング環境最適化</li>
+                                }
+                                else if (title == "ITコスト低減／変動費化 | IT管理サービス IT-Guardians | コニカミノルタ")
+                                {
+                                    <li>ITコスト低減／変動費化</li>
+                                }
+                                else if (title == "IT-Guardians リモートビューサービス | コニカミノルタ")
+                                {
+                                    <li>リモートビューサービス</li>
+                                }
+                                else if (title == "IT-Guardians アンチウイルスサービス | コニカミノルタ")
+                                {
+                                    <li>アンチウイルスサービス</li>
+                                }
+                                else if (title == "IT-Guardians UTMサービス | コニカミノルタ")
+                                {
+                                    <li>UTMサービス</li>
+                                }
+                                else
+                                {
+                                    <li></li>
+                                }
                             </ul>
                         </div>
 
@@ -564,11 +611,11 @@
 
             <script type="text/javascript">
                 function PAGODA_prepClient(fn) {
-                    fn.setClientCode('konicaminolta');
-                    if (typeof (PAGODA_conversion) == "function") { PAGODA_conversion(fn); }
-                }
-                var host = (("https:" == document.location.protocol) ? "https://ssl" : "http://s") + '.pagoda56.com';
-                document.write(unescape("%3Cscript src='" + host + "/pagoda/pagoda.js' type='text/javascript'%3E%3C/script%3E"));
+                                        fn.setClientCode('konicaminolta');
+                                        if (typeof (PAGODA_conversion) == "function") { PAGODA_conversion(fn); }
+                                    }
+                                    var host = (("https:" == document.location.protocol) ? "https://ssl" : "http://s") + '.pagoda56.com';
+                                    document.write(unescape("%3Cscript src='" + host + "/pagoda/pagoda.js' type='text/javascript'%3E%3C/script%3E"));
             </script>
             <!-- End of Konica Minolta_Cvtag, Konica_Information equipment_RTtag and Pandora_tag for Web Ad Trucking -->
             <!-- Start of Konica Inc._LinkedInInsightTag -->
@@ -578,8 +625,8 @@
             <script type="text/javascript">
                 (function () {
                     var s = document.getElementsByTagName("script")[0];
-                    var b = document.createElement("script");
-                    b.type = "text/javascript";
+                                    var b = document.createElement("script");
+                                    b.type = "text/javascript";
                     b.async = true;
                     b.src = (window.location.protocol === "https:" ? "https://sjs" : "http://js") + ".bizographics.com/insight.min.js";
                     s.parentNode.insertBefore(b, s);
