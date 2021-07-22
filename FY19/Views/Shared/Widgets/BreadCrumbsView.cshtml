@@ -31,244 +31,180 @@
 }
 
 @{
-    string text1 = string.Empty, text2 = string.Empty, text3 = string.Empty, text4 = string.Empty, text5 = string.Empty, text6 = string.Empty, text7 = string.Empty, text8 = string.Empty, text9 = string.Empty, text10 = string.Empty;
+    string text1, text2, text3, text4, text5, text6, text7, text8, text9, text10;
     string url1, url2, url3, url4, url5, url6, url7, url8, url9, url10;
     string className = "anchorLinkClass";
     string id = "anchorLinkId";
 
-    if (Model.Properties.Text1 != null)
-    {
-        text1 = HtmlToPlainText(Model.Properties.Text1.Replace("Label:", ""));
-    }
-    else
-    {
-        text1 = Model.Properties.Text1;
-    }
-    if (Model.Properties.Url1 != null)
-    {
-        url1 = HtmlToPlainText(Model.Properties.Url1.Replace("URL: https://", ""));
-    }
-    else
-    {
-        url1 = Model.Properties.Url1;
-    }
+    //breadcrumb 1
+    text1 = (Model.Properties.Text1 != null) ? (Model.Properties.Text1.Length > 200 ? Model.Properties.Text1.Substring(0, 200) : Model.Properties.Text1) : (null);
+    url1 = (Model.Properties.Url1 != null) ? (Model.Properties.Url1.Length > 992 ? Model.Properties.Url1.Substring(0, 992) : Model.Properties.Url1) : (null);
 
-    if (Model.Properties.Text2 != null)
-    {
-        text2 = HtmlToPlainText(Model.Properties.Text2.Replace("Label:", ""));
-    }
-    else
-    {
-        text2 = Model.Properties.Text2;
-    }
-    if (Model.Properties.Url2 != null)
-    {
-        url2 = HtmlToPlainText(Model.Properties.Url2.Replace("URL: https://", ""));
-    }
-    else
-    {
-        url2 = Model.Properties.Url2;
-    }
+    //breadcrumb 2
+    text2 = (Model.Properties.Text2 != null) ? (Model.Properties.Text2.Length > 200 ? Model.Properties.Text2.Substring(0, 200) : Model.Properties.Text2) : (null);
+    url2 = (Model.Properties.Url2 != null) ? (Model.Properties.Url2.Length > 992 ? Model.Properties.Url2.Substring(0, 992) : Model.Properties.Url2) : (null);
 
+    //breadcrumb 3
+    text3 = (Model.Properties.Text3 != null) ? (Model.Properties.Text3.Length > 200 ? Model.Properties.Text3.Substring(0, 200) : Model.Properties.Text3) : (null);
+    url3 = (Model.Properties.Url3 != null) ? (Model.Properties.Url3.Length > 992 ? Model.Properties.Url3.Substring(0, 992) : Model.Properties.Url3) : (null);
 
-    if (Model.Properties.Text3 != null)
-    {
-        text3 = HtmlToPlainText(Model.Properties.Text3.Replace("Label:", ""));
-    }
-    else
-    {
-        text3 = Model.Properties.Text3;
-    }
-    if (Model.Properties.Url3 != null)
-    {
-        url3 = HtmlToPlainText(Model.Properties.Url3.Replace("URL: https://", ""));
-    }
-    else
-    {
-        url3 = Model.Properties.Url3;
-    }
+    //breadcrumb 4
+    text4 = (Model.Properties.Text4 != null) ? (Model.Properties.Text4.Length > 200 ? Model.Properties.Text4.Substring(0, 200) : Model.Properties.Text4) : (null);
+    url4 = (Model.Properties.Url4 != null) ? (Model.Properties.Url4.Length > 992 ? Model.Properties.Url4.Substring(0, 992) : Model.Properties.Url4) : (null);
 
-    if (Model.Properties.Text4 != null)
-    {
-        text4 = HtmlToPlainText(Model.Properties.Text4.Replace("Label:", ""));
-    }
-    else
-    {
-        text4 = Model.Properties.Text4;
-    }
-    if (Model.Properties.Url4 != null)
-    {
-        url4 = HtmlToPlainText(Model.Properties.Url4.Replace("URL: https://", ""));
-    }
-    else
-    {
-        url4 = Model.Properties.Url4;
-    }
+    //breadcrumb 5
+    text5 = (Model.Properties.Text5 != null) ? (Model.Properties.Text5.Length > 200 ? Model.Properties.Text5.Substring(0, 200) : Model.Properties.Text5) : (null);
+    url5 = (Model.Properties.Url5 != null) ? (Model.Properties.Url5.Length > 992 ? Model.Properties.Url5.Substring(0, 992) : Model.Properties.Url5) : (null);
 
-    if (Model.Properties.Text5 != null)
-    {
-        text5 = HtmlToPlainText(Model.Properties.Text5.Replace("Label:", ""));
-    }
-    else
-    {
-        text5 = Model.Properties.Text5;
-    }
-    if (Model.Properties.Url5 != null)
-    {
-        url5 = HtmlToPlainText(Model.Properties.Url5.Replace("URL: https://", ""));
-    }
-    else
-    {
-        url5 = Model.Properties.Url5;
-    }
+    //breadcrumb 6
+    text6 = (Model.Properties.Text6 != null) ? (Model.Properties.Text6.Length > 200 ? Model.Properties.Text6.Substring(0, 200) : Model.Properties.Text6) : (null);
+    url6 = (Model.Properties.Url6 != null) ? (Model.Properties.Url6.Length > 992 ? Model.Properties.Url6.Substring(0, 992) : Model.Properties.Url6) : (null);
 
-    if (Model.Properties.Text6 != null)
-    {
-        text6 = HtmlToPlainText(Model.Properties.Text6.Replace("Label:", ""));
-    }
-    else
-    {
-        text6 = Model.Properties.Text6;
-    }
-    if (Model.Properties.Url6 != null)
-    {
-        url6 = HtmlToPlainText(Model.Properties.Url6.Replace("URL: https://", ""));
-    }
-    else
-    {
-        url6 = Model.Properties.Url6;
-    }
+    //breadcrumb 7
+    text7 = (Model.Properties.Text7 != null) ? (Model.Properties.Text7.Length > 200 ? Model.Properties.Text7.Substring(0, 200) : Model.Properties.Text7) : (null);
+    url7 = (Model.Properties.Url7 != null) ? (Model.Properties.Url7.Length > 992 ? Model.Properties.Url7.Substring(0, 992) : Model.Properties.Url7) : (null);
 
-    if (Model.Properties.Text7 != null)
-    {
-        text7 = HtmlToPlainText(Model.Properties.Text7.Replace("Label:", ""));
-    }
-    else
-    {
-        text7 = Model.Properties.Text7;
-    }
-    if (Model.Properties.Url7 != null)
-    {
-        url7 = HtmlToPlainText(Model.Properties.Url7.Replace("URL: https://", ""));
-    }
-    else
-    {
-        url7 = Model.Properties.Url7;
-    }
+    //breadcrumb 8
+    text8 = (Model.Properties.Text8 != null) ? (Model.Properties.Text8.Length > 200 ? Model.Properties.Text8.Substring(0, 200) : Model.Properties.Text8) : (null);
+    url8 = (Model.Properties.Url8 != null) ? (Model.Properties.Url8.Length > 992 ? Model.Properties.Url8.Substring(0, 992) : Model.Properties.Url8) : (null);
 
-    if (Model.Properties.Text8 != null)
-    {
-        text8 = HtmlToPlainText(Model.Properties.Text8.Replace("Label:", ""));
-    }
-    else
-    {
-        text8 = Model.Properties.Text8;
-    }
-    if (Model.Properties.Url8 != null)
-    {
-        url8 = HtmlToPlainText(Model.Properties.Url8.Replace("URL: https://", ""));
-    }
-    else
-    {
-        url8 = Model.Properties.Url8;
-    }
+    //breadcrumb 9
+    text9 = (Model.Properties.Text9 != null) ? (Model.Properties.Text9.Length > 200 ? Model.Properties.Text9.Substring(0, 200) : Model.Properties.Text9) : (null);
+    url9 = (Model.Properties.Url9 != null) ? (Model.Properties.Url9.Length > 992 ? Model.Properties.Url9.Substring(0, 992) : Model.Properties.Url9) : (null);
 
-    if (Model.Properties.Text9 != null)
-    {
-        text9 = HtmlToPlainText(Model.Properties.Text9.Replace("Label:", ""));
-    }
-    else
-    {
-        text9 = Model.Properties.Text9;
-    }
-    if (Model.Properties.Url9 != null)
-    {
-        url9 = HtmlToPlainText(Model.Properties.Url9.Replace("URL: https://", ""));
-    }
-    else
-    {
-        url9 = Model.Properties.Url9;
-    }
-
-    if (Model.Properties.Text10 != null)
-    {
-        text10 = HtmlToPlainText(Model.Properties.Text10.Replace("Label:", ""));
-    }
-    else
-    {
-        text10 = Model.Properties.Text10;
-    }
-    if (Model.Properties.Url10 != null)
-    {
-        url10 = HtmlToPlainText(Model.Properties.Url10.Replace("URL: https://", ""));
-    }
-    else
-    {
-        url10 = Model.Properties.Url10;
-    }
+    //breadcrumb 10
+    text10 = (Model.Properties.Text10 != null) ? (Model.Properties.Text10.Length > 200 ? Model.Properties.Text10.Substring(0, 200) : Model.Properties.Text10) : (null);
+    url10 = (Model.Properties.Url10 != null) ? (Model.Properties.Url10.Length > 992 ? Model.Properties.Url10.Substring(0, 992) : Model.Properties.Url10) : (null);
 }
 
 <div class="breadcrumb">
     <ul class="@className" id="@id">
         @if (text1 != null)
         {
-            <li>
-                <a href="https://@url1" target="_blank">@text1</a>
-            </li>
+            <li>@if (url1 != null)
+                {
+                    <a href="@url1" target="_blank">@text1</a>
+                }
+                else
+                {
+                    @text1
+                }</li>
         }
         @if (text2 != null)
         {
             <li>
-                <a href="https://@url2" target="_blank">@text2</a>
-            </li>
+                @if (url2 != null)
+                {
+                    <a href="@url2" target="_blank">@text2</a>
+                }
+                else
+                {
+                    @text2
+                }</li>
         }
         @if (text3 != null)
         {
-            <li>
-                <a href="https://@url3" target="_blank">@text3</a>
-            </li>
+            if (url3 != null)
+            {
+                <li>
+                    <a href="@url3" target="_blank">@text3</a>
+                </li>
+            }
+            else
+            {
+                <li>@text3</li>
+            }
         }
         @if (text4 != null)
         {
-            <li>
-                <a href="https://@url4" target="_blank">@text4</a>
-            </li>
+            if (url4 != null)
+            {
+                <li>
+                    <a href="@url4" target="_blank">@text4</a>
+                </li>
+            }
+            else
+            {
+                <li>@text4</li>
+            }
         }
         @if (text5 != null)
         {
-            <li>
-                <a href="https://@url5" target="_blank">@text5</a>
-            </li>
+            if (url5 != null)
+            {
+                <li>
+                    <a href="@url5" target="_blank">@text5</a>
+                </li>
+            }
+            else
+            {
+                <li>@text5</li>
+            }
         }
         @if (text6 != null)
         {
-            <li>
-                <a href="https://@url6" target="_blank">@text6</a>
-            </li>
+            if (url6 != null)
+            {
+                <li>
+                    <a href="@url6" target="_blank">@text6</a>
+                </li>
+            }
+            else
+            {
+                <li>@text6</li>
+            }
         }
         @if (text7 != null)
         {
-            <li>
-                <a href="https://@url7" target="_blank">@text7</a>
-            </li>
+            if (url7 != null)
+            {
+                <li>
+                    <a href="@url7" target="_blank">@text7</a>
+                </li>
+            }
+            else
+            {
+                <li>@text7</li>
+            }
         }
         @if (text8 != null)
         {
-            <li>
-                <a href="https://@url8" target="_blank">@text8</a>
-            </li>
+            if (url8 != null)
+            {
+                <li>
+                    <a href="@url8" target="_blank">@text8</a>
+                </li>
+            }
+            else
+            {
+                <li>@text8</li>
+            }
         }
         @if (text9 != null)
         {
-            <li>
-                <a href="https://@url9" target="_blank">@text9</a>
-            </li>
+            if (url9 != null)
+            {
+                <li>
+                    <a href="@url9" target="_blank">@text9</a>
+                </li>
+            }
+            else
+            {
+                <li>@text9</li>
+            }
         }
         @if (text10 != null)
         {
-            <li>
-                <a href="https://@url10" target="_blank">@text10</a>
-            </li>
+            if (url10 != null)
+            {
+                <li>
+                    <a href="@url10" target="_blank">@text10</a>
+                </li>
+            }
+            else
+            {
+                <li>@text10</li>
+            }
         }
     </ul>
 </div>
