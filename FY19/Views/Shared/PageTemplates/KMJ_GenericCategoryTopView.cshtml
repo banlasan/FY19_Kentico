@@ -6,6 +6,7 @@
 
 @{
     string title = string.Empty;
+    string path = string.Empty;
     string hiddenClass = string.Empty;
 
     if (Model.Properties.PageTitle != null)
@@ -23,14 +24,17 @@
     }
 
     string current = "current";
+
+    if (Model.Properties.Path != null)
+    {
+        path = Model.Properties.Path;
+    }
 }
 
 <!DOCTYPE html>
 <html lang="ja">
 <head id="head">
-    <title>
-        @title
-    </title>
+    <title>@title</title>
     <meta name="description" content="IT-GuardiansはコニカミノルタのITの設計・導入・保守・運用ノウハウをパッケージ化し、すべての企業の皆様にご利用いただけるようご提供いたします。" />
     <meta charset="UTF-8" />
     <meta name="keywords" content="インフラ,セキュリティ,サポート,環境構築,リモートサポート" />
@@ -62,9 +66,19 @@
     <script src="https://www.konicaminolta.jp/common/unchangeable/js/kmjslib.js"></script>
     @*<script src="https://www.konicaminolta.jp/common/unchangeable/js/response-3.0.js"></script>*@
     <script src="https://www.konicaminolta.jp/component/c_common/js/jquery-1.7.1.min.js"></script>
-    <meta property="og:image" content="https://www.konicaminolta.com/web-contents/kmj/assets/it-guardians/img/bg_keyvisual_sp.jpg?ext=.jpg" />
-    <link rel="stylesheet" href="https://www.konicaminolta.com/web-contents/kmj/assets/it-guardians/css/responsive.css">
-    <link rel="stylesheet" href="https://www.konicaminolta.com/web-contents/kmj/assets/it-guardians/css/it-guardians_top.css">
+    <link rel="stylesheet" href="~/Content/responsive.css">
+
+    @if (path.Contains("business/service/it-guardians"))
+    {
+        <meta property="og:image" content="~/Content/kmj/assets/it-guardians/img/bg_keyvisual_sp.jpg?ext=.jpg" />
+        <link rel="stylesheet" href="~/Content/kmj/assets/it-guardians/css/it-guardians_top.css">
+    }
+
+    @if (path.Contains("business/solution/document"))
+    {
+        <meta property="og:image" content="https://www.konicaminolta.com/web-contents/kmj/assets/document/img/bg_keyvisual_sp.jpg?ext=.jpg">
+        <link rel="stylesheet" href="https://www.konicaminolta.com/web-contents/kmj/assets/document/css/responsive.css">
+    }
 
     <!--[if lt IE 9]>
     <script src="https://www.konicaminolta.jp/common/unchangeable/js/html5shiv-printshiv.js"></script>
@@ -97,9 +111,22 @@
     <!-- END JMA Google Analytics -->
     <script src="https://www.konicaminolta.com/web-contents/kmj/assets/it-guardians/js/index.js"></script>
     <script src="https://www.konicaminolta.com/web-contents/kmj/assets/it-guardians/js/jquery-smoothscroll.js"></script>
+
     <!-- local共通CSS&JS -->
-    <link rel="stylesheet" href="https://www.konicaminolta.com/web-contents/kmj/assets/it-guardians/css/it-guardians.css" />
-    <script src="https://www.konicaminolta.com/web-contents/kmj/assets/common/js/business.js"></script>
+    @if (path.Contains("business/service/it-guardians"))
+    {
+        <link rel="stylesheet" href="~/Content/kmj/assets/it-guardians/css/it-guardians.css" />
+        <script src="~/Content/kmj/assets/common/js/business.js"></script>
+    }
+
+    @if (path.Contains("business/solution/document"))
+    {
+        <link rel="stylesheet" href="~/Content/kmj/assets/document/css/sticky-state.css" />
+        <link rel="stylesheet" href="~/Content/kmj/assets/document/css/document.css" />
+
+        <script src="https://www.konicaminolta.com/web-contents/kmj/assets/document/js/sticky-state-min.js"></script>
+        <script src="https://www.konicaminolta.com/web-contents/kmj/assets/common/js/business.js"></script>
+    }
     <!-- /local共通CSS&JS -->
     <!-- +++ /local-script +++ -->
     <link rel="stylesheet" href="https://www.konicaminolta.com/web-contents/kmj/assets/common/css/searchbox-kentico.css">
@@ -490,17 +517,33 @@
                 <div id="contentsInner">
                     <div class="main">
 
-                        <nav class="localnavigation @hiddenClass">
-                            <p class="localnavigation__btn">MENU</p>
-                            <ul>
-                                <li><a href="/business/service/it-guardians/index.html">TOP</a></li>
-                                <li class="@if (!title.Contains("ヘルプデスク") && !title.Contains("サービス一覧")) { @current }"><a href="/business/service/it-guardians/index.html#itg-solution">課題解決</a></li>
-                                <li class="@if (title.Contains("ヘルプデスク")){ @current }"><a href="/business/service/it-guardians/helpdesk/index.html">ヘルプデスク</a></li>
-                                <li class="@if (title.Contains("サービス一覧")){ @current }"><a href="/business/service/it-guardians/service/index.html">サービス一覧</a></li>
-                                <li><span>ニュース</span></li>
-                                <li><a href="https://bs-offers.konicaminolta.jp/it-guardians/contact/form/" target="_blank">お問い合わせ</a></li>
-                            </ul>
-                        </nav>
+                        @if (path.Contains("/business/service/it-guardians"))
+                        {
+                            <nav class="localnavigation @hiddenClass">
+                                <p class="localnavigation__btn">MENU</p>
+                                <ul>
+                                    <li><a href="/business/service/it-guardians/index.html">TOP</a></li>
+                                    <li class="@if (path == "/business/service/it-guardians/purpose") { @current }"><a href="/business/service/it-guardians/index.html#itg-solution">課題解決</a></li>
+                                    <li class="@if (path == "/business/service/it-guardians/helpdesk") { @current }"><a href="/business/service/it-guardians/helpdesk/index.html">ヘルプデスク</a></li>
+                                    <li class="@if (path == "/business/service/it-guardians/service" ) { @current }"><a href="/business/service/it-guardians/service/index.html">サービス一覧</a></li>
+                                    <li><span>ニュース</span></li>
+                                    <li><a href="https://bs-offers.konicaminolta.jp/it-guardians/contact/form/" target="_blank">お問い合わせ</a></li>
+                                </ul>
+                            </nav>
+                        }
+
+                        @if (path.Contains("/business/solution/document"))
+                        {
+                            <nav class="localnavigation sticky">
+                                <p class="localnavigation__btn">MENU</p>
+                                <ul>
+                                    <li><a href="/business/solution/document/index.html">サービスTOP</a></li>
+                                    <li class="current"><a href="/business/solution/document/index.html?id=internalLink000">課題解決</a></li>
+                                    <li><a href="https://www.konicaminolta.jp/business/seminar_schedule/index.html">セミナー・イベント</a></li>
+                                    <li><a href="https://bs-offers.konicaminolta.jp/ejikan/fm-ds-contact.html" target="_blank">お問い合わせ</a></li>
+                                </ul>
+                            </nav>
+                        }
 
                         <div class="breadcrumb @hiddenClass">
                             <ul>
@@ -510,13 +553,36 @@
                                     {
                                         @Html.Raw("ヘルプデスク")
                                     }
-                                    else if (title == "サービス一覧 | IT管理サービス IT-Guardians | コニカミノルタ" && title == "IT-Guardians アンチウイルスサービス | コニカミノルタ" && title == "IT-Guardians リモートビューサービス | コニカミノルタ" && title == "IT-Guardians UTMサービス | コニカミノルタ")
-                                    {
-                                        @Html.Raw("サービス一覧")
-                                    }
-                                    else
+                                    @if (title == "ITコスト低減／変動費化 | IT管理サービス IT-Guardians | コニカミノルタ" || title == "プリンティング環境最適化 | IT管理サービス IT-Guardians | コニカミノルタ" || title == "セキュリティ対策 | IT管理サービス IT-Guardians | コニカミノルタ" || title == "情報システムの運用負荷軽減 | IT管理サービス IT-Guardians | コニカミノルタ" || title == "情報伝達による生産性向上 | IT管理サービス IT-Guardians | コニカミノルタ")
                                     {
                                         <a href="/business/service/it-guardians/index.html#itg-solution" class="CMSBreadCrumbsLink">課題解決</a>
+                                    }
+                                    @if (title == "サービス一覧 | IT管理サービス IT-Guardians | コニカミノルタ" || title == "IT-Guardians アンチウイルスサービス | コニカミノルタ" || title == "IT-Guardians リモートビューサービス | コニカミノルタ" || title == "IT-Guardians UTMサービス | コニカミノルタ")
+                                    {
+                                        if (title == "サービス一覧 | IT管理サービス IT-Guardians | コニカミノルタ")
+                                        {
+                                            @Html.Raw("サービス一覧")
+                                        }
+                                        else
+                                        {
+                                            <a href="/Kentico11/business/service/it-guardians/service/index.html" class="CMSBreadCrumbsLink">サービス一覧</a>
+                                        }
+                                    }
+                                    @if (title == "文書管理コンサルティングサービス | コニカミノルタ")
+                                    {
+                                        @Html.Raw("文書管理コンサルティングサービス")
+                                    }
+                                    @if (title == "文書管理システム導入支援 | コニカミノルタ")
+                                    {
+                                        @Html.Raw("文書管理システム導入支援")
+                                    }
+                                    @if (title == "らくらく！文書削減パック ツールコース | コニカミノルタ")
+                                    {
+                                        @Html.Raw("文書管理コンサルティングサービス")
+                                    }
+                                    @if (title == "X-point Cloud | コニカミノルタ")
+                                    {
+                                        @Html.Raw("X-point Cloud")
                                     }
                                 </li>
                                 @if (title == "情報システムの運用負荷軽減 | IT管理サービス IT-Guardians | コニカミノルタ")
@@ -587,39 +653,57 @@
                 </div>
 
                 <div class="footer-btn">
-                    <div class="footer-btn__wrapper">
-                        <div class="footer-btn-content">
-                            <p class="footer-btn-content__txt">
-                                総合カタログ、サービス別カタログ（PDF）をダウンロード
-                                することができます。
-                            </p>
-                            <p class="footer-btn-content__link"><a href="/business/service/it-guardians/catalog/index.html">カタログダウンロード</a></p>
+                    @if (path.Contains("business/service/it-guardians"))
+                    {
+                        <div class="footer-btn__wrapper">
+                            <div class="footer-btn-content">
+                                <p class="footer-btn-content__txt">総合カタログ、サービス別カタログ（PDF）をダウンロードすることができます。</p>
+                                <p class="footer-btn-content__link"><a href="/business/service/it-guardians/catalog/index.html">カタログダウンロード</a></p>
+                            </div>
+                            <div class="footer-btn-content">
+                                <p class="footer-btn-content__txt">商品およびサービスについてご不明な点等ございましたら、お気軽にお問い合わせください。</p>
+                                <p class="footer-btn-content__link"><a href="https://bs-offers.konicaminolta.jp/it-guardians/contact/form/" target="_blank">お問い合わせ</a></p>
+                            </div>
                         </div>
+                    }
 
-                        <div class="footer-btn-content">
-                            <p class="footer-btn-content__txt">
-                                商品およびサービスについてご不明な点等ございましたら、
-                                お気軽にお問い合わせください。
-                            </p>
-
-                            <p class="footer-btn-content__link"><a href="https://bsoffers.konicaminolta.jp/fm-it-guardians-contact.html" target="_blank">お問い合わせ</a></p>
+                    @if (path.Contains("business/solution/document"))
+                    {
+                        <div class="footer-btn__wrapper">
+                            <div class="footer-btn-content">
+                                <p class="footer-btn-content__txt">お客様のお悩みに合わせた解決策をご提案します。まずはお気軽にお問合せください。</p>
+                                <p class="footer-btn-content__link"><a href="https://bs-offers.konicaminolta.jp/ejikan/fm-ds-contact.html" target="_blank">お問い合わせ</a></p>
+                            </div>
                         </div>
-                    </div>
+                    }
                 </div>
 
                 <nav class="footer-navigation">
-                    <ul>
-                        <li><a href="/business/service/it-guardians/index.html">TOP</a></li>
-                        <li><a href="/business/service/it-guardians/index.html#itg-solution">課題解決</a></li>
-                        <li><a href="/business/service/it-guardians/helpdesk/index.html">ヘルプデスク</a></li>
-                        <li><a href="/business/service/it-guardians/service/index.html">サービス一覧</a></li>
-                        <li><span>ニュース</span></li>
-                        <li><a href="/business/user_case/solution_service_products/it_guardians/index.html" target="_blank">導入事例</a></li>
-                        <li><a href="/business/support/index.html" target="_blank">サポート情報</a></li>
-                        <li><a href="https://bsoffers.konicaminolta.jp/fm-it-guardians-contact.html" target="_blank">お問い合わせ</a></li>
-                        <li><a href="/business/support/it-guardians/products/it_support/index.html" target="_blank">よくあるご質問</a></li>
-                        <!--<li><span></span></li>-->
-                    </ul>
+                    @if (path.Contains("business/service/it-guardians"))
+                    {
+                        <ul>
+                            <li><a href="/business/service/it-guardians/index.html">TOP</a></li>
+                            <li><a href="/business/service/it-guardians/index.html#itg-solution">課題解決</a></li>
+                            <li><a href="/business/service/it-guardians/helpdesk/index.html">ヘルプデスク</a></li>
+                            <li><a href="/business/service/it-guardians/service/index.html">サービス一覧</a></li>
+                            <li><span>ニュース</span></li>
+                            <li><a href="/business/user_case/solution_service_products/it_guardians/index.html" target="_blank">導入事例</a></li>
+                            <li><a href="/business/support/index.html" target="_blank">サポート情報</a></li>
+                            <li><a href="https://bsoffers.konicaminolta.jp/fm-it-guardians-contact.html" target="_blank">お問い合わせ</a></li>
+                            <li><a href="/business/support/it-guardians/products/it_support/index.html" target="_blank">よくあるご質問</a></li>
+                            <!--<li><span></span></li>-->
+                        </ul>
+                    }
+
+                    @if (path.Contains("business/solution/document"))
+                    {
+                        <ul>
+                            <li><a href="/business/solution/document/index.html">サービスTOP</a></li>
+                            <li><a href="/business/seminar_schedule/index.html">セミナー・イベント</a></li>
+                            <li><a href="/business/solution/document/index.html#internalLink000">課題解決</a></li>
+                            <li><a href="https://bs-offers.konicaminolta.jp/ejikan/fm-ds-contact.html" target="_blank">お問い合わせ</a></li>
+                        </ul>
+                    }
                 </nav>
 
                 <div class="to-top"><p><a href="#top"><span></span></a></p></div>
